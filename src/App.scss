@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  font-family: "RobotoMono-Regular";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #fff;
+  background: #070a0c;
+}
+//оболочка страницы
+
+#root {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+//контент самой страницы(без footer и header)
+.content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1 1 auto;
+  background: #070a0c;
+  padding: 95px 0px 0px 0px;
+  z-index: 2;
+}
+
+//ограниивающий контейнер
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+  z-index: 1000;
+  height: 100%;
+  padding: 0 30px;
+  position: relative;
+}
+
+a {
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+}
+h1 {
+  font-size: 80px;
+}
+h1,
+h2,
+h3 {
+  font-family: "NeueMachina-Regular";
+  color: #fff;
+}
+h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+h3 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+p {
+  font-family: "RobotoMono-Regular";
+  font-size: 18px;
+}
+button {
+  color: #fff;
+}
+.btn {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  padding: 27px 80px;
+  font-size: 14px;
+
+  background: transparent;
+  position: relative;
+  border: 2px solid #fff;
+  border-radius: 5px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: -31px;
+    top: -26px;
+    background: #070a0c;
+    border-right: 2px solid #fff;
+    width: 55px;
+    height: 51.5px;
+    transform: rotate(42deg);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    transform: rotate(50deg);
+    right: -31px;
+    bottom: -26px;
+    background: #070a0c;
+    border-right: 2px solid #fff;
+    width: 55px;
+    height: 51.5px;
+    transform: rotate(222deg);
+  }
+
+  span {
+    position: absolute;
+    height: 14px;
+    width: 2px;
+    background: #070a0c;
+    left: -2px;
+    bottom: 10px;
+  }
+}
+.btn-with-image {
+}
+.btn-gradient {
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%);
+  border-image-slice: 1;
+
+  &:before {
+    border-right: 2px solid transparent;
+    border-image: linear-gradient(0deg, #3053f9 40%, #5088f8 100%);
+    border-image-slice: 1;
+  }
+
+  &:after {
+    border-right: 2px solid transparent;
+    border-image: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%);
+    border-image-slice: 1;
+  }
+}
+
+.dropdown {
+  &__container {
+  }
+}
