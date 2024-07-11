@@ -1,6 +1,14 @@
 import "./Index.scss";
-const Index = (props) => {
-  return <h1>Ghbdtn</h1>;
-};
+import Intro from "./Intro/Intro";
+import SubIntro from "./SubIntro/SubIntro";
+
+function Index() {
+  return (
+    <>
+      <Intro />
+      <SubIntro />
+    </>
+  );
+}
 
 export default Index;

@@ -27,10 +27,10 @@ function Header() {
             <Link to="#">Регистрация</Link>
           </div>
         </nav>
-        <button className="header__btn btn btn-with-image btn-gradient">
+        <button className="header__btn btn btn-with-image btn-gradient btn-with-border">
           <img src={windows} alt="download" />
           Скачать
-          <span></span>
+          <span className="white-space"></span>
         </button>
       </div>
     </header>

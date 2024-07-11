@@ -1,0 +1,105 @@
+.footer {
+    &__row {
+        display: grid;
+        gap: 48px;
+        grid-template-areas:
+            "product item1 item2 item3"
+            "product item1 item2 item3"
+            "product copy copy copy";
+        grid-template-columns: 350px repeat(3, auto);
+    }
+
+    &__item {
+        & a {
+            display: flex;
+            text-transform: uppercase;
+
+            &:not(:last-child) {
+                margin-bottom: 24px;
+            }
+        }
+        & h2 {
+            font-weight: 400;
+            font-size: 18px;
+            text-transform: uppercase;
+            color: #939597;
+
+            font-family: "RobotoMono-Regular";
+        }
+        &.height {
+            grid-area: product;
+            max-width: 100%;
+
+            & a {
+                margin-bottom: 28px;
+                text-transform: none;
+                gap: 16px;
+                padding: 25px;
+                border-color: #939597;
+
+                &::after,
+                &::before {
+                    border-color: #939597;
+                }
+
+                & span {
+                    bottom: auto;
+                    top: 60%;
+                    height: 25px;
+                    transform: translate(0%, -50%);
+                }
+
+                & p:first-child {
+                    font-weight: 400;
+                    font-size: 18px;
+                    color: #fff;
+                    font-family: "NeueMachina-Regular";
+                    margin-bottom: 12px;
+                    line-height: 1;
+                }
+                & p:last-child {
+                    font-weight: 300;
+                    font-size: 14px;
+                    color: rgba(255, 255, 255, 0.7);
+                }
+            }
+        }
+        &:nth-child(2) {
+            max-width: fit-content;
+            grid-area: item1;
+        }
+        &:nth-child(3) {
+            max-width: fit-content;
+            grid-area: item2;
+        }
+        &:nth-child(4) {
+            max-width: fit-content;
+            grid-area: item3;
+            text-align: right;
+            margin-left: auto;
+
+            .btn-with-image {
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    &__product {
+    }
+
+    &__copy {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        grid-area: copy;
+        gap: 28px;
+
+        & p:last-child {
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: 0.02em;
+            color: #939597;
+            text-transform: uppercase;
+        }
+    }
+}

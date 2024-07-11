@@ -1,9 +1,17 @@
 .header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 100000;
+    width: 100%;
+    height: fit-content;
+    background: #070a0c;
+    border: 1px solid #272c30;
     &__row {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 30px 64px;
+        padding: 25px 64px;
     }
 
     &__logo {
@@ -48,11 +56,11 @@
     }
 
     &__btn {
-        padding: 27px 22px;
+        padding: 18px 24px;
         font-size: 24px;
+        gap: 16px;
         span {
             height: 25px;
-
             bottom: 10px;
         }
     }
