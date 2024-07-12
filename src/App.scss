@@ -253,6 +253,16 @@ button {
     border: none;
   }
 }
+.btn-grey {
+  border: 2px solid #939597;
+  color: #939597;
+  font-size: 18px;
+
+  &::after,
+  &::before {
+    border-right: 2px solid #939597;
+  }
+}
 
 .dropdown {
   &__container {
@@ -315,6 +325,64 @@ button {
   overflow: hidden;
   background: url(./img/svgicons/web.svg) repeat;
 }
+.block-header {
+  &.center {
+    text-align: center;
+
+    &.flex h2 {
+      justify-content: center;
+    }
+  }
+  &.border-1 {
+    span {
+      border: 2px solid #fff;
+      padding: 16px 24px;
+      border-image: url("./img/svgicons/btn-1.svg") 2 stretch;
+    }
+  }
+  &.flex h2 {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  &.border-2 {
+    span {
+      border: 2px solid #fff;
+      padding: 16px 24px;
+      border-image: url("./img/svgicons/btn-2.svg") 2 stretch;
+    }
+  }
+}
+.block-with-substrate {
+  .container {
+    border: 1px solid #272c30;
+    padding: 80px 24px 0px 24px;
+    background: #090c0f;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      right: -8px;
+      top: -16px;
+      background: #070a0c;
+      border-right: 1px solid #272c30;
+      width: 27px;
+      height: 51.5px;
+      transform: rotate(140deg);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: -8px;
+      top: -16px;
+      background: #070a0c;
+      border-right: 1px solid #272c30;
+      width: 27px;
+      height: 51.5px;
+      transform: rotate(41deg);
+    }
+  }
+}
 .label {
   .btn {
     margin: 0 auto;
@@ -342,4 +410,15 @@ button {
   &.right {
     right: 0px;
   }
+  &.center-block {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.text-gradient {
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #3050fb 0%, #41ffc2 50%, #2edcf9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

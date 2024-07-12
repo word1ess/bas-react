@@ -1,0 +1,97 @@
+.how {
+    .block-with-bg {
+        padding: 60px 0px 180px;
+    }
+    .line.center-block {
+        top: 52.5%;
+        left: 40%;
+    }
+    .line.top {
+        top: 20%;
+    }
+    h3 {
+        font-weight: 400;
+        font-size: 40px;
+        color: #fff;
+    }
+    p {
+        line-height: 1.3;
+    }
+    &__row {
+        display: grid;
+        grid-template-columns: 332px 1fr 332px;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-areas:
+            "first . ."
+            "first . second"
+            ". . second"
+            "third . second"
+            "third . .";
+    }
+    &__item {
+        &:nth-child(1) {
+            grid-area: first;
+        }
+        &:nth-child(2) {
+            grid-area: second;
+        }
+        &:nth-child(3) {
+            grid-area: third;
+        }
+
+        & p:not(:last-child) {
+            margin-bottom: 24px;
+        }
+
+        & span {
+            display: block;
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: 0.02em;
+            text-align: center;
+            color: #939597;
+            margin-bottom: 24px;
+        }
+
+        & span.white-space {
+            margin-bottom: 0px;
+        }
+
+        .btn {
+            max-width: 100%;
+            padding: 24px 18px;
+        }
+    }
+    &__index {
+        position: relative;
+        max-width: fit-content;
+        padding: 25px 18px;
+        font-weight: 400;
+        font-size: 24px;
+        margin-bottom: 24px;
+
+        &::after {
+            content: "";
+            background: url("../../../img/svgicons/cornerHow.svg");
+            background-size: cover;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+        }
+    }
+    &__content-img {
+        position: absolute;
+
+        &.top {
+            top: 60px;
+            right: 0px;
+        }
+        &.bottom {
+            bottom: 180px;
+            right: 0px;
+        }
+    }
+}

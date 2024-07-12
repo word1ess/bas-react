@@ -5,6 +5,8 @@
     align-items: center;
     justify-content: center;
     &__info {
+        position: relative;
+        z-index: 2;
         h1 {
             text-align: center;
             .btn {
@@ -28,6 +30,7 @@
         position: absolute;
         top: 0px;
         width: auto;
+        max-width: 600px;
         height: 100%;
         aspect-ratio: 8.6/5.1;
         object-fit: cover;
@@ -43,6 +46,10 @@
 .sub-intro {
     .container {
         padding: 24px 20px;
+    }
+    .btn {
+        padding-left: 128px;
+        padding-right: 128px;
     }
     &__row {
         display: flex;
@@ -60,15 +67,99 @@
         top: -50%;
 
         &.left {
-            transform: translate(0%, 25%);
+            transform: translate(0%, 35%);
             left: 30%;
         }
         &.center {
             top: -25%;
         }
         &.right {
-            transform: translate(0%, 25%);
-            right: 35%;
+            transform: translate(0%, 40%);
+            right: 30%;
         }
+    }
+}
+.automatisation {
+    &__row {
+        display: flex;
+        gap: 60px;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        flex: 0 0 132px;
+        padding-right: 60px;
+        border-right: 1px solid #272c30;
+
+        p {
+            text-align: center;
+        }
+    }
+
+    &__img {
+        position: relative;
+        width: 64px;
+        height: 64px;
+
+        & img {
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: contain;
+        }
+        .corner {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+
+            &.top {
+                top: 0px;
+                right: 0px;
+                border-top: 1px solid #272c30;
+                border-right: 1px solid #272c30;
+            }
+            &.bottom {
+                bottom: 0px;
+                left: 0px;
+                border-bottom: 1px solid #272c30;
+                border-left: 1px solid #272c30;
+            }
+        }
+    }
+}
+.tickers {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    width: 1160px;
+    overflow: hidden;
+}
+.ticker {
+    animation: startLine 30s linear, marquee 30s linear 30s infinite;
+    width: 2300px;
+}
+@keyframes startLine {
+    0% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0%);
     }
 }

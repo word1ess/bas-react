@@ -1,0 +1,36 @@
+.opportunities {
+    &__row {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 24px;
+    }
+
+    &__item {
+        border: 1px solid #272c30;
+        border-radius: 5px;
+        padding: 40px 24px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: -16px;
+            background: #090c0f;
+            border-right: 1px solid #272c30;
+            width: 27px;
+            height: 51.5px;
+            transform: rotate(41deg);
+        }
+    }
+
+    & img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 189px;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+        margin: 0px auto 16px;
+    }
+}
