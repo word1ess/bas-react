@@ -1,0 +1,236 @@
+.education {
+    .block-header {
+        position: relative;
+        .line {
+            bottom: -12px;
+            top: auto;
+            left: 240px;
+        }
+    }
+    &__row {
+        display: flex;
+        gap: 70px;
+    }
+
+    &__swiper {
+        flex: 0 0 540px;
+        & .swiper-button-prev,
+        & .swiper-button-next {
+            top: 35px;
+            transform: none;
+            width: 15px;
+            height: 24px;
+
+            &::after {
+                position: absolute;
+                background: center / contain no-repeat url("../../../img/svgicons/arrow.svg");
+            }
+        }
+        h2 {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .swiper-slide {
+            position: relative;
+        }
+    }
+
+    &__bg {
+        position: relative;
+        border: 1px solid #272c30;
+        border-radius: 5px;
+        padding: 40px 24px;
+        background: #0c1014;
+
+        & + .btn {
+            margin-top: 40px;
+            max-width: 100%;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: -16px;
+            background: #090c0f;
+            border-right: 1px solid #272c30;
+            width: 27px;
+            height: 51.5px;
+            transform: rotate(41deg);
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2/1;
+        object-fit: contain;
+        margin-bottom: 24px;
+    }
+
+    &__body {
+        & a {
+            font-weight: 400;
+            font-size: 24px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #fff;
+        }
+    }
+
+    &__without-bg {
+        & a {
+        }
+    }
+
+    &__content-img {
+        flex: 1 1 auto;
+        height: auto;
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 5.1/7.3;
+        & img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            object-fit: contain;
+        }
+
+        & .line {
+            bottom: 0px;
+            top: auto;
+            left: auto;
+            right: 0px;
+        }
+    }
+    .btn {
+        max-width: 100%;
+
+        &::after,
+        &::before {
+            background: #090c0f;
+        }
+    }
+
+    a + a {
+        display: flex;
+        margin-top: 24px;
+    }
+    .block-with-bg {
+        overflow: visible;
+        border: 1px solid #272c30;
+        border-radius: 5px;
+        padding: 80px 24px;
+        background-color: #090c0f;
+    }
+    .corner {
+        background: #070a0c;
+        position: absolute;
+        width: 32px;
+        height: 50px;
+
+        &.top {
+            top: -19px;
+        }
+        &.left {
+            left: -10px;
+        }
+        &.bottom {
+            bottom: -19px;
+        }
+        &.right {
+            right: -10px;
+        }
+        &.top.left {
+            border-right: 1px solid #272c30;
+            rotate: 45deg;
+        }
+        &.top.right {
+            border-right: 1px solid #272c30;
+            rotate: 135deg;
+        }
+        &.bottom.left {
+            border-right: 1px solid #272c30;
+            rotate: -45deg;
+        }
+        &.bottom.right {
+            border-right: 1px solid #272c30;
+            rotate: -135deg;
+        }
+    }
+}
+@media only screen and (max-width: 1440px) {
+}
+
+@media only screen and (max-width: 1280px) {
+}
+
+@media only screen and (max-width: 992px) {
+    .education {
+        .block-header {
+            .line {
+                display: none;
+            }
+        }
+        &__content-img {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            height: 270px;
+            width: 192px;
+
+            & .line {
+                display: none;
+            }
+        }
+        &__swiper {
+            flex: 1 1 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 576px) {
+    .education {
+        .block-with-bg {
+            padding-bottom: 40px;
+        }
+        .block-header {
+            .line {
+                display: none;
+            }
+            h2 {
+                align-items: flex-start;
+            }
+        }
+        &__row {
+            flex-wrap: wrap;
+        }
+        &__content-img {
+            position: relative;
+            height: 270px;
+            width: 192px;
+            left: 50%;
+            top: 0px;
+            transform: translate(-50%, 0%);
+
+            & .line {
+                display: none;
+            }
+        }
+        &__body {
+            a {
+                font-size: 16px;
+            }
+        }
+        &__swiper {
+            flex: 1 1 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+}

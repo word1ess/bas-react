@@ -1,3 +1,4 @@
+import "./Automatisation.scss";
 import AutomatisationItem from "./AutomatisationItem/AutomatisationItem";
 import imgOne from "../../../img/svgicons/auto-1.svg";
 import imgTwo from "../../../img/svgicons/auto-2.svg";

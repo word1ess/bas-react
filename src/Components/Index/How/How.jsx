@@ -35,13 +35,13 @@ function How() {
   return (
     <article className="how block-dashed-top block-dashed-sides">
       <div className="container">
+        <div className="plus top left">
+          <img src={plusImg} alt="plus" />
+        </div>
+        <div className="plus top right">
+          <img src={plusImg} alt="plus" />
+        </div>
         <div className="block-with-bg">
-          <div className="plus top left">
-            <img src={plusImg} alt="plus" />
-          </div>
-          <div className="plus top right">
-            <img src={plusImg} alt="plus" />
-          </div>
           <div className="line top center">
             <svg
               width="426"

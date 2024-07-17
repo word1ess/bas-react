@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import plusImg from "../../../img/svgicons/plus.svg";
 import windowsImg from "../../../img/svgicons/windows-black.svg";
+
+import "./SubIntro.scss";
+
 function SubIntro() {
   return (
     <>
@@ -12,16 +15,8 @@ function SubIntro() {
           <div className="plus top right">
             <img src={plusImg} alt="plus" />
           </div>
-          <div className="sub-intro__row">
-            <div className="sub-intro__item">
-              <p> Автоматизация браузера без навыков программирования.</p>
-            </div>
-            <div className="sub-intro__item">
-              <p>Визуальный редактор логики и мощный антидетект браузер.</p>
-            </div>
-            <div className="sub-intro__item">
-              <p>Создавайте свои приложения  в несколько кликов.</p>
-            </div>
+          <div className="sub-intro__row text-gradient">
+            Автоматизация браузера без навыков программирования
           </div>
         </div>
       </article>

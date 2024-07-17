@@ -79,3 +79,71 @@
         }
     }
 }
+@media only screen and (max-width: 1440px) {
+}
+
+@media only screen and (max-width: 1280px) {
+}
+
+@media only screen and (max-width: 992px) {
+    .interface {
+        &__item {
+            img {
+                display: none;
+            }
+        }
+        &__row {
+            display: block;
+        }
+        .swiper-wrapper {
+            counter-reset: counteIrnterface 0;
+        }
+        .swiper-slide {
+            &::before {
+                content: "0" counter(counteIrnterface);
+                counter-increment: counteIrnterface 1;
+                transform: none;
+                position: static;
+                display: block;
+                border: none;
+                font-weight: 400;
+                font-size: 24px;
+                color: #fff;
+                background: url("../../../img//svgicons/cornerHow.svg");
+                background-size: cover;
+                padding: 18px 0px 0px 24px;
+                width: fit-content;
+                display: block;
+                height: fit-content;
+                margin: 0 auto;
+                margin-bottom: 40px;
+            }
+            text-align: center;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 576px) {
+    .interface {
+        .container {
+            padding-top: 0px;
+        }
+        &__row {
+            & + h2 {
+                margin-top: 60px;
+            }
+        }
+        &__video {
+            .corner {
+                width: 60px;
+                height: 30px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+}

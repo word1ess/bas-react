@@ -5,8 +5,15 @@ import imgFirst from "./img/1.svg";
 import imgSecond from "./img/2.svg";
 import imgThird from "./img/3.svg";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import { useMediaQuery } from "react-responsive";
+
+import "swiper/css/pagination";
 import "./Interface.scss";
+
 function Interface() {
+  const isMobile = useMediaQuery({ query: `(max-width: 992px)` });
   const interfaceItems = [
     {
       title: "Панель инструментов",
@@ -25,14 +32,8 @@ function Interface() {
     },
   ];
   return (
-    <article className="interface block-dashed-top block-dashed-sides">
+    <article className="interface block-dashed-sides">
       <div className="container">
-        <div className="plus top left">
-          <img src={plusImg} alt="plus" />
-        </div>
-        <div className="plus top right">
-          <img src={plusImg} alt="plus" />
-        </div>
         <header className="block-header center border-1">
           <h2>
             <span>Интерфейс</span>
@@ -44,15 +45,36 @@ function Interface() {
           <video src={interfaceVideo} controls loading="lazy"></video>
         </div>
         <main className="interface__row">
-          {interfaceItems.map((item) => {
-            return (
-              <InterfaceItem
-                title={item.title}
-                text={item.text}
-                img={item.img}
-              />
-            );
-          })}
+          {isMobile ? (
+            <Swiper
+              modules={[Pagination]}
+              pagination={{ clickable: true }}
+              spaceBetween={24}
+              className="swiper"
+            >
+              {interfaceItems.map((item) => {
+                return (
+                  <SwiperSlide>
+                    <InterfaceItem
+                      title={item.title}
+                      text={item.text}
+                      img={item.img}
+                    />
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          ) : (
+            interfaceItems.map((item) => {
+              return (
+                <InterfaceItem
+                  title={item.title}
+                  text={item.text}
+                  img={item.img}
+                />
+              );
+            })
+          )}
         </main>
         <h2> Автоматизация вашего бизнеса</h2>
       </div>
