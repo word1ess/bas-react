@@ -1,6 +1,6 @@
 .intro {
     position: relative;
-    min-height: calc(100vh - 450px);
+    min-height: 420px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,14 +8,58 @@
     &__info {
         position: relative;
         z-index: 2;
-        h1 {
+        & h1 {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
             text-align: center;
-            .btn {
-                font-size: 80px;
+            & div.button {
+                font-size: 60px;
                 text-align: center;
                 font-family: "NeueMachina-Regular";
-                padding: 24px;
+                padding: 20px 24px;
+                background: transparent;
+                border: 2px solid transparent;
+                border-image: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%);
+                border-image-slice: 1;
+                color: #fff;
 
+                font-weight: 400;
+                position: relative;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: -8px;
+                    top: -16px;
+                    width: 27px;
+                    height: 51.5px;
+                    transform: rotate(40deg);
+                    transition: border-image 300ms ease;
+                    display: block;
+                    border-right: 2px solid transparent;
+                    border-image: linear-gradient(0deg, #3053f9 40%, #5088f8 100%);
+                    border-image-slice: 1;
+                    opacity: 1;
+                    background: #070a0c;
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    transform: rotate(50deg);
+                    right: -9px;
+                    bottom: -16px;
+                    width: 28px;
+                    height: 51.5px;
+                    transform: rotate(220deg);
+                    display: block;
+                    border-right: 2px solid transparent;
+                    border-image: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%);
+                    border-image-slice: 1;
+                    opacity: 1;
+                    background: #070a0c;
+                }
                 .white-space.top {
                     height: 60px;
                     bottom: 20px;
@@ -49,8 +93,7 @@
         padding: 40px 20px 40px;
     }
     .btn {
-        padding-left: 128px;
-        padding-right: 128px;
+        padding: 20px 128px;
     }
 
     &__row {
@@ -82,10 +125,12 @@
 
 @media only screen and (max-width: 1280px) {
     .intro {
-        h1 {
-            font-size: 48px;
-            .btn {
+        &__info {
+            h1 {
                 font-size: 48px;
+                div.button {
+                    font-size: 48px;
+                }
             }
         }
         & img {
@@ -100,14 +145,23 @@
 }
 
 @media only screen and (max-width: 992px) {
+    .intro {
+        &.block-with-bg {
+            &::after {
+                opacity: 0;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 768px) {
     .intro {
-        h1 {
-            font-size: 40px;
-            .btn {
+        &__info {
+            h1 {
                 font-size: 40px;
+                div.button {
+                    font-size: 40px;
+                }
             }
         }
     }

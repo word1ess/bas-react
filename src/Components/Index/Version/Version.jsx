@@ -127,10 +127,30 @@ function Version(params) {
             </Link>
             <p className="label__text">Бесплатно</p>
           </label>
-          <Link to="#" className="btn btn-gradient">
-            Купить премиум на год (80$)
-          </Link>
+          <label className="label">
+            <Link to="#" className="btn btn-gradient">
+              Купить премиум (80$)
+            </Link>
+            <p className="label__text">12 месяцев</p>
+          </label>
+          <label className="label">
+            <Link to="#" className="btn btn-gradient">
+              Купить премиум (40$)
+            </Link>
+            <p className="label__text">6 месяцев</p>
+          </label>
         </article>
+        <header className="block-header border-2 flex-row mt mb">
+          <h2>
+            Реальные кейсы
+            <span>пользователей</span>
+          </h2>
+          <p>
+            Посмотрите реальные примеры автоматизации из разных областей,
+            которые принесли своим создателям сотни клиентов и тысячи долларов
+            постоянного дохода.
+          </p>
+        </header>
       </div>
     </article>
   );

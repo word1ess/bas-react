@@ -72,17 +72,7 @@ function Cases() {
         <div className="plus top right">
           <img src={plusImg} alt="plus" />
         </div>
-        <header className="block-header border-2 flex-row">
-          <h2>
-            Реальные кейсы
-            <span>пользователей</span>
-          </h2>
-          <p>
-            Посмотрите реальные примеры автоматизации из разных областей,
-            которые принесли своим создателям сотни клиентов и тысячи долларов
-            постоянного дохода.
-          </p>
-        </header>
+
         <main className="cases__row">
           <aside className="cases__aside">
             <div className="cases__arrows">
@@ -114,7 +104,6 @@ function Cases() {
               nextEl: nextRef.current,
             }}
             breakpoints={{
-              // when window width is >= 768px
               768: {
                 width: 768,
                 slidesPerView: 2,

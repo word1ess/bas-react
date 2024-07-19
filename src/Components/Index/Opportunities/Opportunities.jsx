@@ -3,6 +3,7 @@ import itemImg from "../../../img/advantages/1.png";
 import OpportunitiesItem from "./OpportunitiesItem/OpportunitiesItem";
 import React from "react";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 function Opportunities({ title, supTitle, isBtn, items }) {
   const [opportunitiesItems, setOpportunitiesItems] = React.useState(items);
@@ -62,11 +63,8 @@ function Opportunities({ title, supTitle, isBtn, items }) {
     if (!btnMoreStatus) {
       setOpportunitiesItems([...copyItems, ...newArr]);
       setBtnMoreStatus(true);
-      btnMoreRef.current.textContent = "Скрыть";
     } else {
-      setOpportunitiesItems([...items]);
       setBtnMoreStatus(false);
-      btnMoreRef.current.textContent = "Показать все";
     }
 
     opportunitiesRowRef.current.classList.toggle("active");
@@ -186,17 +184,22 @@ function Opportunities({ title, supTitle, isBtn, items }) {
             );
           })}
         </main>
-        {isBtn && (
-          <button
-            className="btn btn-gradient btn-with-border"
-            onClick={() => {
-              btnHandle(btnMoreRef);
-            }}
-            ref={btnMoreRef}
-          >
-            Показать все
-          </button>
-        )}
+        {isBtn &&
+          (btnMoreStatus ? (
+            <Link to="#" className="btn btn-gradient btn-with-border">
+              Скачать
+            </Link>
+          ) : (
+            <button
+              className="btn btn-gradient btn-with-border"
+              onClick={() => {
+                btnHandle(btnMoreRef);
+              }}
+              ref={btnMoreRef}
+            >
+              Показать все
+            </button>
+          ))}
       </div>
     </article>
   );

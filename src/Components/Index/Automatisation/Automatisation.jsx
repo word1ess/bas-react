@@ -9,7 +9,12 @@ import imgSix from "../../../img/svgicons/auto-6.svg";
 import imgSeven from "../../../img/svgicons/auto-7.svg";
 import imgEight from "../../../img/svgicons/auto-8.svg";
 import imgNine from "../../../img/svgicons/auto-9.svg";
+import imgTen from "../../../img/svgicons/auto-10.svg";
+import imgEleven from "../../../img/svgicons/auto-11.svg";
 import plusImg from "../../../img/svgicons/plus.svg";
+
+import Marquee from "react-fast-marquee";
+
 function Automatisation() {
   const AutomatisationItems = [
     {
@@ -48,6 +53,14 @@ function Automatisation() {
       img: imgNine,
       title: "Ввод текста",
     },
+    {
+      img: imgTen,
+      title: "Браузер",
+    },
+    {
+      img: imgEleven,
+      title: "Капча",
+    },
   ];
   return (
     <article className="automatisation block-dashed-top block-dashed-sides">
@@ -58,16 +71,11 @@ function Automatisation() {
         <div className="plus top right">
           <img src={plusImg} alt="plus" />
         </div>
-        <div className="tickers">
-          <div className="automatisation__row ticker">
-            {AutomatisationItems.map((item) => {
-              return <AutomatisationItem img={item.img} title={item.title} />;
-            })}
-            {AutomatisationItems.map((item) => {
-              return <AutomatisationItem img={item.img} title={item.title} />;
-            })}
-          </div>
-        </div>
+        <Marquee className="automatisation__marquee">
+          {AutomatisationItems.map((item) => {
+            return <AutomatisationItem img={item.img} title={item.title} />;
+          })}
+        </Marquee>
       </div>
     </article>
   );

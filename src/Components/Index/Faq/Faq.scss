@@ -8,35 +8,29 @@
         cursor: pointer;
         font-family: "NeueMachina-Regular";
         color: #fff;
-
+        border-image: linear-gradient(90deg, #272c30 0%, #272c30 100%) 1;
         &:not(:first-child) {
             margin-top: 24px;
+        }
+
+        &::after,
+        &::before {
+            border-image: linear-gradient(90deg, #272c30 0%, #272c30 100%) 1;
+        }
+
+        &:hover,
+        &.active {
+            border-image: linear-gradient(90deg, #fff 0%, #fff 100%) 1;
+
+            &::after,
+            &::before {
+                border-image: linear-gradient(90deg, #fff 0%, #fff 100%) 1;
+            }
         }
 
         &.active .faq {
             &__toggle {
                 rotate: 45deg;
-            }
-        }
-
-        &.active {
-            border-image: none !important;
-            border-color: #fff;
-            &::after,
-            &::before {
-                border-image: none !important;
-                border-right: 2px solid #fff !important;
-            }
-        }
-
-        &:hover {
-            border-image: none !important;
-            border-color: #fff;
-
-            &::after,
-            &::before {
-                border-image: none !important;
-                border-right: 2px solid #fff !important;
             }
         }
     }

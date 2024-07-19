@@ -9,7 +9,7 @@ function Intro() {
         <div className="intro__info">
           <h1>
             Browser
-            <div className="btn btn-gradient btn-with-border">
+            <div className="button">
               Automation
               <span className="white-space top left"></span>
               <span className="white-space bottom right"></span>

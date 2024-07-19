@@ -90,7 +90,7 @@ function How() {
                   <stop offset="1" stop-color="#2EDCF9">
                     <animate
                       attributeName="stop-color"
-                      values="#3050FB;#41FFC2; #2EDCF9; #272C30; #3050FB;"
+                      values="#3050FB; #41FFC2; #2EDCF9; #272C30; #3050FB;"
                       dur="4s"
                       repeatCount="indefinite"
                     />

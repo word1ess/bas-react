@@ -59,11 +59,22 @@
         text-transform: none;
         gap: 16px;
         padding: 25px;
-        border-color: #939597;
+        border-image: linear-gradient(90deg, #272c30 0%, #272c30 100%) 1;
 
         &::after,
         &::before {
-            border-color: #939597;
+            border-image: linear-gradient(90deg, #272c30 0%, #272c30 100%) 1;
+        }
+
+        &:nth-child(2) {
+            border-image: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%) 1;
+
+            &::after {
+                border-image: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%) 1;
+            }
+            &::before {
+                border-image: linear-gradient(0deg, #3053f9 40%, #5088f8 100%) 1;
+            }
         }
 
         & span {
