@@ -8,23 +8,19 @@
         cursor: pointer;
         font-family: "NeueMachina-Regular";
         color: #fff;
-        border-image: linear-gradient(90deg, #272c30 0%, #272c30 100%) 1;
+
         &:not(:first-child) {
             margin-top: 24px;
         }
 
-        &::after,
-        &::before {
-            border-image: linear-gradient(90deg, #272c30 0%, #272c30 100%) 1;
-        }
-
         &:hover,
         &.active {
-            border-image: linear-gradient(90deg, #fff 0%, #fff 100%) 1;
-
+            .border {
+                background: linear-gradient(0deg, #fff 0%, #fff 100%) !important;
+            }
             &::after,
             &::before {
-                border-image: linear-gradient(90deg, #fff 0%, #fff 100%) 1;
+                border-image: linear-gradient(90deg, #fff 0%, #fff 100%) 2 !important;
             }
         }
 
@@ -75,4 +71,33 @@
             background: #fff;
         }
     }
+}
+@media only screen and (max-width: 1440px) {
+}
+
+@media only screen and (max-width: 1280px) {
+}
+
+@media only screen and (max-width: 992px) {
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 576px) {
+    .faq {
+        &__question {
+            padding: 14px 10px;
+            font-size: 14px;
+            gap: 20px;
+        }
+        &__answer {
+            font-size: 14px;
+            padding: 14px 10px;
+            line-height: 1.2;
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) {
 }

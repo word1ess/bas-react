@@ -14,24 +14,35 @@ function HeaderDropdown({ parentLink, parentLinkText, body }) {
     arrowRef.current.classList.toggle("active");
   }
 
-  function dropDownFunc(dropDown) {
-    if (
-      dropDown.current.classList.contains("hover-dropdown") ||
-      dropDown.current.classList.contains("arrow")
-    ) {
-      dropDown.current.onmouseover = dropDown.current.onmouseout =
-        dropdownHover;
-      function dropdownHover(e) {
-        if (e.type == "mouseover") {
-          closeDropdown();
-          this.parentElement.classList.add("dropdown-open");
-          this.parentElement
-            .querySelector(".dropdown-menu")
-            .classList.add("active");
-        }
-      }
-    }
-  }
+  // function dropDownFunc(dropDown) {
+  //   if (
+  //     dropDown.current.classList.contains("hover-dropdown") ||
+  //     dropDown.current.classList.contains("arrow")
+  //   ) {
+  //     dropDown.current.onmouseover = dropDown.current.onmouseout =
+  //       dropdownHover;
+  //     function dropdownHover(e) {
+  //       if (e.type == "mouseover") {
+  //         closeDropdown();
+  //         this.parentElement.classList.add("dropdown-open");
+  //         this.parentElement
+  //           .querySelector(".dropdown-menu")
+  //           .classList.add("active");
+  //       }
+  //     }
+  //   }
+  // }
+
+  // document.addEventListener("mousedown", handleClick);
+
+  // function handleClick(e) {
+  //   if (
+  //     dropdownMenuRef.current &&
+  //     !dropdownMenuRef.current.contains(e.target)
+  //   ) {
+  //     closeDropdown();
+  //   }
+  // }
   function closeDropdown() {
     // remove the open and active class from other opened Dropdown (Closing the opend DropDown)
     dropdownContainerRef.current.classList.remove("dropdown-open");
@@ -39,17 +50,21 @@ function HeaderDropdown({ parentLink, parentLinkText, body }) {
   }
 
   return (
-    <div className="dropdown-container" ref={dropdownContainerRef}>
+    <div
+      className="dropdown-container"
+      ref={dropdownContainerRef}
+      onClick={mobileClickHandle}
+    >
       <Link
         to={parentLink}
         className="header__link dropdown-toggle hover-dropdown"
         ref={hoverDropdownRef}
-        onMouseEnter={() => dropDownFunc(hoverDropdownRef)}
+        // onMouseEnter={() => dropDownFunc(hoverDropdownRef)}
       >
         {parentLinkText}
       </Link>
       {isMobile ? (
-        <div className="arrow" ref={arrowRef} onClick={mobileClickHandle}></div>
+        <div className="arrow" ref={arrowRef}></div>
       ) : (
         <div className="arrow" ref={arrowRef}></div>
       )}

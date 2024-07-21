@@ -52,37 +52,29 @@ function How() {
             >
               <path
                 d="M0 1H162.467C164.707 1 166.674 2.49042 167.28 4.64735L214.969 174.353C215.575 176.51 217.542 178 219.782 178H426"
-                stroke="url(#paint0_linear_549_4156)"
+                stroke="url(#paint0_linear_706_1431)"
               />
               <defs>
                 <linearGradient
-                  id="paint0_linear_549_4156"
-                  x1="226.586"
-                  y1="178"
-                  x2="393.19"
-                  y2="156.116"
+                  id="paint0_linear_706_1431"
+                  x1="0"
+                  y1="1"
+                  x2="396.065"
+                  y2="178"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0.2" stop-color="#272C30">
+                  <stop stop-color="#3050FB">
                     <animate
                       attributeName="stop-color"
-                      values="#272C30; #3050FB; #41FFC2; #2EDCF9; #272C30;"
+                      values="#2EDCF9; #3050FB; #41FFC2; #2EDCF9"
                       dur="4s"
                       repeatCount="indefinite"
                     />
                   </stop>
-                  <stop offset="0.5" stop-color="#3050FB">
+                  <stop offset="0.46" stop-color="#41FFC2">
                     <animate
                       attributeName="stop-color"
-                      values="#2EDCF9; #272C30; #3050FB; #41FFC2; #2EDCF9;"
-                      dur="4s"
-                      repeatCount="indefinite"
-                    />
-                  </stop>
-                  <stop offset="0.8" stop-color="#41FFC2">
-                    <animate
-                      attributeName="stop-color"
-                      values="#41FFC2; #2EDCF9; #272C30; #3050FB; #41FFC2;"
+                      values="#41FFC2; #2EDCF9; #3050FB; #41FFC2;"
                       dur="4s"
                       repeatCount="indefinite"
                     />
@@ -90,7 +82,7 @@ function How() {
                   <stop offset="1" stop-color="#2EDCF9">
                     <animate
                       attributeName="stop-color"
-                      values="#3050FB; #41FFC2; #2EDCF9; #272C30; #3050FB;"
+                      values="#3050FB; #41FFC2; #2EDCF9; #3050FB;"
                       dur="4s"
                       repeatCount="indefinite"
                     />
@@ -109,37 +101,29 @@ function How() {
             >
               <path
                 d="M589 1H361.222C359.884 1 358.602 1.53605 357.662 2.48831L222.468 139.512C221.529 140.464 220.247 141 218.909 141L0 141"
-                stroke="url(#paint0_linear_549_4157)"
+                stroke="url(#paint0_linear_707_1438)"
               />
               <defs>
                 <linearGradient
-                  id="paint0_linear_549_4157"
-                  x1="275.716"
-                  y1="141"
-                  x2="53.1242"
-                  y2="89.8911"
+                  id="paint0_linear_707_1438"
+                  x1="589"
+                  y1="1"
+                  x2="38.2781"
+                  y2="14.5496"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0.2" stop-color="#272C30">
+                  <stop stop-color="#3050FB">
                     <animate
                       attributeName="stop-color"
-                      values="#272C30; #3050FB; #41FFC2; #2EDCF9; #272C30;"
+                      values="#2EDCF9; #3050FB; #41FFC2; #2EDCF9"
                       dur="4s"
                       repeatCount="indefinite"
                     />
                   </stop>
-                  <stop offset="0.5" stop-color="#3050FB">
+                  <stop offset="0.52" stop-color="#41FFC2">
                     <animate
                       attributeName="stop-color"
-                      values="#2EDCF9; #272C30; #3050FB; #41FFC2; #2EDCF9;"
-                      dur="4s"
-                      repeatCount="indefinite"
-                    />
-                  </stop>
-                  <stop offset="0.8" stop-color="#41FFC2">
-                    <animate
-                      attributeName="stop-color"
-                      values="#41FFC2; #2EDCF9; #272C30; #3050FB; #41FFC2;"
+                      values="#41FFC2; #2EDCF9; #3050FB; #41FFC2;"
                       dur="4s"
                       repeatCount="indefinite"
                     />
@@ -147,7 +131,7 @@ function How() {
                   <stop offset="1" stop-color="#2EDCF9">
                     <animate
                       attributeName="stop-color"
-                      values="#3050FB;#41FFC2; #2EDCF9; #272C30; #3050FB;"
+                      values="#3050FB; #41FFC2; #2EDCF9; #3050FB;"
                       dur="4s"
                       repeatCount="indefinite"
                     />

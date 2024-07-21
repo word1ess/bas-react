@@ -40,7 +40,7 @@ function Education() {
       ],
       img: educationImg,
       btn: [
-        <Link to="#" className="btn btn-gradient btn-with-border">
+        <Link to="#" className="btn btn-gradient">
           Официальный канал YouTube
         </Link>,
       ],
@@ -50,12 +50,11 @@ function Education() {
       subTitle: undefined,
       img: undefined,
       body: [
-        <Link to="#" className="btn btn-gradient btn-with-border">
-          Задать вопрос
-          <span className="white-space"></span>
-        </Link>,
         <Link to="mailto:basmarketings@gmail.com">
           basmarketings@gmail.com
+        </Link>,
+        <Link to="#" className="btn btn-gradient">
+          Задать вопрос
         </Link>,
       ],
     },

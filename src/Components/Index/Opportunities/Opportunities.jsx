@@ -70,7 +70,7 @@ function Opportunities({ title, supTitle, isBtn, items }) {
     opportunitiesRowRef.current.classList.toggle("active");
   }
   return (
-    <article className="opportunities block-with-substrate">
+    <article className="opportunities block-with-substrate ">
       <div className="container">
         <div className="line">
           <svg
@@ -170,7 +170,6 @@ function Opportunities({ title, supTitle, isBtn, items }) {
             <h2>{title}</h2>
           </header>
         )}
-
         <main className="opportunities__row" ref={opportunitiesRowRef}>
           {opportunitiesItems.map((item) => {
             return (
@@ -184,10 +183,12 @@ function Opportunities({ title, supTitle, isBtn, items }) {
             );
           })}
         </main>
+
         {isBtn &&
           (btnMoreStatus ? (
             <Link to="#" className="btn btn-gradient btn-with-border">
               Скачать
+              <span className="border"></span>
             </Link>
           ) : (
             <button
@@ -198,8 +199,10 @@ function Opportunities({ title, supTitle, isBtn, items }) {
               ref={btnMoreRef}
             >
               Показать все
+              <span className="border"></span>
             </button>
           ))}
+        <div className="lines__fixes"></div>
       </div>
     </article>
   );

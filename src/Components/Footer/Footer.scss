@@ -59,25 +59,22 @@
         text-transform: none;
         gap: 16px;
         padding: 25px;
-        border-image: linear-gradient(90deg, #272c30 0%, #272c30 100%) 1;
 
-        &::after,
-        &::before {
-            border-image: linear-gradient(90deg, #272c30 0%, #272c30 100%) 1;
-        }
-
-        &:nth-child(2) {
-            border-image: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%) 1;
+        &:nth-child(3),
+        &:nth-child(4) {
+            & .border {
+                background: linear-gradient(90deg, #939597 0%, #939597 100%) !important;
+            }
 
             &::after {
-                border-image: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%) 1;
+                border-image: linear-gradient(90deg, #939597 0%, #939597 100%) 1 !important;
             }
             &::before {
-                border-image: linear-gradient(0deg, #3053f9 40%, #5088f8 100%) 1;
+                border-image: linear-gradient(90deg, #939597 0%, #939597 100%) 1 !important;
             }
         }
 
-        & span {
+        & span.white-space {
             bottom: auto;
             top: 60%;
             height: 25px;

@@ -26,7 +26,26 @@
 
                 font-weight: 400;
                 position: relative;
+                span.white-space {
+                    position: absolute;
+                    height: 14px;
+                    width: 2px;
+                    background: #070a0c;
+                    left: -2px;
+                    bottom: 5px;
 
+                    &.bottom {
+                        top: auto;
+                        height: 2px;
+                        width: 14px;
+
+                        bottom: -2px;
+                    }
+                    &.right {
+                        left: auto;
+                        right: 18px;
+                    }
+                }
                 &:before {
                     content: "";
                     position: absolute;
@@ -61,8 +80,8 @@
                     background: #070a0c;
                 }
                 .white-space.top {
-                    height: 60px;
-                    bottom: 20px;
+                    height: 40px;
+                    bottom: 22px;
                 }
                 .white-space.bottom.right {
                     width: 60px;

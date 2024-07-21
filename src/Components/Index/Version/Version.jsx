@@ -124,6 +124,8 @@ function Version(params) {
             >
               <img src={windowsBtn} alt="windows" />
               Скачать
+              <span className="white-space"></span>
+              <span className="border"></span>
             </Link>
             <p className="label__text">Бесплатно</p>
           </label>

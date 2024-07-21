@@ -103,13 +103,13 @@ body {
   position: relative;
   flex: 1 1 auto;
   background: #070a0c;
-  padding: 125px 0px 0px 0px;
+  padding: 89px 0px 0px 0px;
   z-index: 2;
 }
 
 //ограниивающий контейнер
 .container {
-  max-width: 1220px;
+  max-width: 1120px;
   margin: 0 auto;
   z-index: 1000;
   height: 100%;
@@ -149,6 +149,8 @@ button {
   color: #fff;
 }
 .btn {
+  position: relative;
+
   display: flex;
   gap: 16px;
   align-items: center;
@@ -160,6 +162,7 @@ button {
   position: relative;
   border: 2px solid #fff;
   border-radius: 5px;
+
   max-width: fit-content;
 
   font-family: "NeueMachina-Regular";
@@ -170,12 +173,12 @@ button {
     content: "";
     position: absolute;
     left: -9px;
-    top: -14px;
+    top: -15px;
     width: 26px;
-    height: 45.5px;
-    transform: rotate(39deg);
-
-    transition: border-image 300ms ease;
+    height: 34px;
+    transform: rotate(48deg);
+    display: block;
+    // transition: border-image 300ms ease;
 
     background: #070a0c;
     border-right: 2px solid #fff;
@@ -184,12 +187,11 @@ button {
   &:after {
     content: "";
     position: absolute;
-    transform: rotate(50deg);
-    right: -9px;
-    bottom: -16px;
-    width: 28px;
-    height: 51.5px;
-    transform: rotate(220deg);
+    right: -10.85px;
+    bottom: -15px;
+    width: 26px;
+    height: 34px;
+    transform: rotate(228deg);
     background: #070a0c;
     border-right: 2px solid #fff;
   }
@@ -199,8 +201,9 @@ button {
     height: 14px;
     width: 2px;
     background: #070a0c;
-    left: -2px;
+    left: 0px;
     bottom: 10px;
+    z-index: 3;
 
     &.bottom {
       top: auto;
@@ -216,38 +219,99 @@ button {
   }
   &.btn-with-border {
     font-family: "NeueMachina-Regular";
-  }
-  &.btn-with-border.btn-gradient {
-    background: transparent;
-    border: 2px solid transparent;
-    border-image: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%);
-    border-image-slice: 1;
-    color: #fff;
-    font-weight: 400;
 
     &:before {
-      display: block;
+      display: inline;
       border-right: 2px solid transparent;
-      border-image: linear-gradient(0deg, #3053f9 40%, #5088f8 100%);
-      border-image-slice: 1;
-      opacity: 1;
+
+      z-index: 2;
+
+      left: -11.2px;
+      top: -11.5px;
+      width: 26px;
+      height: 28px;
+      transform: rotate(44deg);
     }
 
     &:after {
       display: block;
       border-right: 2px solid transparent;
-      border-image: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%);
-      border-image-slice: 1;
-      opacity: 1;
+
+      z-index: 2;
+      right: -12.5px;
+      bottom: -9.5px;
+      width: 26px;
+      height: 33px;
+      transform: rotate(215deg);
+    }
+
+    .border {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      border-radius: 5px;
+      padding: 2px;
+
+      background: linear-gradient(90deg, #fff 0%, #fff 100%);
+
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      z-index: 1;
+    }
+  }
+  &.btn-with-border.btn-gradient {
+    background: transparent;
+    color: #fff;
+    font-weight: 400;
+
+    &:before {
+      border-image: linear-gradient(0deg, #3053f9 40%, #5088f8 100%) 2;
+    }
+    &:after {
+      border-image: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%) 2;
+    }
+    .border {
+      background: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%);
     }
 
     &:hover {
-      border-image: linear-gradient(45deg, #2edcf9 0%, #3050fb 50%, #41ffc2 98.77%, #2edcf9 99.95%, #3050fb 100%);
-      border-image-slice: 1;
-
+      .border {
+        background: linear-gradient(45deg, #2edcf9 0%, #3050fb 50%, #41ffc2 98.77%, #2edcf9 99.95%, #3050fb 100%);
+      }
       &::before {
-        border-image: linear-gradient(90deg, #2eb7f9 0%, #2ed4f9 100%);
-        border-image-slice: 3;
+        border-image: linear-gradient(180deg, #2c7dfa 0%, #2db5ff 100%) 2;
+      }
+      &::after {
+        border-image: linear-gradient(0deg, #36e4c9 0%, #2f87eb 100%) 2;
+      }
+    }
+  }
+  &.btn-with-border.btn-grey {
+    background: transparent;
+    &:before {
+      border-image: linear-gradient(0deg, #272c30 0%, #272c30 100%) 2;
+    }
+    &:after {
+      border-image: linear-gradient(0deg, #272c30 0%, #272c30 100%) 2;
+    }
+    .border {
+      background: linear-gradient(0deg, #272c30 0%, #272c30 100%);
+    }
+    &:hover {
+      .border {
+        background: linear-gradient(45deg, #2edcf9 0%, #3050fb 50%, #41ffc2 98.77%, #2edcf9 99.95%, #3050fb 100%);
+      }
+      &::before {
+        border-image: linear-gradient(180deg, #2c7dfa 0%, #2db5ff 100%) 2;
+      }
+      &::after {
+        border-image: linear-gradient(0deg, #36e4c9 0%, #2f87eb 100%) 2;
       }
     }
   }
@@ -259,7 +323,9 @@ button {
 }
 .btn-gradient {
   border: none;
-  background: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%);
+  background: url("./img/svgicons/web-for-btn.svg"), linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%);
+  background-position: center;
+  background-size: cover;
   font-weight: 800;
   font-size: 24px;
   color: #070a0c;
@@ -271,37 +337,27 @@ button {
   }
 
   &:hover {
-    background: linear-gradient(45deg, #2edcf9 0%, #3050fb 50%, #41ffc2 98.77%, #2edcf9 99.95%, #3050fb 100%);
+    background: url("./img/svgicons/web-for-btn.svg"),
+      linear-gradient(45deg, #2edcf9 0%, #3050fb 50%, #41ffc2 98.77%, #2edcf9 99.95%, #3050fb 100%);
+    background-position: center;
+    background-size: cover;
   }
 }
 .btn-grey {
   border: 2px solid transparent;
-  border-image: linear-gradient(90deg, #939597 0%, #939597 100%);
-  border-image-slice: 1;
+
   color: #939597;
   font-size: 18px;
   transition: all 300ms ease;
 
   &::after,
   &::before {
-    border-right: 2px solid transparent;
-    border-image: linear-gradient(90deg, #939597 0%, #939597 100%) 3;
-    transition: all 300ms ease;
-  }
-  &::before {
-    width: 26px;
+    border: none;
   }
 
   &:hover {
-    border-image: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%) 1;
+    background: #272c30;
     color: #fff;
-
-    &::after {
-      border-image: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%) 1;
-    }
-    &::before {
-      border-image: linear-gradient(0deg, #3053f9 40%, #5088f8 100%) 1;
-    }
   }
 }
 
@@ -552,14 +608,12 @@ div.swiper-pagination {
   justify-content: center;
   span.swiper-pagination-bullet {
     width: 6px;
-    height: 2px;
+    height: 6px;
     background: #272c30;
-    border-radius: 0px;
+    border-radius: 50%;
     transition: all 300ms ease;
   }
   span.swiper-pagination-bullet-active {
-    width: 24px;
-    height: 2px;
     background: #939597;
     opacity: 1;
   }

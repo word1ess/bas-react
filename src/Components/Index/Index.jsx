@@ -11,9 +11,9 @@ import Opportunities from "./Opportunities/Opportunities";
 import Automatisation from "./Automatisation/Automatisation";
 import itemImg from "../../img/advantages/1.png";
 import itemImgSecond from "../../img/advantages/2.png";
-
 import plusImg from "../../img/svgicons/plus.svg";
-
+import { useRef } from "react";
+import { Helmet } from "react-helmet";
 function Index() {
   const firstAdditinalItems = [
     {
@@ -94,8 +94,20 @@ function Index() {
       p: `Мы предлагаем поддержку по Email или Skype для премиум пользователей (только сообщения). В неe включены рекомендации по выполнению конкретных задач и решение технических проблем.`,
     },
   ];
+  const windowHeight = useRef(window.innerHeight);
+  const isLaptop = 600 > windowHeight.current;
   return (
     <>
+      <Helmet>
+        <meta
+          name="viewport"
+          content={`${
+            isLaptop
+              ? "width=device-width, initial-scale=0.6"
+              : "width=device-width, initial-scale=1"
+          }`}
+        />
+      </Helmet>
       <Intro />
       <SubIntro />
       <Interface />
@@ -111,7 +123,9 @@ function Index() {
         title={[
           "Премиум",
           <div className="btn btn-gradient btn-with-border">
-            <span className="white-space"></span>возможности
+            возможности
+            <span className="white-space"></span>
+            <span className="border"></span>
           </div>,
         ]}
         // supTitle="бесплатно"

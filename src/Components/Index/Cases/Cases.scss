@@ -7,11 +7,17 @@
     &__aside {
         display: flex;
         flex-direction: column;
-        flex: 0 0 360px;
+        flex: 0 0 270px;
         padding: 80px 0px;
         justify-content: space-between;
         align-items: center;
         gap: 20px;
+
+        & img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3.6/2.5;
+        }
     }
 
     &__arrows {
@@ -37,6 +43,14 @@
         border: 1px solid #272c30;
         border-radius: 5px;
         position: relative;
+
+        display: flex;
+        flex-direction: column;
+        height: auto;
+
+        .text-gradient {
+            margin-top: auto;
+        }
 
         &::before {
             content: "";
@@ -90,6 +104,23 @@
         .btn {
             max-width: fit-content;
             width: fit-content;
+            border: 2px solid transparent !important;
+            border-image: linear-gradient(135deg, #3053f9 20%, #41ffc2 35%, #272c30 50%, #272c30 60%, #2edcf9 100%) 2 !important;
+            &::before {
+                border-right: 2px solid transparent !important;
+                border-image: linear-gradient(135deg, #315ff6 0%, #315ff6 100%) 2 !important;
+                transform: rotate(44deg) !important;
+            }
+            &::after {
+                border-right: 2px solid transparent !important;
+                border-image: linear-gradient(135deg, #2edaf9bb 0%, #2edaf9bb 100%) 2 !important;
+                transform: rotate(220deg) !important;
+                width: 26.5px !important;
+                height: 26px !important;
+                right: -15.5px !important;
+                bottom: -12px !important;
+                border-radius: 0px;
+            }
         }
     }
 
@@ -99,8 +130,9 @@
         justify-content: center;
         padding: 24px;
         border: 1px solid transparent;
-        border-image: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%);
-        border-image-slice: 1;
+        border-color: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%);
+        // border-image-slice: 1;
+        border-radius: 6px;
 
         & img {
             height: 20px;
@@ -184,10 +216,16 @@
             position: static;
         }
     }
-    cite p {
-        font-style: normal;
-        font-family: "NeueMachina-Regular";
+    cite {
+        img {
+            max-width: 20%;
+        }
+        p {
+            font-style: normal;
+            font-family: "NeueMachina-Regular";
+        }
     }
+
     &__author {
         position: relative;
         border-radius: 50%;
@@ -222,6 +260,13 @@
         letter-spacing: 0.02em;
         color: #939597;
     }
+
+    .btn img {
+        aspect-ratio: 1/1;
+        width: 24px;
+        height: 24px;
+        flex: 0 0 24px;
+    }
 }
 
 @media only screen and (max-width: 992px) {
@@ -233,15 +278,6 @@
             .swiper {
                 min-width: 0px;
                 max-width: 100%;
-            }
-            .swiper-slide {
-                display: flex;
-                flex-direction: column;
-                height: auto;
-
-                .text-gradient {
-                    margin-top: auto;
-                }
             }
         }
         &__aside {
@@ -267,6 +303,9 @@
             h3 {
                 font-size: 24px;
             }
+        }
+        .btn img {
+            display: none;
         }
     }
 }

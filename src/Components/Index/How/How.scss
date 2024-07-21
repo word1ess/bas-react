@@ -7,7 +7,13 @@
         left: 40%;
     }
     .line.top {
-        top: 20%;
+        top: 15%;
+        max-width: 360px;
+
+        & svg {
+            width: 100%;
+            object-fit: contain;
+        }
     }
     h3 {
         font-weight: 400;

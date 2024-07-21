@@ -11,7 +11,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 25px 64px;
+        padding: 14px 64px;
         gap: 20px;
     }
 
@@ -76,7 +76,7 @@
     }
 
     &__btn {
-        padding: 18px 24px;
+        padding: 12px 24px;
         font-size: 24px;
         gap: 16px;
         span {
@@ -89,7 +89,7 @@
         position: absolute;
         display: none;
 
-        padding-top: 73px;
+        padding-top: 52px;
         top: 0px;
         left: -50%;
 
@@ -245,6 +245,7 @@
         &__row {
             justify-content: space-between;
             gap: 40px;
+            padding: 16px;
         }
         &__logo {
             margin: 0px;
@@ -376,8 +377,8 @@
         }
 
         &__btn {
-            padding: 18px 40px;
-            margin-left: auto;
+            padding: 12px 40px;
+            margin-left: 0px;
             font-size: 18px;
             max-width: fit-content;
             width: fit-content;

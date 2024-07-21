@@ -127,6 +127,7 @@ function Header() {
           <img src={windows} alt="download" />
           Скачать
           <span className="white-space"></span>
+          <span className="border"></span>
         </button>
         <div class="header__burger" ref={burgerBtnRef} onClick={burgerHandle}>
           <span></span>

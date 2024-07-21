@@ -59,6 +59,20 @@ function Cases() {
       author: undefined,
       slogan: "Любая автоматизация в сфере создания и продвижения сайтов.",
     },
+    {
+      img: cryptoImg,
+      type: "Криптовалюта",
+      title: "NotCoin Автоматизация",
+      description:
+        "С Помощью BAS была реализована автоматическая добыча монет NotCoin для нескольких тысяч аккаунтов.",
+      link: undefined,
+      review:
+        "Еще  2018 году сделал программу по Email маркетингу, с того времени было уже заработано больше 150к$ И все на бесплатном BAS. Софт в связке с модулями может практически все)",
+      authorimg: undefined,
+      author: "Разработчик",
+      slogan:
+        "Создавайте автоматизацию для любых криптовалютных проектов: торговля, airdrop и др.",
+    },
   ];
 
   const prevRef = useRef(null);
@@ -98,7 +112,7 @@ function Cases() {
             className="swiper"
             modules={[Navigation]}
             spaceBetween={24}
-            slidesPerView={1.2}
+            slidesPerView={1}
             navigation={{
               prevEl: prevRef.current,
               nextEl: nextRef.current,

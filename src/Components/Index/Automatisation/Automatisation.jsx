@@ -71,7 +71,7 @@ function Automatisation() {
         <div className="plus top right">
           <img src={plusImg} alt="plus" />
         </div>
-        <Marquee className="automatisation__marquee">
+        <Marquee className="automatisation__marquee" direction="right">
           {AutomatisationItems.map((item) => {
             return <AutomatisationItem img={item.img} title={item.title} />;
           })}
