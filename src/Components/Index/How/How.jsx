@@ -1,7 +1,7 @@
 import HowItem from "./HowItem/HowItem";
 import plusImg from "../../../img/svgicons/plus.svg";
-import firstImg from "../../../img/how/1.png";
-import secondImg from "../../../img/how/2.png";
+import firstImg from "./img/1.png";
+import secondImg from "./img/2.png";
 import "./How.scss";
 function How() {
   const howItem = [

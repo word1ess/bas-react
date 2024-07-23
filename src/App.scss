@@ -83,9 +83,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
   background: #070a0c;
+
+  &.burger-active {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
 }
 //оболочка страницы
-
+@function rem($px) {
+  @return ($px / 16px) + rem;
+}
+@function em($px) {
+  @return ($px / 16px) + em;
+}
 #root {
   position: relative;
   overflow: hidden;
@@ -119,11 +131,11 @@ body {
 
 a {
   color: #fff;
-  font-size: 18px;
+  font-size: rem(18px);
   letter-spacing: 0.02em;
 }
 h1 {
-  font-size: 60px;
+  font-size: rem(60px);
 }
 h1,
 h2,
@@ -132,17 +144,17 @@ h3 {
   color: #fff;
 }
 h2 {
-  font-size: 40px;
-  margin-bottom: 40px;
+  font-size: rem(40px);
+  margin-bottom: rem(40px);
 }
 h3 {
-  font-size: 24px;
-  margin-bottom: 24px;
+  font-size: rem(26px);
+  margin-bottom: rem(24px);
   letter-spacing: 0.02em;
 }
 p {
   font-family: "RobotoMono-Regular";
-  font-size: 18px;
+  font-size: rem(18px);
   line-height: 1.2;
 }
 button {
@@ -152,11 +164,11 @@ button {
   position: relative;
 
   display: flex;
-  gap: 16px;
+  gap: rem(16px);
   align-items: center;
   justify-content: center;
-  padding: 20px 80px;
-  font-size: 14px;
+  padding: rem(20px) rem(80px);
+  font-size: rem(14px);
 
   background: transparent;
   position: relative;
@@ -327,7 +339,7 @@ button {
   background-position: center;
   background-size: cover;
   font-weight: 800;
-  font-size: 24px;
+  font-size: rem(24px);
   color: #070a0c;
   transition: all 300ms ease;
   font-family: "NeueMachina-Ultrabold";
@@ -347,7 +359,7 @@ button {
   border: 2px solid transparent;
 
   color: #939597;
-  font-size: 18px;
+  font-size: rem(18px);
   transition: all 300ms ease;
 
   &::after,
@@ -459,13 +471,13 @@ button {
   &.border-1 {
     span {
       border: 2px solid #fff;
-      padding: 16px 24px;
+      padding: rem(16px) rem(24px);
       border-image: url("./img/svgicons/btn-1.svg") 2 stretch;
     }
   }
   &.flex h2 {
     display: flex;
-    gap: 16px;
+    gap: rem(16px);
     align-items: center;
   }
   &.flex-row {
@@ -482,7 +494,7 @@ button {
   &.border-2 {
     span {
       border: 2px solid #fff;
-      padding: 16px 24px;
+      padding: rem(16px) rem(24px);
       border-image: url("./img/svgicons/btn-2.svg") 2 stretch;
     }
   }
@@ -492,17 +504,17 @@ button {
     &:not(.flex) {
       h2 span {
         display: block;
-        margin-top: 16px;
+        margin-top: rem(16px);
         max-width: fit-content;
       }
     }
   }
 
   &.mt {
-    margin-top: 200px;
+    margin-top: rem(200px);
   }
   &.mb {
-    margin-bottom: 60px;
+    margin-bottom: rem(60px);
   }
 }
 .block-with-substrate {
@@ -536,13 +548,14 @@ button {
   }
 }
 .label {
+  overflow: hidden;
   .btn {
     margin: 0 auto;
   }
   &__text {
-    margin-top: 16px;
+    margin-top: rem(16px);
     font-weight: 400;
-    font-size: 18px;
+    font-size: rem(18px);
     letter-spacing: 0.02em;
     color: #939597;
     text-align: center;
@@ -622,20 +635,20 @@ div.swiper-pagination {
 @media only screen and (max-width: 1440px) {
 }
 
-@media only screen and (max-width: 1280px) {
-  h2 {
-    font-size: 32px;
-    margin-bottom: 32px;
-  }
-  h3 {
-    font-size: 18px;
-    margin-bottom: 24px;
-  }
+// @media only screen and (max-width: 1280px) {
+//   h2 {
+//     font-size: 32px;
+//     margin-bottom: 32px;
+//   }
+//   h3 {
+//     font-size: 18px;
+//     margin-bottom: 24px;
+//   }
 
-  p {
-    font-size: 16px;
-  }
-}
+//   p {
+//     font-size: 16px;
+//   }
+// }
 
 @media only screen and (max-width: 992px) {
   .label {

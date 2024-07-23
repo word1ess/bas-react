@@ -101,10 +101,12 @@ function Cases() {
             </div>
             <img src={casesImg} alt="" />
             <label className="label">
-              <Link to="#" className="btn btn-gradient btn-with-image">
-                <img src={windowsImg} />
-                Скачать
-              </Link>
+              <div className="button-container">
+                <Link to="#" className="btn btn-gradient btn-with-image">
+                  <img src={windowsImg} />
+                  Скачать
+                </Link>
+              </div>
               <p className="label__text">Бесплатно</p>
             </label>
           </aside>
@@ -119,7 +121,6 @@ function Cases() {
             }}
             breakpoints={{
               768: {
-                width: 768,
                 slidesPerView: 2,
               },
             }}

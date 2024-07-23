@@ -80,6 +80,7 @@ function Header() {
   const burgerMenuRef = useRef(null);
 
   function burgerHandle() {
+    document.body.classList.toggle("burger-active");
     burgerBtnRef.current.classList.toggle("burger-active");
     burgerMenuRef.current.classList.toggle("burger-active");
   }

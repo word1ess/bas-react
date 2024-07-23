@@ -225,10 +225,12 @@ function SubIntro() {
             <img src={plusImg} alt="plus" />
           </div>
           <label className="label">
-            <Link to="#" className="btn btn-gradient btn-with-image">
-              <img src={windowsImg} alt="windows" />
-              Скачать
-            </Link>
+            <div className="btn-container">
+              <Link to="#" className="btn btn-gradient btn-with-image">
+                <img src={windowsImg} alt="windows" />
+                Скачать
+              </Link>
+            </div>
             <p className="label__text">Бесплатно</p>
           </label>
         </div>

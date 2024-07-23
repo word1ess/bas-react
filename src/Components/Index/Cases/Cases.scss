@@ -2,6 +2,7 @@
     &__row {
         display: flex;
         gap: 24px;
+        min-width: 0px;
     }
 
     &__aside {
@@ -150,8 +151,8 @@
             right: -12px;
         }
         &::before {
-            transform: rotate(48deg);
-            left: -11.5px;
+            transform: rotate(38deg) !important;
+            left: -13.5px !important;
         }
     }
 
@@ -268,7 +269,10 @@
         flex: 0 0 24px;
     }
 }
-
+.button-container,
+.btn-container {
+    overflow: hidden;
+}
 @media only screen and (max-width: 992px) {
     .cases {
         &__row {
@@ -296,16 +300,20 @@
         &__arrows {
             display: none;
         }
-        .block-header {
-            margin-bottom: 40px;
+
+        &__header {
+            & .btn img {
+                display: block !important;
+            }
         }
         &__body {
             h3 {
                 font-size: 24px;
             }
         }
-        .btn img {
-            display: none;
+
+        .block-header {
+            margin-bottom: 40px;
         }
     }
 }
@@ -332,4 +340,59 @@
 }
 
 @media only screen and (max-width: 450px) {
+}
+@media only screen and (max-height: 770px) and (min-width: 992px) {
+    .cases {
+        .container {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        &__aside {
+            gap: 10px;
+            padding: 50px 0px;
+        }
+        & &__prev,
+        & &__next {
+            width: 50px;
+            height: 100px;
+        }
+        &__header {
+            margin-bottom: 20px;
+
+            p {
+                font-size: 18px;
+            }
+        }
+        & &__img {
+            height: 17px;
+            width: 16px;
+            flex: 0 0 16px;
+        }
+        &__body {
+            .btn {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+        }
+        blockquote {
+            padding-bottom: 0px;
+            cite {
+                gap: 20px;
+                justify-content: flex-start;
+                img.line {
+                    transform: translate(0px, -10px);
+                }
+            }
+        }
+        &__author {
+            width: 40px;
+            height: 40px;
+        }
+        .swiper-slide {
+            padding: 20px 25px;
+        }
+        .text-gradient {
+            font-size: 14px;
+        }
+    }
 }

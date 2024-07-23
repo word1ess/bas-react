@@ -1,14 +1,20 @@
+@function rem($px) {
+    @return ($px / 16px) + rem;
+}
+@function em($px) {
+    @return ($px / 16px) + em;
+}
 .opportunities {
     position: relative;
     z-index: 1;
     .container {
-        padding-bottom: 120px;
+        padding-bottom: em(120px);
     }
     & + & {
-        transform: translate(0px, -40px);
+        transform: translate(0px, em(-40px));
         z-index: 10;
         .container {
-            padding-bottom: 24px;
+            padding-bottom: em(24px);
             &::before {
                 background: linear-gradient(48deg, #070a0c 34%, #090c0f 35%);
             }
@@ -16,9 +22,6 @@
             &::after {
                 background: linear-gradient(132deg, #070a0c 34%, #090c0f 35%);
             }
-            // &::before {
-            //     left: 0px;
-            // }
         }
 
         .line {
@@ -49,7 +52,7 @@
                 display: flex;
                 flex-direction: column;
                 border: 0px;
-                padding: 24px;
+                padding: em(24px);
 
                 background: none;
 
@@ -61,7 +64,11 @@
 
                 transition: all 300ms ease;
                 h3 {
-                    order: -1;
+                    order: 2;
+
+                    & + p {
+                        order: 4;
+                    }
                 }
 
                 &:first-child {
@@ -110,16 +117,7 @@
                 }
 
                 &.big {
-                    padding-bottom: 64px;
-                }
-                & img {
-                    display: block;
-                    width: 100%;
-                    height: auto;
-                    max-width: 100%;
-                    aspect-ratio: 5.3/3.1;
-                    object-fit: contain;
-                    margin: 0px auto 16px;
+                    padding-bottom: em(64px);
                 }
                 &::before {
                     content: "0" counter(counter);
@@ -128,20 +126,46 @@
                     position: static;
                     border: none;
                     font-weight: 400;
-                    font-size: 24px;
+                    font-size: em(24px);
                     color: #fff;
                     background: url("../../../img//svgicons/cornerHow.svg");
                     background-size: cover;
-                    padding: 18px 0px 0px 24px;
+                    padding: em(18px) 0px 0px em(24px);
                     width: fit-content;
                     display: block;
                     height: fit-content;
                     margin-bottom: 40px;
+                    order: 1;
                 }
                 & .plus {
                     &.top {
                         top: -6px;
+                        display: none;
                     }
+                }
+            }
+
+            &__img {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: auto;
+                max-width: 100%;
+                aspect-ratio: 5.3/3.1;
+                margin: 0px auto em(16px);
+                position: relative;
+                order: 3;
+
+                background: center / contain no-repeat url("../../../img/svgicons/card-bg.svg");
+
+                & img {
+                    width: 189px;
+                    height: 186px;
+                    max-width: none;
+                    aspect-ratio: auto;
+                    object-fit: cover;
+                    margin-bottom: 0px;
                 }
             }
         }
@@ -169,7 +193,7 @@
         display: grid;
         // grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         grid-template-columns: repeat(6, 1fr);
-        gap: 24px;
+        gap: rem(24px);
         position: relative;
         z-index: 3;
 
@@ -178,7 +202,7 @@
             position: absolute;
             bottom: 0px;
             left: 0px;
-            height: 160px;
+            height: rem(160px);
             width: 100%;
             background: linear-gradient(180deg, rgba(9, 12, 15, 0) 0%, #090c0f 100%);
             opacity: 1;
@@ -195,7 +219,7 @@
     &__item {
         border: 1.5px solid #272c30;
         border-radius: 5px;
-        padding: 40px 24px;
+        padding: em(40px) em(24px);
         position: relative;
         grid-column: span 2;
         background: var(--main-bg) padding-box,
@@ -278,24 +302,24 @@
         position: relative;
         z-index: 3;
         .btn {
-            margin-top: 24px;
+            margin-top: rem(24px);
 
             font-weight: 400;
-            font-size: 64px;
+            font-size: rem(64px);
             text-align: center;
             padding: 24px;
         }
 
         h3 {
             max-width: fit-content;
-            margin: 0px auto 40px;
+            margin: 0px auto rem(40px);
         }
 
         &.big h2 {
-            font-size: 64px;
+            font-size: rem(64px);
 
             .btn {
-                padding: 5px 22px 17px;
+                padding: rem(5px) rem(22px) rem(17px);
             }
         }
 
@@ -414,11 +438,6 @@
             grid-template-columns: 1fr;
         }
 
-        & + & .opportunities {
-            &__row {
-                grid-template-columns: 1fr;
-            }
-        }
         &__item {
             grid-column: span 1;
             &.big {
@@ -435,9 +454,6 @@
                     overflow: hidden;
                     background: #090c0f;
                 }
-                // &::before {
-                //     left: 0px;
-                // }
             }
 
             .line {
@@ -448,10 +464,12 @@
                 &__row {
                     counter-reset: counter 0;
                     gap: 0px;
+                    grid-template-columns: 1fr;
                     &::after {
                         display: none;
                     }
                 }
+
                 &__item {
                     display: flex;
                     flex-direction: column;
@@ -506,12 +524,17 @@
                     }
                 }
             }
+            .btn {
+                padding: 10px 24px;
+                font-size: 18px;
+            }
         }
 
         .btn {
-            padding: 10px 24px;
+            padding: 18px 24px;
             font-size: 18px;
         }
+
         .block-header.center.big h2 {
             font-size: 32px;
 
@@ -531,3 +554,46 @@
         }
     }
 }
+// @media only screen and (max-height: 770px) and (min-width: 992px) {
+//     .opportunities {
+//         img {
+//             aspect-ratio: 1/0.8;
+//         }
+//         &__item {
+//             padding: 20px 20px;
+//         }
+//         &__row {
+//         }
+//         & + & {
+//             .container {
+//                 padding-top: 40px;
+//             }
+//             & .opportunities {
+//                 &__item {
+//                     & img {
+//                         max-width: 60%;
+//                     }
+//                     &::before {
+//                         font-size: 18px;
+//                         margin-bottom: 24px;
+//                         padding: 12px 0px 0px 18px;
+//                     }
+//                     &.big {
+//                         padding-bottom: 24px;
+//                     }
+//                 }
+//             }
+//         }
+//         .block-header.big {
+//             h2 {
+//                 font-size: 32px;
+//                 .btn {
+//                     font-size: 32px;
+//                 }
+//             }
+//         }
+//         .btn {
+//             font-size: 18px;
+//         }
+//     }
+// }

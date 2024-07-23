@@ -125,6 +125,14 @@
                 font-size: 18px;
             }
         }
+        .btns {
+            .label:nth-child(2) {
+                order: 2;
+            }
+            .label {
+                flex: 1 1 100%;
+            }
+        }
     }
 }
 
@@ -209,6 +217,16 @@
         &__table {
             td {
                 word-break: break-all;
+            }
+        }
+    }
+}
+@media only screen and (max-height: 770px) and (min-width: 992px) {
+    .version {
+        &__table {
+            td,
+            th {
+                font-size: 18px;
             }
         }
     }

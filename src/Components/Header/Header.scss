@@ -7,6 +7,7 @@
     height: fit-content;
     background: #070a0c;
     border: 1px solid #272c30;
+    font-family: "NeueMachina-Regular";
     &__row {
         display: flex;
         align-items: center;
@@ -49,7 +50,7 @@
         display: flex;
         gap: 30px;
         align-items: center;
-
+        text-transform: uppercase;
         & .header-down__menu {
             max-width: 80px;
             left: -20px;
@@ -182,7 +183,7 @@
             }
         }
         &__row {
-            padding: 30px 24px;
+            padding: 15px 24px;
         }
     }
 }
@@ -257,6 +258,17 @@
             height: 20px;
             z-index: 4;
             order: 3;
+            &.burger-active::before {
+                transform: rotate(45deg);
+                top: 9px;
+            }
+            &.burger-active::after {
+                transform: rotate(-45deg);
+                bottom: 9px;
+            }
+            &.burger-active span {
+                display: none;
+            }
         }
         &__burger span {
             position: absolute;
@@ -289,7 +301,7 @@
 
         &__menu {
             position: fixed;
-            top: 133px;
+            top: 91px;
             right: 0;
             transform: translate(0, -120%);
 
@@ -300,7 +312,7 @@
 
             width: 100%;
             max-width: 420px;
-            height: fit-content;
+            height: calc(100vh - 90px);
             background: #070a0c;
 
             transition: transform 300ms ease 0ms, opacity 400ms ease-in 300ms;

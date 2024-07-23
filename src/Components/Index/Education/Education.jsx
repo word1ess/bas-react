@@ -3,7 +3,7 @@ import "./Education.scss";
 import educationImg from "../../../img/advantages/2.png";
 import plusImg from "../../../img/svgicons/plus.svg";
 import linkImg from "../../../img/svgicons/link.svg";
-import contentImg from "../../../img/education/1.png";
+import contentImg from "./images/content.png";
 
 import React from "react";
 import { useRef } from "react";
@@ -13,6 +13,12 @@ import { Navigation } from "swiper/modules";
 
 import EducationSlide from "./EducationSlide/EducationSlide";
 function Education() {
+  function importAll(image) {
+    return image.keys().map(image);
+  }
+  const slideImages = importAll(
+    require.context("./images/for-slider/", false, /\.(png|jpe?g|svg)$/)
+  );
   const educationSlides = [
     {
       title: "Статьи",
@@ -20,9 +26,11 @@ function Education() {
       body: [<p>Какой-то текст из статьи</p>],
       img: educationImg,
       btn: [
-        <Link to="#" className="btn btn-gradient">
-          Быстрый старт
-        </Link>,
+        <div className="button-container">
+          <Link to="#" className="btn btn-gradient">
+            Быстрый старт
+          </Link>
+        </div>,
       ],
     },
     {
@@ -40,9 +48,11 @@ function Education() {
       ],
       img: educationImg,
       btn: [
-        <Link to="#" className="btn btn-gradient">
-          Официальный канал YouTube
-        </Link>,
+        <div className="button-container">
+          <Link to="#" className="btn btn-gradient">
+            Официальный канал YouTube
+          </Link>
+        </div>,
       ],
     },
     {
@@ -53,9 +63,13 @@ function Education() {
         <Link to="mailto:basmarketings@gmail.com">
           basmarketings@gmail.com
         </Link>,
-        <Link to="#" className="btn btn-gradient">
-          Задать вопрос
-        </Link>,
+      ],
+      btn: [
+        <div className="button-container">
+          <Link to="#" className="btn btn-gradient">
+            Задать вопрос
+          </Link>
+        </div>,
       ],
     },
   ];
@@ -126,14 +140,14 @@ function Education() {
             >
               <div className="swiper-button-prev" ref={prevRef}></div>
               <div className="swiper-button-next" ref={nextRef}></div>
-              {educationSlides.map((slide) => {
+              {educationSlides.map((slide, i) => {
                 return (
                   <SwiperSlide>
                     <EducationSlide
                       title={slide.title}
                       subtitle={slide.subTitle}
                       body={slide.body}
-                      img={slide.img}
+                      img={slideImages[i]}
                       btn={slide.btn}
                     />
                   </SwiperSlide>

@@ -1,11 +1,10 @@
 import "./Opportunities.scss";
-import itemImg from "../../../img/advantages/1.png";
 import OpportunitiesItem from "./OpportunitiesItem/OpportunitiesItem";
 import React from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 
-function Opportunities({ title, supTitle, isBtn, items }) {
+function Opportunities({ title, supTitle, isBtn, items, images, isPremium }) {
   const [opportunitiesItems, setOpportunitiesItems] = React.useState(items);
   const [btnMoreStatus, setBtnMoreStatus] = React.useState(false);
 
@@ -15,46 +14,38 @@ function Opportunities({ title, supTitle, isBtn, items }) {
     const copyItems = opportunitiesItems.slice();
     const newArr = [
       {
-        img: itemImg,
         title: "Автоматическое решение капчи",
         p: `100% эмуляция человека. Поддерживается человекоподобное движения и клики мыши, перетаскивание элементов, прокрутка, выбор элементов из выпадающего списка, нативная эмуляция клавиатуры, сочетания клавиш и т.д.`,
       },
       {
-        img: itemImg,
         title: "Модуль получения SMS",
         p: `Без знаний программирования:
         АИ-помощник/Запись действий/Визуальный конструктор..`,
       },
       {
-        img: itemImg,
         title: "Модуль электронной почты",
         p: `Запуск до 300 браузеров одновременно для выполнения вашей задачи в зависимости от мощности вашего ПК.`,
       },
       {
-        img: itemImg,
         title: "Автоматизация расширений браузера",
         p: `100% эмуляция человека. Поддерживается человекоподобное движения и клики мыши, перетаскивание элементов, прокрутка, выбор элементов из выпадающего списка, нативная эмуляция клавиатуры, сочетания клавиш и т.д.`,
       },
       {
-        img: itemImg,
         title: "Автоматизация расширений браузера",
         p: `Без знаний программирования:
         АИ-помощник/Запись действий/Визуальный конструктор..`,
       },
       {
-        img: itemImg,
         title: "Базы данных",
         p: `Запуск до 300 браузеров одновременно для выполнения вашей задачи в зависимости от мощности вашего ПК.`,
       },
       {
-        img: itemImg,
         title: "Расширение функционала с помощью модулей",
         p: `Без знаний программирования:
         АИ-помощник/Запись действий/Визуальный конструктор..`,
         additionalClass: true,
       },
       {
-        img: itemImg,
         title: "Поддержка Javascript и Python",
         p: `Запуск до 300 браузеров одновременно для выполнения вашей задачи в зависимости от мощности вашего ПК.`,
         additionalClass: true,
@@ -171,14 +162,15 @@ function Opportunities({ title, supTitle, isBtn, items }) {
           </header>
         )}
         <main className="opportunities__row" ref={opportunitiesRowRef}>
-          {opportunitiesItems.map((item) => {
+          {opportunitiesItems.map((item, i) => {
             return (
               <OpportunitiesItem
-                img={item.img}
+                image={images[i]}
                 title={item.title}
                 text={item.p}
                 additionalClass={item.additionalClass}
                 decorationImgs={item.decorationImgs}
+                isPremium
               />
             );
           })}
@@ -186,22 +178,29 @@ function Opportunities({ title, supTitle, isBtn, items }) {
 
         {isBtn &&
           (btnMoreStatus ? (
-            <Link to="#" className="btn btn-gradient btn-with-border">
-              Скачать
-              <span className="border"></span>
-            </Link>
+            <div className="button-container">
+              <Link to="#" className="btn btn-gradient btn-with-border">
+                Скачать
+                <span className="border"></span>
+                <span className="white-space"></span>
+              </Link>
+            </div>
           ) : (
-            <button
-              className="btn btn-gradient btn-with-border"
-              onClick={() => {
-                btnHandle(btnMoreRef);
-              }}
-              ref={btnMoreRef}
-            >
-              Показать все
-              <span className="border"></span>
-            </button>
+            <div className="button-container">
+              <button
+                className="btn btn-gradient btn-with-border"
+                onClick={() => {
+                  btnHandle(btnMoreRef);
+                }}
+                ref={btnMoreRef}
+              >
+                Показать все
+                <span className="border"></span>
+                <span className="white-space"></span>
+              </button>
+            </div>
           ))}
+
         <div className="lines__fixes"></div>
       </div>
     </article>

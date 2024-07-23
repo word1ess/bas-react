@@ -1,11 +1,10 @@
-import imgLeft from "../../../img/index/intro/1.png";
-import imgRight from "../../../img/index/intro/2.png";
+import bgVideo from "./video/bg.webm";
 
 function Intro() {
   return (
     <>
-      <article className="intro block-with-bg">
-        <img src={imgLeft} alt="" className="block-bg" />
+      <article className="intro">
+        <video loading="lazy" src={bgVideo} autoPlay muted loop></video>
         <div className="intro__info">
           <h1>
             Browser
@@ -17,7 +16,6 @@ function Intro() {
             Studio
           </h1>
         </div>
-        <img src={imgRight} alt="" />
       </article>
     </>
   );

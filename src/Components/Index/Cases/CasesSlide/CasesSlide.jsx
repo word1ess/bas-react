@@ -18,7 +18,6 @@ function CasesSlide({
       <header className="cases__header">
         <div className="cases__img btn btn-gradient btn-with-border">
           <img src={img} alt="" />
-          <span className="border"></span>
         </div>
         <p>{type}</p>
       </header>
@@ -26,11 +25,13 @@ function CasesSlide({
       <main className="cases__body">
         <h3>{title}</h3>
         <p>{description}</p>
-        <Link to={link ?? "#"} className="btn btn-gradient btn-with-border">
-          Канал проекта
-          <span className="white-space"></span>
-          <span className="border"></span>
-        </Link>
+        <div className="button-container">
+          <Link to={link ?? "#"} className="btn btn-gradient btn-with-border">
+            Канал проекта
+            <span className="white-space"></span>
+            <span className="border"></span>
+          </Link>
+        </div>
       </main>
       {review ? (
         <blockquote>

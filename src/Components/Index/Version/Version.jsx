@@ -118,27 +118,33 @@ function Version(params) {
         </table>
         <article className="btns">
           <label className="label">
-            <Link
-              to="#"
-              className="btn btn-gradient btn-with-border btn-with-image"
-            >
-              <img src={windowsBtn} alt="windows" />
-              Скачать
-              <span className="white-space"></span>
-              <span className="border"></span>
-            </Link>
+            <div className="btn-container">
+              <Link
+                to="#"
+                className="btn btn-gradient btn-with-border btn-with-image"
+              >
+                <img src={windowsBtn} alt="windows" />
+                Скачать
+                <span className="white-space"></span>
+                <span className="border"></span>
+              </Link>
+            </div>
             <p className="label__text">Бесплатно</p>
           </label>
           <label className="label">
-            <Link to="#" className="btn btn-gradient">
-              Купить премиум (80$)
-            </Link>
+            <div className="btn-container">
+              <Link to="#" className="btn btn-gradient">
+                Купить премиум (80$)
+              </Link>
+            </div>
             <p className="label__text">12 месяцев</p>
           </label>
           <label className="label">
-            <Link to="#" className="btn btn-gradient">
-              Купить премиум (40$)
-            </Link>
+            <div className="btn-container">
+              <Link to="#" className="btn btn-gradient">
+                Купить премиум (40$)
+              </Link>
+            </div>
             <p className="label__text">6 месяцев</p>
           </label>
         </article>

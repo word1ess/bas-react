@@ -46,6 +46,10 @@
         padding: 40px 24px;
         background: #0c1014;
         margin-bottom: 20px;
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         & + .btn {
             max-width: 100%;
@@ -109,6 +113,9 @@
             right: -20px;
         }
     }
+    .button-container {
+        margin-top: auto;
+    }
     .btn {
         max-width: 100%;
         padding: 20px 24px;
@@ -135,6 +142,7 @@
         position: absolute;
         width: 32px;
         height: 50px;
+        z-index: 10;
 
         &.top {
             top: -19px;
@@ -246,6 +254,28 @@
     .education {
         .btn {
             font-size: 14px;
+        }
+    }
+}
+@media only screen and (max-height: 770px) and (min-width: 992px) {
+    .education {
+        .container {
+            padding-top: 20px;
+        }
+        .block-with-bg {
+            padding-top: 40px;
+        }
+        &__img {
+            aspect-ratio: 3/1;
+        }
+        &__body {
+            a {
+                font-size: 14px;
+            }
+        }
+        &__bg {
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
     }
 }
