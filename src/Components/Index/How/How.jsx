@@ -2,6 +2,7 @@ import HowItem from "./HowItem/HowItem";
 import plusImg from "../../../img/svgicons/plus.svg";
 import firstImg from "./img/1.png";
 import secondImg from "./img/2.png";
+import video from "../../../video/interface.webm";
 import "./How.scss";
 function How() {
   const howItem = [
@@ -12,6 +13,7 @@ function How() {
         <span>Или</span>,
         <p>Используете визуальный конструктор.</p>,
       ],
+      video,
     },
     {
       title: "Настройка интерфейса",
@@ -21,6 +23,7 @@ function How() {
           куда сохранять результаты.
         </p>,
       ],
+      video,
     },
     {
       title: "Запуск",
@@ -30,6 +33,7 @@ function How() {
           удобства или передачи другим пользователями.
         </p>,
       ],
+      video,
     },
   ];
   return (
@@ -146,7 +150,12 @@ function How() {
           <main className="how__row">
             {howItem.map((item, i) => {
               return (
-                <HowItem index={++i} title={item.title} text={item.text} />
+                <HowItem
+                  index={++i}
+                  title={item.title}
+                  text={item.text}
+                  video={item.video}
+                />
               );
             })}
           </main>

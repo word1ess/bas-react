@@ -6,7 +6,6 @@ function OpportunitiesItem({
   decorationImgs,
   isPremium,
 }) {
-  console.log(isPremium);
   return (
     <div className={`opportunities__item ${additionalClass ? "big" : ""}`}>
       {isPremium ? (

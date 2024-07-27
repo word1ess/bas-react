@@ -4,7 +4,7 @@ import educationImg from "../../../img/advantages/2.png";
 import plusImg from "../../../img/svgicons/plus.svg";
 import linkImg from "../../../img/svgicons/link.svg";
 import contentImg from "./images/content.png";
-
+import { Tooltip } from "react-tooltip";
 import React from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
@@ -19,11 +19,23 @@ function Education() {
   const slideImages = importAll(
     require.context("./images/for-slider/", false, /\.(png|jpe?g|svg)$/)
   );
+  const copyTextToClipboard = (text) => {
+    try {
+      navigator.clipboard.writeText(text);
+      console.log("Текст успешно скопирован в буфер обмена!");
+    } catch (err) {
+      console.error("Ошибка:", err);
+    }
+  };
   const educationSlides = [
     {
       title: "Статьи",
-      subTitle: "Быстрый старт",
-      body: [<p>Какой-то текст из статьи</p>],
+      body: [
+        <Link to="#" className="btn-with-image">
+          Видео от пользователя
+          <img src={linkImg} alt="link" />
+        </Link>,
+      ],
       img: educationImg,
       btn: [
         <div className="button-container">
@@ -60,9 +72,19 @@ function Education() {
       subTitle: undefined,
       img: undefined,
       body: [
-        <Link to="mailto:basmarketings@gmail.com">
-          basmarketings@gmail.com
-        </Link>,
+        <>
+          <a
+            data-tooltip-id="copy"
+            data-tooltip-delay-hide={300}
+            onClick={() => {
+              navigator.clipboard.writeText("basmarketings@gmail.com");
+            }}
+            closeEvents={"mouseleave"}
+          >
+            basmarketings@gmail.com
+          </a>
+          <Tooltip id="copy" content="Скопировано!" openOnClick />
+        </>,
       ],
       btn: [
         <div className="button-container">

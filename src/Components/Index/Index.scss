@@ -259,44 +259,7 @@
     //     .block-header.border-2 span {
     //         padding: 10px 15px;
     //     }
-    .header {
-        &__row {
-            padding: 10px 15px;
-        }
-        &__links {
-            a {
-                font-size: 13px;
-            }
-        }
-        &__for-user {
-            & a {
-                font-size: 13px;
-            }
-        }
-        &__btn {
-            font-size: 20px;
-        }
-        .footer__product {
-            padding: 15px;
-            p:first-child {
-                font-size: 13px;
-            }
-            p:last-child {
-                font-size: 10px;
-            }
 
-            img {
-                width: 40px;
-                height: 40px;
-            }
-
-            & > div + img {
-                width: 8px;
-                height: 9px;
-                object-fit: contain;
-            }
-        }
-    }
     //     .dropdown-menu {
     //         padding-top: 45.5px;
     //     }

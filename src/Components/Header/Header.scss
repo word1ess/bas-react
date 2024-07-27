@@ -8,11 +8,13 @@
     background: #070a0c;
     border: 1px solid #272c30;
     font-family: "NeueMachina-Regular";
+
+    transition: all 300ms ease;
     &__row {
         display: flex;
-        align-items: center;
+        // align-items: center;
         justify-content: space-between;
-        padding: 14px 64px;
+        padding: 0px 64px;
         gap: 20px;
     }
 
@@ -21,6 +23,7 @@
         width: 121px;
         height: 58px;
         position: relative;
+        margin: 14px 50px 14px 0px;
 
         img {
             position: absolute;
@@ -35,15 +38,50 @@
     &__menu {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+
         flex: 1 1 auto;
         max-width: 1300px;
     }
 
     &__links {
         display: flex;
-        gap: 80px;
-        align-items: center;
+        gap: 32px;
+        // align-items: center;
+
+        .dropdown-container,
+        & > a {
+            display: flex;
+            align-items: center;
+            padding: 14px 24px;
+        }
+
+        .dropdown-container {
+            position: relative;
+
+            &::after,
+            &::before {
+                content: "";
+                height: 100%;
+                width: 1px;
+                background: #272c30;
+                top: 0px;
+                position: absolute;
+            }
+            &::after {
+                right: 0px;
+            }
+            &::before {
+                left: 0px;
+            }
+        }
+
+        a {
+            transition: all 300ms ease;
+        }
+    }
+
+    &__burger {
+        display: none;
     }
 
     &__for-user {
@@ -51,14 +89,13 @@
         gap: 30px;
         align-items: center;
         text-transform: uppercase;
+
         & .header-down__menu {
             max-width: 80px;
             left: -20px;
+            padding-top: 51px;
             & li {
-                &:not(:last-child) {
-                    margin-bottom: 14px;
-                    padding-bottom: 14px;
-                }
+                padding: 12px;
 
                 & button {
                     display: block;
@@ -71,15 +108,11 @@
         }
     }
 
-    &__lang {
-        .current {
-        }
-    }
-
     &__btn {
         padding: 12px 24px;
         font-size: 24px;
         gap: 16px;
+        margin: 14px 0px;
         span {
             height: 25px;
             bottom: 10px;
@@ -89,8 +122,9 @@
     &-down__menu {
         position: absolute;
         display: none;
+        z-index: 3;
 
-        padding-top: 52px;
+        padding-top: 86px;
         top: 0px;
         left: -50%;
 
@@ -116,6 +150,36 @@
     .footer__product {
         margin-bottom: 0px;
     }
+
+    &.white {
+        background: #faf8f2;
+        border: 1px solid #bebcbf;
+
+        & a {
+            color: #1c1818;
+        }
+        .dropdown-container {
+            .arrow {
+                &::after,
+                &::before {
+                    background: #1c1818;
+                }
+            }
+        }
+
+        & .header {
+            &__links {
+                .dropdown-container {
+                    position: relative;
+
+                    &::after,
+                    &::before {
+                        background: #bebcbf;
+                    }
+                }
+            }
+        }
+    }
 }
 .dropdown-container {
     position: relative;
@@ -126,12 +190,12 @@
     &__row {
         border: 1px solid #272c30;
         border-radius: 0 0 5px 5px;
-        padding: 12px 12px 12px 12px;
+        // padding: 12px 12px 12px 12px;
         background: #070a0c;
     }
 }
 .dropdown-container .arrow {
-    width: 20px;
+    width: 16px;
     height: 15px;
     display: block;
     position: relative;
@@ -139,10 +203,10 @@
     &::before {
         content: "";
         position: absolute;
-        width: 12px;
+        width: 10px;
         height: 2px;
         background: #fff;
-        top: 10px;
+        top: 8px;
         transition: all 300ms ease;
     }
     &::after {
@@ -177,13 +241,102 @@
     .header {
         &__logo {
             width: 56px;
+            margin-right: 0px;
             & img {
                 left: 0px;
                 object-fit: contain;
             }
         }
         &__row {
-            padding: 15px 24px;
+            padding: 0px 10px;
+        }
+        &__links {
+            gap: 0px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1300px) and (min-width: 992px) {
+    .dropdown-container .arrow {
+        width: 13px;
+        height: 13px;
+        display: block;
+        position: relative;
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 1px;
+            background: #fff;
+            top: 6px;
+            transition: all 300ms ease;
+        }
+        &::after {
+            rotate: -45deg;
+            right: 0px;
+        }
+        &::before {
+            rotate: 45deg;
+            left: 0px;
+        }
+    }
+    .header {
+        &__logo {
+            margin-right: 0px;
+        }
+        &__row {
+            padding: 0px 15px;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        &__links {
+            a {
+                font-size: 13px;
+            }
+
+            a,
+            .dropdown-container {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+        &__for-user {
+            & a {
+                font-size: 13px;
+            }
+        }
+        &__btn {
+            font-size: 20px;
+            margin-left: 30px;
+        }
+        &__logo {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        &__btn {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .footer__product {
+            padding: 15px;
+            p:first-child {
+                font-size: 13px;
+            }
+            p:last-child {
+                font-size: 10px;
+            }
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+
+            & > div + img {
+                width: 8px;
+                height: 9px;
+                object-fit: contain;
+            }
         }
     }
 }
@@ -195,7 +348,8 @@
         flex-wrap: wrap;
         max-width: 420px;
         width: 100%;
-        padding: 0px;
+        padding: 0px !important;
+        align-items: center;
 
         &:not(:last-child) {
             border-bottom: 1px solid #272c30;
@@ -247,6 +401,7 @@
             justify-content: space-between;
             gap: 40px;
             padding: 16px;
+            align-items: center;
         }
         &__logo {
             margin: 0px;
@@ -345,10 +500,9 @@
             }
         }
         &__link {
-            margin: 24px 0px 24px 18px;
-
+            padding: 24px 16px;
             & + .arrow {
-                margin: 24px 18px 24px auto;
+                margin: 0px 16px 0px auto;
             }
         }
         &-down__menu {
@@ -390,10 +544,91 @@
 
         &__btn {
             padding: 12px 40px;
-            margin-left: 0px;
+            margin: 0px;
             font-size: 18px;
             max-width: fit-content;
             width: fit-content;
+        }
+    }
+}
+@media only screen and (max-height: 770px) and (min-width: 992px) {
+    .dropdown-container .arrow {
+        width: 13px;
+        height: 13px;
+        display: block;
+        position: relative;
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 1px;
+            background: #fff;
+            top: 6px;
+            transition: all 300ms ease;
+        }
+        &::after {
+            rotate: -45deg;
+            right: 0px;
+        }
+        &::before {
+            rotate: 45deg;
+            left: 0px;
+        }
+    }
+    .header {
+        &__row {
+            padding: 0px 15px;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        &__links {
+            a {
+                font-size: 13px;
+            }
+
+            a,
+            .dropdown-container {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+        &__for-user {
+            & a {
+                font-size: 13px;
+            }
+        }
+        &__btn {
+            font-size: 20px;
+            margin-left: 30px;
+        }
+        &__logo {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        &__btn {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .footer__product {
+            padding: 15px;
+            p:first-child {
+                font-size: 13px;
+            }
+            p:last-child {
+                font-size: 10px;
+            }
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+
+            & > div + img {
+                width: 8px;
+                height: 9px;
+                object-fit: contain;
+            }
         }
     }
 }

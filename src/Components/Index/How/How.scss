@@ -249,12 +249,13 @@
             font-size: 24px;
         }
         &__content-img.top {
-            width: 40%;
-            top: 0px;
+            width: 60%;
+            top: -10%;
         }
         &__content-img.bottom {
-            width: 40%;
-            bottom: 20px;
+            width: 67.5%;
+            bottom: -10%;
+            right: 9%;
         }
     }
 }

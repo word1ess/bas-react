@@ -1,6 +1,6 @@
 import InterfaceItem from "./InterfaceItem/InterfaceItem";
 import plusImg from "../../../img/svgicons/plus.svg";
-import interfaceVideo from "../../../video/interface.mp4";
+import interfaceVideo from "../../../video/interface.webm";
 import imgFirst from "./img/1.svg";
 import imgSecond from "./img/2.svg";
 import imgThird from "./img/3.svg";

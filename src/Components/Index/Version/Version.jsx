@@ -134,18 +134,18 @@ function Version(params) {
           <label className="label">
             <div className="btn-container">
               <Link to="#" className="btn btn-gradient">
-                Купить премиум (80$)
-              </Link>
-            </div>
-            <p className="label__text">12 месяцев</p>
-          </label>
-          <label className="label">
-            <div className="btn-container">
-              <Link to="#" className="btn btn-gradient">
                 Купить премиум (40$)
               </Link>
             </div>
             <p className="label__text">6 месяцев</p>
+          </label>
+          <label className="label">
+            <div className="btn-container">
+              <Link to="#" className="btn btn-gradient">
+                Купить премиум (80$)
+              </Link>
+            </div>
+            <p className="label__text">12 месяцев</p>
           </label>
         </article>
         <header className="block-header border-2 flex-row mt mb">

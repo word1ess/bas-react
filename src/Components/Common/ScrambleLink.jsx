@@ -17,7 +17,6 @@ function ScrambleLink({ linkText }) {
 
       const text = e.target.innerHTML;
       const randomizedText = text.split("").map(getRandomCharacter).join("");
-
       for (let i = 0; i < text.length; i++) {
         isInProgress = true;
 
@@ -37,79 +36,81 @@ function ScrambleLink({ linkText }) {
   }
 
   let allowedCharacters = [
-    "А",
     "а",
-    "Б",
+
     "б",
-    "В",
+
     "в",
-    "Г",
+
     "г",
-    "Д",
+
     "д",
-    "Е",
+
     "е",
-    "Ё",
+
     "ё",
-    "Ж",
+
     "ж",
-    "З",
+
     "з",
-    "И",
+
     "и",
-    "Й",
+
     "й",
-    "К",
+
     "к",
-    "Л",
+
     "л",
-    "М",
+
     "м",
-    "Н",
+
     "н",
-    "О",
+
     "о",
-    "П",
     "п",
-    "Р",
+
     "р",
-    "С",
+
     "с",
-    "Т",
+
     "т",
-    "У",
+
     "у",
-    "Ф",
+
     "ф",
-    "Х",
+
     "х",
-    "Ц",
+
     "ц",
-    "Ч",
+
     "ч",
-    "Ш",
+
     "ш",
-    "Щ",
+
     "щ",
-    "Ъ",
+
     "ъ",
-    "Ы",
+
     "ы",
-    "Ь",
     "ь",
-    "Э",
+
     "э",
-    "Ю",
+
     "ю",
-    "Я",
+
     "я",
   ];
 
   const linkCrambleRef = useRef(null);
   const eventHandler = createEventHandler();
-
+  const eventHandlerReverse = createEventHandler();
   return (
-    <Link to="#" ref={linkCrambleRef} onMouseOver={eventHandler}>
+    <Link
+      to="#"
+      ref={linkCrambleRef}
+      onMouseOver={eventHandler}
+      onMouseLeave={eventHandler}
+    >
       {linkText}
     </Link>
   );

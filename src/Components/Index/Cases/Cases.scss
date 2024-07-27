@@ -107,15 +107,21 @@
             width: fit-content;
             border: 2px solid transparent !important;
             border-image: linear-gradient(135deg, #3053f9 20%, #41ffc2 35%, #272c30 50%, #272c30 60%, #2edcf9 100%) 2 !important;
+            &::after,
+            &::before {
+                border-width: 1px;
+                height: 32px;
+            }
             &::before {
                 border-right: 2px solid transparent !important;
                 border-image: linear-gradient(135deg, #315ff6 0%, #315ff6 100%) 2 !important;
-                transform: rotate(44deg) !important;
+                transform: rotate(36deg) !important;
+                left: -14.5px !important;
             }
             &::after {
                 border-right: 2px solid transparent !important;
                 border-image: linear-gradient(135deg, #2edaf9bb 0%, #2edaf9bb 100%) 2 !important;
-                transform: rotate(220deg) !important;
+                transform: rotate(219deg) !important;
                 width: 26.5px !important;
                 height: 26px !important;
                 right: -15.5px !important;
@@ -139,20 +145,6 @@
             height: 20px;
             width: 18px;
             object-fit: contain;
-        }
-
-        &::after,
-        &::before {
-            border-width: 1px;
-            height: 32px;
-        }
-        &::after {
-            transform: rotate(228deg);
-            right: -12px;
-        }
-        &::before {
-            transform: rotate(38deg) !important;
-            left: -13.5px !important;
         }
     }
 

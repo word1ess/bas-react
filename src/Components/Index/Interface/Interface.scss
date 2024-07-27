@@ -3,7 +3,7 @@
         padding-bottom: 40px;
     }
     &__video {
-        width: 80%;
+        width: 100%;
         height: auto;
         aspect-ratio: 6/2;
         position: relative;
@@ -138,6 +138,7 @@
             }
         }
         &__video {
+            aspect-ratio: 1/1;
             .corner {
                 width: 60px;
                 height: 30px;

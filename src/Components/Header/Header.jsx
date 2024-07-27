@@ -1,8 +1,6 @@
 import "./Header.scss";
 import { Link } from "react-router-dom";
 
-import logo from "../../img/svgicons/logo.svg";
-import logoMobile from "../../img/svgicons/logo-mobile.svg";
 import windows from "../../img/svgicons/windows.svg";
 import productImg from "../../img/product.png";
 import linkImg from "../../img/svgicons/link.svg";
@@ -12,14 +10,15 @@ import ScrambleLink from "../Common/ScrambleLink";
 import { useMediaQuery } from "react-responsive";
 import { useRef } from "react";
 
-function Header() {
+function Header({ additionalClass, headerLogo, headerBtn }) {
+  const [logo, logoMobile] = headerLogo;
   const headerDropdowns = [
     {
       parentLink: "#",
       parentLinkText: "Наши продукты",
       body: [
         <li>
-          <Link to="#" className="footer__product btn-with-image">
+          <Link to="/" className="footer__product btn-with-image">
             <img src={productImg} alt="product" />
             <div>
               <p>Browser AutomationStudio</p>
@@ -30,11 +29,11 @@ function Header() {
           </Link>
         </li>,
         <li>
-          <Link to="#" className="footer__product btn-with-image">
+          <Link to="/finger" className="footer__product btn-with-image">
             <img src={productImg} alt="product" />
             <div>
-              <p>Browser AutomationStudio</p>
-              <p>Автоматизация браузера</p>
+              <p>FingerprintSwitcher</p>
+              <p>Измените отпечаток браузера</p>
             </div>
             <img src={linkImg} alt="link" />
             <span className="white-space"></span>
@@ -44,8 +43,8 @@ function Header() {
           <Link to="#" className="footer__product  btn-with-image">
             <img src={productImg} alt="product" />
             <div>
-              <p>Browser AutomationStudio</p>
-              <p>Автоматизация браузера</p>
+              <p>FingerprintManager</p>
+              <p>Антидетект браузер</p>
             </div>
             <img src={linkImg} alt="link" />
             <span className="white-space"></span>
@@ -74,8 +73,8 @@ function Header() {
       ],
     },
   ];
-  const isMobile = useMediaQuery({ query: `(max-width: 992px)` });
 
+  const isMobile = useMediaQuery({ query: `(max-width: 992px)` });
   const burgerBtnRef = useRef(null);
   const burgerMenuRef = useRef(null);
 
@@ -85,7 +84,7 @@ function Header() {
     burgerMenuRef.current.classList.toggle("burger-active");
   }
   return (
-    <header className="header">
+    <header className={`header ${additionalClass}`}>
       <div className="header__row">
         <Link to="/" className="header__logo">
           <picture>
@@ -124,12 +123,7 @@ function Header() {
             />
           )}
         </nav>
-        <button className="header__btn btn btn-with-image btn-gradient btn-with-border">
-          <img src={windows} alt="download" />
-          Скачать
-          <span className="white-space"></span>
-          <span className="border"></span>
-        </button>
+        {headerBtn}
         <div class="header__burger" ref={burgerBtnRef} onClick={burgerHandle}>
           <span></span>
         </div>

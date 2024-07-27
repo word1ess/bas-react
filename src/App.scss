@@ -211,9 +211,9 @@ button {
   span.white-space {
     position: absolute;
     height: 14px;
-    width: 2px;
+    width: 4px;
     background: #070a0c;
-    left: 0px;
+    left: -1px;
     bottom: 10px;
     z-index: 3;
 
@@ -254,7 +254,7 @@ button {
       bottom: -9.5px;
       width: 26px;
       height: 33px;
-      transform: rotate(215deg);
+      transform: rotate(214.5deg);
     }
 
     .border {
@@ -330,7 +330,7 @@ button {
 }
 .btn-with-image {
   display: flex;
-  gap: 8px;
+  gap: 16px;
   align-items: center;
 }
 .btn-gradient {
@@ -603,10 +603,6 @@ button {
     height: 100%;
     background: center / contain no-repeat url("./img/svgicons/arrow.svg");
   }
-
-  &:hover {
-    opacity: 0.7;
-  }
 }
 .swiper-button-prev {
   &::after {
@@ -688,6 +684,10 @@ div.swiper-pagination {
 
   .btns {
     margin-bottom: 40px;
+    & .label {
+      flex: 1 1 100% !important;
+      max-width: 100%;
+    }
   }
   .label {
     &__text {

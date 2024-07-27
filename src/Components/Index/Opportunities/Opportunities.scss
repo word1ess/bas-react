@@ -128,7 +128,7 @@
                     font-weight: 400;
                     font-size: em(24px);
                     color: #fff;
-                    background: url("../../../img//svgicons/cornerHow.svg");
+                    background: top center / cover no-repeat url("../../../img//svgicons/cornerHow.svg");
                     background-size: cover;
                     padding: em(18px) 0px 0px em(24px);
                     width: fit-content;
@@ -222,33 +222,7 @@
         padding: em(40px) em(24px);
         position: relative;
         grid-column: span 2;
-        background: var(--main-bg) padding-box,
-            // border-box extends this background to the border space
-            var(--gradient-border) border-box,
-            // Duplicate main background to fill in behind the gradient border. You can remove this if you want the border to extend "outside" the box background.
-            #272c30 border-box;
-
-        background-position: center center;
-
-        animation: bg-spin 3s linear infinite;
-        animation-play-state: paused;
-
-        transition: all 300ms ease;
-
-        cursor: pointer;
-
-        --border-angle: 0turn; // For animation.
-        --main-bg: conic-gradient(from var(--border-angle), #0c1014, #0c1014 100%);
-
-        --gradient-border: conic-gradient(
-            from var(--border-angle),
-            transparent,
-            #3053f9 25%,
-            #3ffbc7 59%,
-            #35e9e4 75%,
-            transparent
-        );
-
+        background: conic-gradient(from var(--border-angle), #0c1014, #0c1014 100%);
         @keyframes bg-spin {
             to {
                 --border-angle: 1turn;
@@ -258,6 +232,32 @@
         &:hover {
             border: solid 1.5px transparent;
             animation-play-state: running;
+            background: var(--main-bg) padding-box,
+                // border-box extends this background to the border space
+                var(--gradient-border) border-box,
+                // Duplicate main background to fill in behind the gradient border. You can remove this if you want the border to extend "outside" the box background.
+                #272c30 border-box;
+
+            background-position: center center;
+
+            animation: bg-spin 3s linear infinite;
+            animation-play-state: paused;
+
+            transition: all 300ms ease;
+
+            cursor: pointer;
+
+            --border-angle: 0turn; // For animation.
+            --main-bg: conic-gradient(from var(--border-angle), #0c1014, #0c1014 100%);
+
+            --gradient-border: conic-gradient(
+                from var(--border-angle),
+                transparent,
+                #3053f9 25%,
+                #3ffbc7 59%,
+                #35e9e4 75%,
+                transparent
+            );
         }
 
         &.big {
@@ -275,19 +275,21 @@
             height: 51.5px;
             transform: rotate(41deg);
         }
+        & img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-width: 189px;
+            aspect-ratio: 1/1;
+            object-fit: contain;
+            margin: 0px auto 16px;
+        }
     }
-    & img {
-        display: block;
-        width: 100%;
-        height: auto;
-        max-width: 189px;
-        aspect-ratio: 1/1;
-        object-fit: contain;
-        margin: 0px auto 16px;
-    }
+
     .btn {
-        margin: 80px auto 0px;
-        padding: 15px 96px;
+        // padding: 15px 96px;
+        padding-left: 96px;
+        padding-right: 96px;
         font-size: 24px;
         position: relative;
         z-index: 3;
@@ -296,18 +298,26 @@
         &::after {
             background: #090c0f;
         }
+
+        &.btn-with-image {
+            padding: 21px 96px;
+        }
+    }
+
+    .button-container {
+        margin: 80px auto 0px;
+        max-width: fit-content;
     }
 
     .block-header {
         position: relative;
         z-index: 3;
         .btn {
-            margin-top: rem(24px);
-
             font-weight: 400;
             font-size: rem(64px);
             text-align: center;
             padding: 24px;
+            margin: rem(24px) auto 0px;
         }
 
         h3 {
@@ -335,42 +345,6 @@
     initial-value: 0turn;
 }
 
-@keyframes hero-preview-animation-line {
-    0% {
-        transform: translateZ(0) translate(-150px);
-    }
-
-    20% {
-        transform: translateZ(0) translate(-150px, -1828px);
-    }
-
-    21% {
-        transform: translateZ(0) translate(-150px, -1828px) rotate(45deg);
-    }
-
-    30% {
-        transform: translateZ(0) translate(150px, -1828px) rotate(90deg);
-    }
-
-    45% {
-        transform: translateZ(0) translate(968px, -1828px) rotate(90deg);
-    }
-    47% {
-        transform: translateZ(0) translate(968px, -1840px) rotate(135deg);
-    }
-
-    54% {
-        transform: translateZ(0) translate(968px, -1498px) rotate(180deg);
-    }
-
-    73% {
-        transform: translateZ(0) translate(968px) rotate(180deg);
-    }
-
-    to {
-        transform: translateZ(0) translate(968px) rotate(180deg);
-    }
-}
 @media only screen and (max-width: 1440px) {
 }
 

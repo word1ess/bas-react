@@ -4,6 +4,8 @@ import React from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 
+import windowImg from "../../../img/svgicons/windows.svg";
+
 function Opportunities({ title, supTitle, isBtn, items, images, isPremium }) {
   const [opportunitiesItems, setOpportunitiesItems] = React.useState(items);
   const [btnMoreStatus, setBtnMoreStatus] = React.useState(false);
@@ -179,10 +181,14 @@ function Opportunities({ title, supTitle, isBtn, items, images, isPremium }) {
         {isBtn &&
           (btnMoreStatus ? (
             <div className="button-container">
-              <Link to="#" className="btn btn-gradient btn-with-border">
+              <Link
+                to="#"
+                class="btn btn-with-image btn-gradient btn-with-border"
+              >
+                <img src={windowImg} alt="download" />
                 Скачать
-                <span className="border"></span>
-                <span className="white-space"></span>
+                <span class="white-space"></span>
+                <span class="border"></span>
               </Link>
             </div>
           ) : (
