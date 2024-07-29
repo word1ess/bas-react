@@ -3,16 +3,16 @@
         padding-bottom: 40px;
     }
     &__video {
-        width: 100%;
+        width: 70%;
         height: auto;
-        aspect-ratio: 6/2;
+        aspect-ratio: 4/2.5;
         position: relative;
         margin: 0 auto 60px;
 
         .corner {
             background: #070a0c;
             position: absolute;
-            width: 92px;
+            width: 120px;
             height: 47px;
             z-index: 2;
 

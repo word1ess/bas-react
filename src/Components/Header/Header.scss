@@ -46,25 +46,22 @@
     &__links {
         display: flex;
         gap: 32px;
-        // align-items: center;
-
-        .dropdown-container,
-        & > a {
-            display: flex;
-            align-items: center;
-            padding: 14px 24px;
-        }
+        align-items: center;
+        overflow: hidden;
 
         .dropdown-container {
             position: relative;
+            display: flex;
+            align-items: center;
+            padding: 14px 24px;
 
             &::after,
             &::before {
                 content: "";
-                height: 100%;
+                height: 85px;
                 width: 1px;
                 background: #272c30;
-                top: 0px;
+                top: -20px;
                 position: absolute;
             }
             &::after {
@@ -291,11 +288,11 @@
             justify-content: space-between;
         }
         &__links {
+            gap: 20px;
             a {
                 font-size: 13px;
             }
 
-            a,
             .dropdown-container {
                 padding-top: 10px;
                 padding-bottom: 10px;
