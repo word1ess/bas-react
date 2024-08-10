@@ -12,7 +12,6 @@ function HeaderDropdown({ parentLink, parentLinkText, body }) {
     arrowRef.current.classList.toggle("active");
   }
   function closeDropdown() {
-    // remove the open and active class from other opened Dropdown (Closing the opend DropDown)
     dropdownContainerRef.current.classList.remove("dropdown-open");
     dropdownMenuRef.current.classList.remove("active");
   }
