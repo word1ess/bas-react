@@ -117,6 +117,11 @@ body {
   background: #070a0c;
   padding: 89px 0px 0px 0px;
   z-index: 2;
+
+  &.white {
+    background: #faf8f2;
+    color: #1c1818;
+  }
 }
 
 //ограниивающий контейнер
@@ -127,6 +132,15 @@ body {
   height: 100%;
   padding: 0 30px;
   position: relative;
+}
+.block-separator.block-dashed-sides {
+  & .container {
+    padding: 35px 0px;
+  }
+}
+
+.white .container {
+  max-width: 1012px;
 }
 
 a {
@@ -271,7 +285,9 @@ button {
 
       background: linear-gradient(90deg, #fff 0%, #fff 100%);
 
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
       z-index: 1;
@@ -387,6 +403,18 @@ button {
   height: 20px;
   position: absolute;
 
+  .white &.left {
+    left: -10px;
+  }
+
+  .white &.right {
+    right: -10px;
+  }
+
+  .white &.top {
+    top: -10px;
+  }
+
   &.top {
     top: -11.5px;
   }
@@ -413,6 +441,10 @@ button {
     border-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='1' stroke-dasharray='20%2c 20' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e")
       2 round round;
   }
+  .white &-top {
+    border-top: 1px solid #bebcbf;
+    border-image: none;
+  }
   &-sides .container {
     border-left: 2px dashed;
     border-right: 2px dashed;
@@ -429,6 +461,12 @@ button {
       right: -10px;
       height: 50%;
     }
+  }
+
+  .white &-sides .container {
+    border-left: 1px solid #bebcbf;
+    border-right: 1px solid #bebcbf;
+    border-image: none;
   }
   &-content {
     position: relative;
@@ -515,6 +553,13 @@ button {
   }
   &.mb {
     margin-bottom: rem(60px);
+  }
+}
+.white .block-header {
+  &.border-1 {
+    span {
+      color: #1c1818;
+    }
   }
 }
 .block-with-substrate {
@@ -625,6 +670,46 @@ div.swiper-pagination {
   span.swiper-pagination-bullet-active {
     background: #939597;
     opacity: 1;
+  }
+}
+
+.white {
+  .btn,
+  .btn-finger {
+    cursor: pointer;
+    filter: url("#rounded-corners");
+    transition: opacity 300ms ease;
+    position: relative;
+
+    &__border {
+      background-color: #ff7120;
+      -webkit-clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+      clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+      padding: 1px;
+    }
+    &__text {
+      z-index: 2;
+      background-color: #ff7120;
+      font-size: rem(18px);
+      text-transform: uppercase;
+      white-space: nowrap;
+      -webkit-clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+      clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+      border-radius: 14px 3px 16px;
+      justify-content: center;
+      align-items: center;
+      padding: rem(18px) rem(19.5px);
+      transition-property: background-color;
+      transition-duration: 0.2s;
+      transition-timing-function: ease;
+      display: flex;
+      position: relative;
+      color: #1c1818;
+
+      &:hover {
+        background-color: #faf8f2;
+      }
+    }
   }
 }
 

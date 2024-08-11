@@ -5,7 +5,7 @@ import heartImg from "../../img/svgicons/heart.svg";
 import plusImg from "../../img/svgicons/plus.svg";
 import FooterProduct from "./FooterProduct/FooterProduct";
 import { Link } from "react-router-dom";
-function Footer() {
+function Footer({ additionalClass }) {
   const footerProducts = [
     {
       productImg,
@@ -27,7 +27,9 @@ function Footer() {
     },
   ];
   return (
-    <footer className="footer block-dashed-top block-dashed-sides">
+    <footer
+      className={`footer block-dashed-top block-dashed-sides ${additionalClass}`}
+    >
       <div className="container with-shadow">
         <div className="plus top left">
           <img src={plusImg} alt="plus" />

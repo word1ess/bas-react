@@ -12,7 +12,7 @@
     transition: all 300ms ease;
     &__row {
         display: flex;
-        // align-items: center;
+        align-items: center;
         justify-content: space-between;
         padding: 0px 64px;
         gap: 20px;
@@ -37,7 +37,7 @@
 
     &__menu {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
 
         flex: 1 1 auto;
         max-width: 1300px;
@@ -45,31 +45,15 @@
 
     &__links {
         display: flex;
-        gap: 32px;
+        gap: 30px;
         align-items: center;
-        // overflow: hidden;
+        // overflow: hidden;\
+        margin-left: auto;
 
         .dropdown-container {
             position: relative;
             display: flex;
             align-items: center;
-            padding: 14px 24px;
-
-            &::after,
-            &::before {
-                content: "";
-                height: 85px;
-                width: 1px;
-                background: #272c30;
-                top: -20px;
-                position: absolute;
-            }
-            &::after {
-                right: 0px;
-            }
-            &::before {
-                left: 0px;
-            }
         }
 
         a {
@@ -96,6 +80,7 @@
         gap: 30px;
         align-items: center;
         text-transform: uppercase;
+        margin-left: auto;
 
         & .header-down__menu {
             max-width: 80px;
@@ -161,7 +146,6 @@
     &.white {
         background: #faf8f2;
         border: 1px solid #bebcbf;
-
         & a {
             color: #1c1818;
         }
@@ -477,7 +461,9 @@
             height: calc(100vh - 90px);
             background: #070a0c;
 
-            transition: transform 300ms ease 0ms, opacity 400ms ease-in 300ms;
+            transition:
+                transform 300ms ease 0ms,
+                opacity 400ms ease-in 300ms;
 
             flex-direction: column;
             justify-content: flex-start;

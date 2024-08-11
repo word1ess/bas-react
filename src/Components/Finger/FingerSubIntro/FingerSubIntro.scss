@@ -1,0 +1,32 @@
+@function rem($px) {
+    @return ($px / 14px) + rem;
+}
+.subintro-finger {
+    &__row {
+        display: flex;
+        align-items: flex-end;
+        gap: 20px;
+    }
+    &__item {
+        max-width: 300px;
+        font-size: rem(24px);
+        color: #1c1818;
+
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: #bebcbf;
+            display: block;
+            margin-bottom: rem(16px);
+        }
+    }
+    &__img {
+        display: block;
+        flex: 1 1 auto;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+    }
+}

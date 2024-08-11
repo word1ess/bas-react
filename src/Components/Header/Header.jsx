@@ -113,7 +113,8 @@ function Header({ additionalClass, headerLogo, headerBtn }) {
               />
             )}
             <ScrambleLink linkText="Вход" />
-            <ScrambleLink linkText="Регистрация" />
+            {/* {<ScrambleLink linkText="Регистрация" />} */}
+            
           </div>
           {isMobile && (
             <HeaderDropdown

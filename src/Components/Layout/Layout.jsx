@@ -24,7 +24,11 @@ const Layout = () => {
   ];
   const headerBtnFinger = [
     <Link to="#" className="header__btn btn-finger">
-      получить ключ
+      <div className="btn-finger__border">
+        <div className="btn-finger__text">
+          получить ключ
+        </div>
+      </div>
     </Link>,
   ];
   const [additionalClass, setAdditionalClass] = useState("");
@@ -53,10 +57,10 @@ const Layout = () => {
         headerLogo={headerLogo}
         headerBtn={headerBtn}
       />
-      <main className="content">
+      <main className={`content ${additionalClass}`} >
         <Outlet />
       </main>
-      <Footer />
+      <Footer additionalClass={additionalClass}/>
     </>
   );
 };
