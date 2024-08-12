@@ -1,0 +1,63 @@
+@function rem($px) {
+    @return ($px / 14px) + rem;
+}
+.plugins-finger {
+    &__row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(24px);
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+
+        position: relative;
+        border: 1px solid #bebcbf;
+        background: #fff;
+        padding: rem(80px) rem(24px) rem(40px) rem(24px);
+
+        p {
+            letter-spacing: 0.02em;
+            text-align: justify;
+            line-height: 1.4;
+        }
+        &.big {
+            grid-column: span 3;
+        }
+        h3 {
+            span {
+                font-family: "NeueMachina-Ultrabold";
+            }
+        }
+        p {
+            margin-bottom: rem(24px);
+        }
+    }
+    &__github {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        border: 1px solid #bebcbf;
+        border-top: none;
+        border-left: none;
+        width: 120px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__img {
+        max-width: fit-content;
+        margin: 0 auto rem(40px);
+    }
+    &__blocks {
+        display: flex;
+        gap: rem(48px);
+    }
+    &__block {
+        flex: 1 0 5rem;
+    }
+    .btn-finger {
+        margin-top: auto;
+    }
+}

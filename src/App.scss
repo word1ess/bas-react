@@ -83,6 +83,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
   background: #070a0c;
+  overflow-x: hidden;
 
   &.burger-active {
     position: fixed;
@@ -100,7 +101,7 @@ body {
 }
 #root {
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
   min-height: 100%;
 }
 .wrapper {
@@ -140,7 +141,7 @@ body {
 }
 
 .white .container {
-  max-width: 1012px;
+  max-width: 1060px;
 }
 
 a {
@@ -285,9 +286,7 @@ button {
 
       background: linear-gradient(90deg, #fff 0%, #fff 100%);
 
-      -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
       z-index: 1;
@@ -555,10 +554,89 @@ button {
     margin-bottom: rem(60px);
   }
 }
-.white .block-header {
-  &.border-1 {
-    span {
+.white {
+  .block-header {
+    &.border-1 {
+      h2 {
+        color: #1c1818;
+      }
+      span {
+        color: #1c1818;
+      }
+    }
+  }
+  .btn,
+  .btn-finger {
+    cursor: pointer;
+    filter: url("#rounded-corners");
+    transition: opacity 300ms ease;
+    position: relative;
+
+    &__border {
+      background-color: #ff7120;
+      -webkit-clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+      clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+      padding: 1px;
+      padding-top: 1.2px;
+      padding-left: 1.2px;
+    }
+    &__text {
+      z-index: 2;
+      background-color: #ff7120;
+      font-size: rem(18px);
+      text-transform: uppercase;
+      white-space: nowrap;
+      -webkit-clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+      clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+      // border-radius: 14px 3px 16px;
+      justify-content: center;
+      align-items: center;
+      padding: rem(18px) rem(19.5px);
+      transition-property: background-color;
+      transition-duration: 0.2s;
+      transition-timing-function: ease;
+      display: flex;
+      position: relative;
       color: #1c1818;
+
+      &:hover {
+        background-color: #faf8f2;
+      }
+    }
+    &__bordered {
+      .btn-finger__text {
+        background: #fff;
+      }
+    }
+  }
+  & h2,
+  & h3 {
+    color: #1c1818;
+  }
+  article ul,
+  section ul {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24px);
+    margin: rem(24px) 0px;
+
+    li {
+      font-size: rem(16px);
+      color: #1c1818;
+      display: flex;
+      gap: rem(8px);
+      align-items: flex-start;
+
+      &::before {
+        content: "";
+
+        width: 6px;
+        height: 6px;
+        background: #ff7120;
+        display: block;
+        flex: 0 0 6px;
+        margin-top: 2px;
+      }
     }
   }
 }
@@ -670,46 +748,6 @@ div.swiper-pagination {
   span.swiper-pagination-bullet-active {
     background: #939597;
     opacity: 1;
-  }
-}
-
-.white {
-  .btn,
-  .btn-finger {
-    cursor: pointer;
-    filter: url("#rounded-corners");
-    transition: opacity 300ms ease;
-    position: relative;
-
-    &__border {
-      background-color: #ff7120;
-      -webkit-clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-      clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-      padding: 1px;
-    }
-    &__text {
-      z-index: 2;
-      background-color: #ff7120;
-      font-size: rem(18px);
-      text-transform: uppercase;
-      white-space: nowrap;
-      -webkit-clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-      clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-      border-radius: 14px 3px 16px;
-      justify-content: center;
-      align-items: center;
-      padding: rem(18px) rem(19.5px);
-      transition-property: background-color;
-      transition-duration: 0.2s;
-      transition-timing-function: ease;
-      display: flex;
-      position: relative;
-      color: #1c1818;
-
-      &:hover {
-        background-color: #faf8f2;
-      }
-    }
   }
 }
 

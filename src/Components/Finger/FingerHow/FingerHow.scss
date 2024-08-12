@@ -1,0 +1,59 @@
+@function rem($px) {
+    @return ($px / 14px) + rem;
+}
+.how-finger {
+    .container {
+        padding: 40px 24px;
+    }
+    .line {
+        top: 20px;
+
+        &.bottom {
+            top: auto;
+            bottom: 33px;
+        }
+    }
+    &__item {
+        display: flex;
+        gap: rem(24px);
+
+        &:not(:last-child) {
+            margin-bottom: rem(40px);
+        }
+        position: relative;
+    }
+    &__info {
+        flex: 0 0 297px;
+        h3 {
+            font-weight: 800;
+        }
+        p {
+            font-family: "NeueMachina-Regular";
+        }
+        img {
+            margin-bottom: rem(32px);
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            display: block;
+        }
+    }
+    &__btns {
+        display: flex;
+        flex-direction: column;
+        gap: rem(16px);
+        margin-top: rem(24px);
+    }
+    &__video {
+        flex: 1 1 auto;
+        & video {
+            position: sticky;
+            top: 120px;
+            left: 0px;
+            display: block;
+            aspect-ratio: 6.91/3.88;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

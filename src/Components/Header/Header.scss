@@ -47,7 +47,7 @@
         display: flex;
         gap: 30px;
         align-items: center;
-        // overflow: hidden;\
+        // overflow: hidden;
         margin-left: auto;
 
         .dropdown-container {
@@ -85,7 +85,7 @@
         & .header-down__menu {
             max-width: 80px;
             left: -20px;
-            padding-top: 51px;
+
             & li {
                 padding: 12px;
 
@@ -116,7 +116,7 @@
         display: none;
         z-index: 3;
 
-        padding-top: 86px;
+        padding-top: 59px;
         top: 0px;
         left: -50%;
 
@@ -461,9 +461,7 @@
             height: calc(100vh - 90px);
             background: #070a0c;
 
-            transition:
-                transform 300ms ease 0ms,
-                opacity 400ms ease-in 300ms;
+            transition: transform 300ms ease 0ms, opacity 400ms ease-in 300ms;
 
             flex-direction: column;
             justify-content: flex-start;

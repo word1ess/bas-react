@@ -1,0 +1,68 @@
+@function rem($px) {
+    @return ($px / 14px) + rem;
+}
+.dop-finger {
+    &-item__row {
+        display: flex;
+    }
+
+    &__item {
+        position: relative;
+        border: 1px solid #bebcbf;
+
+        background: #fff;
+
+        &:not(:last-child) {
+            margin-bottom: rem(24px);
+        }
+
+        p {
+            letter-spacing: 0.02em;
+            text-align: justify;
+            line-height: 1.4;
+            margin-bottom: rem(24px);
+        }
+        h3 {
+            font-family: "NeueMachina-Ultrabold";
+        }
+    }
+
+    &__img {
+        flex: 0 0 222px;
+        display: flex;
+        flex-direction: column;
+        & img {
+            display: block;
+        }
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        padding: rem(24px);
+        padding-right: rem(50px);
+        border-right: 1px solid #bebcbf;
+    }
+    &__play {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: rem(32px);
+        border-top: 1px solid #bebcbf;
+        flex: 1 1 auto;
+    }
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: rem(40px) rem(32px);
+    }
+
+    .btn-finger {
+        display: block;
+        margin-top: auto;
+        max-width: fit-content;
+        &__text {
+            padding: rem(18.5px) rem(90px);
+        }
+    }
+}

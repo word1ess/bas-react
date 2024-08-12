@@ -1,0 +1,121 @@
+@function rem($px) {
+    @return ($px / 14px) + rem;
+}
+.where-finger {
+    &__row {
+        display: grid;
+        gap: rem(40px) rem(47px);
+        grid-template-columns: 298px 322px 298px;
+        grid-template-areas:
+            ". a ."
+            "b bg c"
+            "d bg e"
+            "f bg g";
+    }
+    &__inner {
+        display: flex;
+        gap: rem(16px);
+        align-items: center;
+        background: #fff;
+        position: relative;
+        z-index: 2;
+        padding: rem(24px);
+        border-radius: 3px;
+        overflow: hidden;
+        height: 100%;
+    }
+    &__item {
+        border: 1px solid transparent;
+        border-radius: 5px;
+        position: relative;
+        padding: 1px 1.2px 1.5px 1.5px;
+        border-radius: 5px;
+        overflow: hidden;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: calc(100% + 2px);
+            height: calc(100% + 2px);
+            display: block;
+        }
+        &:nth-child(1) {
+            grid-area: a;
+            &::after {
+                background: linear-gradient(0deg, #ee8d48 0%, #bebcbf 50%);
+            }
+        }
+        &:nth-child(odd):not(:first-child) {
+            &::after {
+                background: linear-gradient(90deg, #ee8d48 0%, #bebcbf 50%);
+            }
+        }
+        &:nth-child(even) {
+            &::after {
+                background: linear-gradient(-90deg, #ee8d48 0%, #bebcbf 50%);
+            }
+        }
+        &:nth-child(2) {
+            grid-area: b;
+        }
+        &:nth-child(3) {
+            grid-area: c;
+        }
+        &:nth-child(4) {
+            grid-area: d;
+        }
+        &:nth-child(5) {
+            grid-area: e;
+        }
+        &:nth-child(6) {
+            grid-area: f;
+            &::after {
+                background: linear-gradient(-90deg, #ee8d48 0%, #bebcbf 50%);
+            }
+        }
+        &:nth-child(7) {
+            grid-area: g;
+            padding-bottom: 1px;
+        }
+
+        h3 {
+            font-size: rem(18px);
+            margin-bottom: rem(12px);
+        }
+
+        p {
+            font-size: rem(14px);
+            color: rgba(28, 24, 24, 0.7);
+        }
+        img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+    }
+    &__bg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-area: bg;
+    }
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        gap: rem(24px);
+        margin: 0 auto;
+        max-width: 482px;
+        padding: 0px 80px;
+        margin-top: rem(78px);
+
+        & p {
+            font-family: "NeueMachina-Regular";
+            font-weight: 400;
+            font-size: 24px;
+            text-align: center;
+            color: #1c1818;
+        }
+    }
+}
