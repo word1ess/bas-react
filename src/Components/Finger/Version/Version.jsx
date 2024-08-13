@@ -2,10 +2,11 @@ import VersionItem from "./VersionItem/VerisonItem";
 import plusImg from "../../../img/svgicons/plus.svg";
 import "./Version.scss";
 
+import linkImg from "../../../img/svgicons/link-dark.svg";
 import minusImg from "../../../img/svgicons/munis-black.svg";
 import arrowImg from "../../../img/svgicons/arrow-down-black.svg";
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Version(params) {
   const tableItems = [
@@ -65,46 +66,56 @@ function Version(params) {
     },
     {
       property: [
-        <p>
-          Сервис <span>FingerprintDetector</span>
-        </p>,
+        <Link to="#" className="btn-with-image">
+          <p>
+            Сервис <span>FingerprintDetector</span>
+          </p>
+          <img src={linkImg} alt="" />
+        </Link>,
       ],
       free: minusImg,
       premium: arrowImg,
     },
     {
       property: [
-        <p>
-          Сервис <span>FingerprintManager</span>
-        </p>,
+        <Link to="#" className="btn-with-image">
+          <p>
+            Сервис <span>FingerprintManager</span>
+          </p>
+          <img src={linkImg} alt="" />
+        </Link>,
       ],
       free: minusImg,
       premium: arrowImg,
     },
     {
       property: [
-        <p>
-          Сервис <span>PerdectCanvas</span>
-        </p>,
+        <Link to="#" className="btn-with-image">
+          <p>
+            Сервис <span>PerdectCanvas</span>
+          </p>
+
+          <img src={linkImg} alt="" />
+        </Link>,
       ],
       free: minusImg,
       premium: arrowImg,
     },
     {
       property: [
-        <p>
-          Плагины для <span>автоматизации</span>
-        </p>,
+        <Link to="#" className="btn-with-image">
+          <p>
+            Плагины для <span>автоматизации</span>
+          </p>
+
+          <img src={linkImg} alt="" />
+        </Link>,
       ],
       free: [<p>С ограничениями</p>],
       premium: arrowImg,
     },
     {
-      property: [
-        <p>
-          Плагины для <span>автоматизации</span>
-        </p>,
-      ],
+      property: [<p>Лимит запросов(за 3 минуты)</p>],
       free: [<p>1</p>],
       premium: [<p>100 / 1000</p>],
     },
@@ -118,7 +129,7 @@ function Version(params) {
         <div className="plus top right">
           <img src={plusImg} alt="plus" />
         </div>
-        <header className="block-header border-2 flex">
+        <header className="block-header border-1 flex">
           <h2>
             <span>Цены</span>
           </h2>
@@ -196,7 +207,7 @@ function Version(params) {
             <Link to="#" className="btn-finger">
               <div className="btn-finger__border">
                 <div className="btn-finger__text">
-                  купить 40$ <span>(60$)</span>
+                  купить 40$ <s> (60$)</s>
                 </div>
               </div>
             </Link>

@@ -139,6 +139,17 @@ function FingerOpportunities() {
           <img src={plusImg} alt="plus" />
         </div>
 
+        <header class="block-header border-1 flex">
+          <h2>
+            <span>Возможности</span>
+          </h2>
+          <p>
+            Вот список свойств, связанных с отпечатками браузера. Их можно
+            изменить с помощью сервиса
+            <b className="text-orange"> FingerprintSwitcher</b>
+          </p>
+        </header>
+
         <main className="opportunities-finger__row">
           {fingerOpportunitiesItems.map((item, i) => {
             return (

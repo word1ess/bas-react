@@ -82,7 +82,7 @@ function FingerHow() {
           <div className="plus top right">
             <img src={plusImg} alt="plus" />
           </div>
-          <div className="line">
+          <div className="line left">
             <svg
               width="290"
               height="66"

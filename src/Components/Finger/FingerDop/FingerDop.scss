@@ -66,3 +66,24 @@
         }
     }
 }
+
+@media only screen and (max-width: 992px) {
+    .dop-finger {
+        &-item__row {
+            flex-direction: column-reverse;
+        }
+        &__play {
+            border-bottom: 1px solid #bebcbf;
+        }
+        &__text {
+            padding-right: 24px;
+        }
+        .btn-finger {
+            max-width: 100%;
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 450px) {
+}

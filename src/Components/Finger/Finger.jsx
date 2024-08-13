@@ -11,6 +11,11 @@ import plusImg from "../../img/svgicons/plus.svg";
 import Version from "./Version/Version";
 import Faq from "./Faq/Faq";
 
+import faceImg from "../../img/footer/face.svg";
+
+import { useEffect } from "react";
+import { useRef } from "react";
+
 function Finger() {
   return (
     <>
@@ -34,6 +39,13 @@ function Finger() {
       <FingerDop />
       <Version />
       <Faq />
+      <article className="footer-eyes">
+        <article className="eyes">
+          <div className="eye"></div>
+          <div className="eye"></div>
+          <img src={faceImg} alt="" />
+        </article>
+      </article>
     </>
   );
 }

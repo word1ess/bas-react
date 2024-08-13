@@ -50,7 +50,7 @@ function Faq() {
         <img src={plusImg} alt="plus" />
       </div>
       <div className="container">
-        <header className="block-header border-2">
+        <header className="block-header border-1">
           <h2>
             Еще остались
             <span>вопросы?</span>

@@ -54,6 +54,61 @@
             aspect-ratio: 6.91/3.88;
             width: 100%;
             object-fit: cover;
+            clip-path: polygon(6% 0, 94% 0, 100% 6%, 100% 94%, 94% 100%, 6% 100%, 0 94%, 0 6%);
         }
     }
+}
+.plyr--video {
+}
+[data-media-player] {
+    position: sticky !important;
+    top: 120px;
+    left: 0px;
+    display: block;
+    aspect-ratio: 6.91/3.88;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 992px) {
+    .how-finger {
+        .line {
+            max-width: 160px;
+
+            svg {
+                width: 100%;
+                object-fit: contain;
+            }
+
+            &.bottom {
+                display: none;
+            }
+        }
+        .block-header {
+        }
+    }
+    .how-finger + .how-finger {
+        border-top: none !important;
+        .block-header {
+            display: none;
+        }
+        .container {
+            padding-top: 0px;
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    .how-finger {
+        .line {
+            display: none;
+        }
+        &__item {
+            flex-direction: column;
+            h3 {
+                max-width: 300px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 450px) {
 }

@@ -157,8 +157,19 @@
                 }
             }
         }
+        .dropdown-container,
+        .dropdown-container__row {
+            border-color: #bebcbf;
+        }
 
         & .header {
+            &__burger {
+                &::before,
+                &::after,
+                span {
+                    background: #bebcbf;
+                }
+            }
             &__links {
                 .dropdown-container {
                     position: relative;
@@ -168,6 +179,31 @@
                         background: #bebcbf;
                     }
                 }
+                a:not(.header__link) {
+                    border-color: #bebcbf;
+                }
+            }
+            &__for-user {
+                border-color: #bebcbf;
+            }
+            &-down__menu {
+                li {
+                    background: #faf8f2;
+                    &:not(:last-child) {
+                        border-color: #bebcbf;
+                    }
+
+                    & p {
+                        color: #1c1818;
+                    }
+                    button {
+                        color: #1c1818;
+                    }
+                }
+            }
+            &__menu {
+                top: 92px;
+                background: #faf8f2;
             }
         }
     }
@@ -539,6 +575,9 @@
             font-size: 18px;
             max-width: fit-content;
             width: fit-content;
+        }
+        .btn-finger {
+            padding: 0px;
         }
     }
 }

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import linkImg from "../../../../img/svgicons/link-dark.svg";
 function FingeDopItem({ title, text, link, img, playBtn }) {
   return (
     <article className="dop-finger__item">
@@ -9,7 +9,9 @@ function FingeDopItem({ title, text, link, img, playBtn }) {
           <p>{text}</p>
           <Link to={link} class="btn-finger">
             <div class="btn-finger__border">
-              <div class="btn-finger__text btn-arrow">подробнее</div>
+              <div class="btn-finger__text btn-with-image">
+                подробнее <img src={linkImg} alt="" />
+              </div>
             </div>
           </Link>
         </div>

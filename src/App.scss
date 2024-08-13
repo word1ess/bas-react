@@ -84,6 +84,7 @@ body {
   color: #fff;
   background: #070a0c;
   overflow-x: hidden;
+  --plyr-color-main: #ff7120 !important;
 
   &.burger-active {
     position: fixed;
@@ -348,6 +349,11 @@ button {
   gap: 16px;
   align-items: center;
 }
+.white {
+  a {
+    color: #1c1818;
+  }
+}
 .btn-gradient {
   border: none;
   background: url("./img/svgicons/web-for-btn.svg"), linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%);
@@ -505,13 +511,7 @@ button {
       justify-content: center;
     }
   }
-  &.border-1 {
-    span {
-      border: 2px solid #fff;
-      padding: rem(16px) rem(24px);
-      border-image: url("./img/svgicons/btn-1.svg") 2 stretch;
-    }
-  }
+
   &.flex h2 {
     display: flex;
     gap: rem(16px);
@@ -528,6 +528,13 @@ button {
       margin-top: 20px;
     }
   }
+  &.border-1 {
+    span {
+      border: 2px solid #fff;
+      padding: rem(16px) rem(24px);
+      border-image: url("./img/svgicons/btn-1.svg") 2 stretch;
+    }
+  }
   &.border-2 {
     span {
       border: 2px solid #fff;
@@ -535,7 +542,6 @@ button {
       border-image: url("./img/svgicons/btn-2.svg") 2 stretch;
     }
   }
-
   &.border-1,
   &.border-2 {
     &:not(.flex) {
@@ -554,14 +560,21 @@ button {
     margin-bottom: rem(60px);
   }
 }
+
 .white {
   .block-header {
-    &.border-1 {
+    &.border-1,
+    &.border-2 {
       h2 {
         color: #1c1818;
       }
       span {
         color: #1c1818;
+      }
+    }
+    &.border-1 {
+      span {
+        border-image: url("./img/svgicons/btn-1-orange.svg") 2 stretch stretch;
       }
     }
   }
@@ -770,6 +783,11 @@ div.swiper-pagination {
 // }
 
 @media only screen and (max-width: 992px) {
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
   .label {
     display: block;
     width: 100%;

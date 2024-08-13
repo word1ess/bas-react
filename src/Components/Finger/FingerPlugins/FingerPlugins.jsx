@@ -1,6 +1,8 @@
 import "./FingerPlugins.scss";
 import { Link } from "react-router-dom";
 import plusImg from "../../../img/svgicons/plus.svg";
+
+import linkImg from "../../../img/svgicons/link-dark.svg";
 import itemImgFirst from "./img/1.svg";
 import itemImgSecond from "./img/2.svg";
 import itemImgThird from "./img/3.svg";
@@ -75,46 +77,47 @@ function FingerPlugins() {
               />
             );
           })}
-          <article className="plugins-finger__item big">
-            <div className="plugins-finger__github">
-              <img src={gitHubImg} alt="" />
-            </div>
-            <h3>
-              <span>Универсальный плагин</span>
-            </h3>
-            <div className="plugins-finger__blocks">
-              <div className="plugins-finger__block">
-                <p>
-                  Каждый из вышеперечисленных плагинов адаптирован для
-                  конкретного фреймворка. Если вы хотите подключить фреймворк,
-                  которого нет в списке, вы можете использовать универсальный
-                  плагин. Он позволяет запустить браузер, изменить его
-                  отпечаток, а также поддерживает соединение по CDP. Поэтому его
-                  можно использовать с любой библиотекой автоматизации, которая
-                  может подключаться через CDP.Плагин, который работает для
-                  любого фреймворка автоматизации доступен здесь
-                </p>
-              </div>
-              <div className="plugins-finger__block">
-                <p>
-                  Но мы рекомендуем использовать BrowserAutomationStudio для
-                  автоматизации браузера, поскольку он позволяет опытным
-                  пользователям он позволяет  ускорить скорость разработки в
-                  несколько раз за счет визуального конструктора логики и
-                  готовых модулей, а для новичков создавать свою автоматизацию
-                  без знаний программирования.
-                </p>
-                <Link to="#" class="btn-finger">
-                  <div class="btn-finger__border">
-                    <div class="btn-finger__text btn-arrow">
-                      Скачать на GitHub
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            </div>
-          </article>
         </main>
+        <article className="plugins-finger__item big">
+          <div className="plugins-finger__github">
+            <img src={gitHubImg} alt="" />
+          </div>
+          <h3>
+            <span>Универсальный плагин</span>
+          </h3>
+          <div className="plugins-finger__blocks">
+            <div className="plugins-finger__block">
+              <p>
+                Каждый из вышеперечисленных плагинов адаптирован для конкретного
+                фреймворка. Если вы хотите подключить фреймворк, которого нет в
+                списке, вы можете использовать универсальный плагин. Он
+                позволяет запустить браузер, изменить его отпечаток, а также
+                поддерживает соединение по CDP. Поэтому его можно использовать с
+                любой библиотекой автоматизации, которая может подключаться
+                через CDP.Плагин, который работает для любого фреймворка
+                автоматизации доступен здесь
+              </p>
+            </div>
+            <div className="plugins-finger__block">
+              <p>
+                Но мы рекомендуем использовать BrowserAutomationStudio для
+                автоматизации браузера, поскольку он позволяет опытным
+                пользователям он позволяет  ускорить скорость разработки в
+                несколько раз за счет визуального конструктора логики и готовых
+                модулей, а для новичков создавать свою автоматизацию без знаний
+                программирования.
+              </p>
+              <Link to="#" class="btn-finger">
+                <div class="btn-finger__border">
+                  <div class="btn-finger__text  btn-with-image">
+                    Скачать на GitHub
+                    <img src={linkImg} alt="" />
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </article>
       </div>
     </article>
   );

@@ -60,7 +60,9 @@
         gap: 16px;
         padding: 25px;
         justify-content: space-between;
-
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 113px;
         &:nth-child(3),
         &:nth-child(4) {
             & .border {
@@ -114,7 +116,12 @@
     }
     &.white {
         background: #faf8f2;
+        border-top: 1px solid #bebcbf;
+
+        border-image: none;
         .container.with-shadow {
+            border: 1px solid #bebcbf;
+            border-top: none;
             &::after {
                 display: none !important;
             }
@@ -122,6 +129,8 @@
         .footer__item {
             a {
                 color: #1c1818 !important;
+                width: 100% !important;
+                max-width: 100% !important;
             }
         }
         .btn {
@@ -203,4 +212,7 @@
 }
 
 @media only screen and (max-width: 450px) {
+    .footer.white {
+        padding-top: 80px;
+    }
 }

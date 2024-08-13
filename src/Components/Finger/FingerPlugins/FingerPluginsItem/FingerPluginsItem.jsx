@@ -1,4 +1,5 @@
 import gitHubImg from "../img/github.png";
+import linkImg from "../../../../img/svgicons/link-dark.svg";
 import { Link } from "react-router-dom";
 
 function FingerPluginsItem({ img, title, text, link }) {
@@ -10,11 +11,14 @@ function FingerPluginsItem({ img, title, text, link }) {
       <div className="plugins-finger__img">
         <img src={img} alt="" />
       </div>
-      <h3>{title}</h3>
+      {title}
       <p>{text}</p>
       <Link to={link} class="btn-finger">
         <div class="btn-finger__border">
-          <div class="btn-finger__text btn-arrow">Скачать на GitHub</div>
+          <div class="btn-finger__text btn-with-image">
+            Скачать на GitHub
+            <img src={linkImg} alt="" />
+          </div>
         </div>
       </Link>
     </article>

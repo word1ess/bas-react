@@ -1,31 +1,33 @@
 import "./Footer.scss";
-import productImg from "../../img/product.png";
-import linkImg from "../../img/svgicons/link.svg";
+
 import heartImg from "../../img/svgicons/heart.svg";
 import plusImg from "../../img/svgicons/plus.svg";
 import FooterProduct from "./FooterProduct/FooterProduct";
 import { Link } from "react-router-dom";
-function Footer({ additionalClass }) {
+function Footer({ additionalClass, linkImg }) {
   const footerProducts = [
     {
-      productImg,
       title: "Browser AutomationStudio",
       text: "Автоматизация браузера",
       linkImg,
     },
     {
-      productImg,
       title: "FingerprintSwitcher",
       text: "Измените отпечаток браузера",
       linkImg,
     },
     {
-      productImg,
       title: "FingerprintManager",
       text: "Антидетект браузер",
       linkImg,
     },
   ];
+  function importAll(image) {
+    return image.keys().map(image);
+  }
+  const productsImgs = importAll(
+    require.context("../../img/footer/", false, /\.(svg)$/)
+  );
   return (
     <footer
       className={`footer block-dashed-top block-dashed-sides ${additionalClass}`}
@@ -41,10 +43,10 @@ function Footer({ additionalClass }) {
           <nav className="footer__item height">
             <h2>Наши продукты</h2>
 
-            {footerProducts.map((product) => {
+            {footerProducts.map((product, i) => {
               return (
                 <FooterProduct
-                  productImg={product.productImg}
+                  productImg={productsImgs[i]}
                   title={product.title}
                   text={product.text}
                   linkImg={product.linkImg}

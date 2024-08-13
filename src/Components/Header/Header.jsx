@@ -2,15 +2,20 @@ import "./Header.scss";
 import { Link } from "react-router-dom";
 
 import windows from "../../img/svgicons/windows.svg";
-import productImg from "../../img/product.png";
-import linkImg from "../../img/svgicons/link.svg";
+
 import HeaderDropdown from "./HeaderDropdown/HeaderDropdown";
 import ScrambleLink from "../Common/ScrambleLink";
 
 import { useMediaQuery } from "react-responsive";
 import { useRef } from "react";
 
-function Header({ additionalClass, headerLogo, headerBtn }) {
+function Header({ additionalClass, headerLogo, headerBtn, linkImg }) {
+  function importAll(image) {
+    return image.keys().map(image);
+  }
+  const productsImgs = importAll(
+    require.context("../../img/footer/", false, /\.(svg)$/)
+  );
   const [logo, logoMobile] = headerLogo;
   const headerDropdowns = [
     {
@@ -19,7 +24,7 @@ function Header({ additionalClass, headerLogo, headerBtn }) {
       body: [
         <li>
           <Link to="/" className="footer__product btn-with-image">
-            <img src={productImg} alt="product" />
+            <img src={productsImgs[0]} alt="product" />
             <div>
               <p>Browser AutomationStudio</p>
               <p>Автоматизация браузера</p>
@@ -30,7 +35,7 @@ function Header({ additionalClass, headerLogo, headerBtn }) {
         </li>,
         <li>
           <Link to="/finger" className="footer__product btn-with-image">
-            <img src={productImg} alt="product" />
+            <img src={productsImgs[1]} alt="product" />
             <div>
               <p>FingerprintSwitcher</p>
               <p>Измените отпечаток браузера</p>
@@ -41,7 +46,7 @@ function Header({ additionalClass, headerLogo, headerBtn }) {
         </li>,
         <li>
           <Link to="#" className="footer__product  btn-with-image">
-            <img src={productImg} alt="product" />
+            <img src={productsImgs[2]} alt="product" />
             <div>
               <p>FingerprintManager</p>
               <p>Антидетект браузер</p>
@@ -114,7 +119,6 @@ function Header({ additionalClass, headerLogo, headerBtn }) {
             )}
             <ScrambleLink linkText="Вход" />
             {/* {<ScrambleLink linkText="Регистрация" />} */}
-            
           </div>
           {isMobile && (
             <HeaderDropdown

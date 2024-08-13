@@ -1,5 +1,7 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import linkImageWhite from "../../img/svgicons/link.svg";
+import linkImageDark from "../../img/svgicons/link-dark.svg";
 
 import Header from "../Header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
@@ -25,15 +27,14 @@ const Layout = () => {
   const headerBtnFinger = [
     <Link to="#" className="header__btn btn-finger">
       <div className="btn-finger__border">
-        <div className="btn-finger__text">
-          получить ключ
-        </div>
+        <div className="btn-finger__text">получить ключ</div>
       </div>
     </Link>,
   ];
   const [additionalClass, setAdditionalClass] = useState("");
   const [headerLogo, setHeaderLogo] = useState([logo, logoMobile]);
   const [headerBtn, setHeaderBtn] = useState(headerBtnBas);
+  const [linkImg, setLinkImg] = useState(linkImageWhite);
   const location = useLocation();
   const FINGER_PAGE = "/finger";
   useEffect(() => {
@@ -42,11 +43,13 @@ const Layout = () => {
         setAdditionalClass("white");
         setHeaderLogo([logoFinger, logoFingerMobile]);
         setHeaderBtn(headerBtnFinger);
+        setLinkImg(linkImageDark);
         break;
       default:
         setAdditionalClass("");
         setHeaderLogo([logo, logoMobile]);
         setHeaderBtn(headerBtnBas);
+        setLinkImg(linkImageWhite);
         break;
     }
   }, [location.pathname]);
@@ -56,11 +59,12 @@ const Layout = () => {
         additionalClass={additionalClass}
         headerLogo={headerLogo}
         headerBtn={headerBtn}
+        linkImg={linkImg}
       />
-      <main className={`content ${additionalClass}`} >
+      <main className={`content ${additionalClass}`}>
         <Outlet />
       </main>
-      <Footer additionalClass={additionalClass}/>
+      <Footer additionalClass={additionalClass} linkImg={linkImg} />
     </>
   );
 };
