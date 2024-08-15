@@ -1,11 +1,17 @@
 import { createRef } from "react";
-import { Link } from "react-router-dom";
 
 function FingerOpportunitiesItem({ img, title, text, link }) {
   const item = createRef(null);
   const itemDesc = createRef(null);
+
+  const hiddenItem = createRef(null);
+  const btnMore = createRef(null);
   function handleClickItem(e) {
     e.target !== itemDesc.current && item.current.classList.toggle("active");
+  }
+  function handleClickBtnHandle(e) {
+    btnMore.current.classList.add("active");
+    hiddenItem.current.classList.remove("hidden");
   }
   return (
     <article
@@ -23,13 +29,24 @@ function FingerOpportunitiesItem({ img, title, text, link }) {
         </div>
       </div>
       <h3>{title}</h3>
-      <div className="opportunities-finger__desc" ref={itemDesc}>
+      <div
+        className="opportunities-finger__desc"
+        ref={itemDesc}
+        onClick={(e) => e.stopPropagation()}
+      >
         <p>{text}</p>
-        <Link to={link} className="btn-finger btn-finger__bordered">
+        <p className="hidden" ref={hiddenItem}>
+          {text}
+        </p>
+        <button
+          onClick={handleClickBtnHandle}
+          ref={btnMore}
+          className="btn-finger btn-finger__bordered"
+        >
           <div class="btn-finger__border">
             <div class="btn-finger__text">Подробнее</div>
           </div>
-        </Link>
+        </button>
       </div>
     </article>
   );

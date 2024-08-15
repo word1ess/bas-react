@@ -6,6 +6,9 @@
     justify-content: flex-start;
     position: relative;
     margin-top: 60px;
+    aspect-ratio: auto;
+
+    padding: rem(44px) 0px;
 
     .rfm-marquee-container {
         position: relative;

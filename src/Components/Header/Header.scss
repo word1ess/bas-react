@@ -40,7 +40,6 @@
         justify-content: center;
 
         flex: 1 1 auto;
-        max-width: 1300px;
     }
 
     &__links {
@@ -49,11 +48,21 @@
         align-items: center;
         // overflow: hidden;
         margin-left: auto;
+        padding-left: 117px;
 
         .dropdown-container {
             position: relative;
             display: flex;
             align-items: center;
+
+            &__row {
+                padding: 12px;
+                padding-bottom: 0px;
+
+                li {
+                    border: none !important;
+                }
+            }
         }
 
         a {
@@ -67,6 +76,47 @@
             }
             &:nth-child(4) {
                 min-width: 85px;
+            }
+        }
+    }
+
+    &__link-hover {
+        position: relative;
+        &::after,
+        &::before {
+            display: block;
+            position: absolute;
+            background: transparent;
+            content: "";
+            width: 16px;
+            height: 16px;
+            opacity: 0;
+            border: 2px solid #fff;
+            transition: all 300ms ease;
+        }
+        &::before {
+            top: -5px;
+            left: -10px;
+
+            border-right: none;
+            border-bottom: none;
+            transform: translate(-10px);
+        }
+        &::after {
+            bottom: -5px;
+            right: -10px;
+            transform: translate(10px);
+            border-left: none;
+            border-top: none;
+        }
+        &:hover {
+            &::before {
+                transform: translate(0px);
+                opacity: 1;
+            }
+            &::after {
+                transform: translate(0px);
+                opacity: 1;
             }
         }
     }
@@ -116,7 +166,7 @@
         display: none;
         z-index: 3;
 
-        padding-top: 59px;
+        padding-top: 66px;
         top: 0px;
         left: -50%;
 
@@ -140,16 +190,68 @@
     }
 
     .footer__product {
-        margin-bottom: 0px;
+        display: flex;
+        align-items: stretch;
+        justify-content: stretch;
+        margin-bottom: 12px;
+        background: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%);
+        clip-path: polygon(40px 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%, 0 40px);
+        padding: 1px;
+        border-radius: 5px;
+        position: relative;
+        &-border {
+            display: flex;
+            gap: 16px;
+            padding: 24px;
+            clip-path: polygon(40px 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%, 0 40px);
+            background: #070a0c;
+            border-radius: 5px;
+            // height: 100%;
+            flex: 1 1 auto;
+            align-items: center;
+            div {
+                max-width: 200px;
+            }
+            & .arrow {
+                width: 12px;
+                height: 12px;
+                flex: 0 0 12px;
+            }
+            & .logo {
+                width: 50px;
+                height: 50px;
+                flex: 0 0 50px;
+            }
+        }
+
+        .white-space {
+            position: absolute;
+            bottom: 30px;
+            left: 0px;
+            width: 2px;
+            background: #070a0c;
+            height: 14px;
+            z-index: 10;
+            top: auto;
+        }
     }
 
     &.white {
         background: #faf8f2;
         border: 1px solid #bebcbf;
         & a {
-            color: #1c1818;
+            color: #000;
         }
         .dropdown-container {
+            &__row {
+                background: #faf8f2;
+                & li {
+                    display: block;
+                    filter: url("#rounded-corners");
+                    overflow: hidden;
+                    position: relative;
+                }
+            }
             .arrow {
                 &::after,
                 &::before {
@@ -162,6 +264,25 @@
             border-color: #bebcbf;
         }
 
+        .footer__product {
+            background: #ff7120;
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+            padding: 1px;
+            filter: url("#rounded-corners");
+            border-radius: 5px;
+            &-border {
+                filter: url("#rounded-corners");
+                clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+                background: #faf8f2;
+                border-radius: 5px;
+                // height: 100%;
+            }
+
+            .white-space {
+                display: none;
+            }
+        }
+
         & .header {
             &__burger {
                 &::before,
@@ -169,6 +290,9 @@
                 span {
                     background: #bebcbf;
                 }
+            }
+            &__logo {
+                width: 292px;
             }
             &__links {
                 .dropdown-container {
@@ -204,6 +328,15 @@
             &__menu {
                 top: 92px;
                 background: #faf8f2;
+            }
+            &__link-hover {
+                &::after,
+                &::before {
+                    border-color: #ff7120;
+                }
+            }
+            &__btn {
+                margin: 0px;
             }
         }
     }
@@ -243,6 +376,48 @@
     &::before {
         rotate: 45deg;
         left: 0px;
+    }
+}
+
+.projects__project {
+    overflow: hidden;
+    p {
+        border: 2px solid transparent;
+        cursor: pointer;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        padding: 10px;
+        position: relative;
+        transition: all 0.3s ease;
+        z-index: 2;
+        &::after,
+        &::before {
+            background: #f8f8f8;
+            content: "";
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: -5px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        &::before {
+            bottom: -5px;
+            left: 15px;
+            right: auto;
+            top: auto;
+        }
+
+        &:hover {
+            border-color: #dc5435;
+
+            &::before {
+                transform: translate(-50px);
+            }
+            &::after {
+                transform: translate(50px);
+            }
+        }
     }
 }
 

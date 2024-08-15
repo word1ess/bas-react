@@ -2,6 +2,9 @@
     @return ($px / 14px) + rem;
 }
 .subintro-finger {
+    &.block-dashed-sides .container {
+        padding: rem(30px) rem(24px) 0px;
+    }
     &__row {
         display: flex;
         align-items: flex-end;
@@ -16,6 +19,7 @@
         max-width: 300px;
         font-size: rem(24px);
         color: #1c1818;
+        padding-bottom: rem(60px);
 
         position: relative;
 
@@ -32,7 +36,8 @@
         display: block;
         flex: 1 1 auto;
         aspect-ratio: 1/1;
-        object-fit: contain;
+        object-fit: cover;
+        max-width: 340px;
     }
 }
 @media only screen and (max-width: 992px) {
@@ -53,6 +58,7 @@
         }
         &__item {
             max-width: 33%;
+            padding-bottom: 0px;
         }
     }
 }

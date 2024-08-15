@@ -124,12 +124,13 @@
 
         h3 {
             font-size: rem(18px);
-            margin-bottom: rem(12px);
+            margin-bottom: rem(6px);
         }
 
         p {
             font-size: rem(14px);
             color: rgba(28, 24, 24, 0.7);
+            font-weight: 300;
         }
         img {
             width: 50px;
@@ -152,6 +153,7 @@
         width: 50%;
         height: auto;
         aspect-ratio: 1/1;
+        opacity: 0.3;
     }
     &__footer {
         display: flex;

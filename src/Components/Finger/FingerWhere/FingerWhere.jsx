@@ -8,7 +8,9 @@ function FingerWhere() {
   function importAll(image) {
     return image.keys().map(image);
   }
-  const fingerImgs = importAll(require.context("./img/", false, /\.(png)$/));
+  const fingerImgs = importAll(
+    require.context("./img/items/", false, /\.(svg)$/)
+  );
   const fingerWhereItems = [
     {
       title: "Browser AutomationStudio",

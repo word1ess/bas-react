@@ -189,11 +189,12 @@ function Version(params) {
             <div className="btn-container">
               <Link to="#" className="btn-finger btn-finger__bordered">
                 <div className="btn-finger__border">
-                  <div className="btn-finger__text">купить 20$</div>
+                  <div className="btn-finger__text">
+                    как пользоваться бесплатно
+                  </div>
                 </div>
               </Link>
             </div>
-            <p className="label__text">Бесплатно</p>
           </label>
           <label className="label">
             <Link to="#" className="btn-finger">

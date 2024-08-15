@@ -1,11 +1,10 @@
-<svg width="120" height="89" viewBox="0 0 120 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="0.5" y="0.5" width="119" height="88" rx="4.5" stroke="#BEBCBF" stroke-dasharray="16 16"/>
-<mask id="path-2-inside-1_3612_4718" fill="white">
-<path d="M16 0H5C2.23858 0 0 2.23858 0 5V16H16V0Z"/>
-</mask>
-<path d="M16 -1H5C1.68629 -1 -1 1.68629 -1 5H1C1 2.79086 2.79086 1 5 1H16V-1ZM0 16H16H0ZM16 16V0V16ZM5 -1C1.68629 -1 -1 1.68629 -1 5V16H1V5C1 2.79086 2.79086 1 5 1V-1Z" fill="#FF7120" mask="url(#path-2-inside-1_3612_4718)"/>
-<mask id="path-4-inside-2_3612_4718" fill="white">
-<path d="M104 89H115C117.761 89 120 86.7614 120 84V73H104V89Z"/>
-</mask>
-<path d="M104 90H115C118.314 90 121 87.3137 121 84H119C119 86.2091 117.209 88 115 88H104V90ZM120 73H104H120ZM104 73V89V73ZM115 90C118.314 90 121 87.3137 121 84V73H119V84C119 86.2091 117.209 88 115 88V90Z" fill="#FF7120" mask="url(#path-4-inside-2_3612_4718)"/>
+<svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="8" y1="0.5" x2="24" y2="0.5" stroke="#BEBCBF"/>
+<line x1="40" y1="0.5" x2="56" y2="0.5" stroke="#BEBCBF"/>
+<line x1="8" y1="64.5" x2="24" y2="64.5" stroke="#BEBCBF"/>
+<line x1="40" y1="64.5" x2="56" y2="64.5" stroke="#BEBCBF"/>
+<line x1="0.5" y1="9" x2="0.499999" y2="25" stroke="#BEBCBF"/>
+<line x1="0.5" y1="41" x2="0.499999" y2="57" stroke="#BEBCBF"/>
+<line x1="64.5" y1="9" x2="64.5" y2="25" stroke="#BEBCBF"/>
+<line x1="64.5" y1="41" x2="64.5" y2="57" stroke="#BEBCBF"/>
 </svg>

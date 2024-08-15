@@ -2,6 +2,9 @@
     @return ($px / 14px) + rem;
 }
 .about-finger {
+    .container {
+        padding: rem(40px) rem(24px) rem(30px);
+    }
     &__row {
         display: flex;
         gap: rem(48px);

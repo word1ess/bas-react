@@ -93,12 +93,13 @@ body {
     overflow: hidden;
   }
 }
+
 //оболочка страницы
 @function rem($px) {
-  @return ($px / 16px) + rem;
+  @return ($px / 14px) + rem;
 }
 @function em($px) {
-  @return ($px / 16px) + em;
+  @return ($px / 14px) + em;
 }
 #root {
   position: relative;
@@ -135,13 +136,16 @@ body {
   padding: 0 30px;
   position: relative;
 }
+
 .block-separator.block-dashed-sides {
   & .container {
     padding: 35px 0px;
   }
 }
 
-.white .container {
+.white .block-dashed-sides .container {
+  padding-top: 40px;
+  padding-bottom: 40px;
   max-width: 1060px;
 }
 
@@ -409,7 +413,7 @@ button {
   position: absolute;
 
   .white &.left {
-    left: -10px;
+    left: -10.9px;
   }
 
   .white &.right {
@@ -574,24 +578,47 @@ button {
     }
     &.border-1 {
       span {
-        border-image: url("./img/svgicons/btn-1-orange.svg") 2 stretch stretch;
+        position: relative;
+        border: 1px solid #fff;
+
+        border-image: url("./img/svgicons/btn-1-orange.svg") 1 round;
+        &::before {
+          content: "";
+          border-left: 1.5px solid #ff7120;
+          border-top: 1.5px solid #ff7120;
+          border-radius: 5px 0px 0px 0px;
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          top: -1px;
+          left: -1px;
+        }
+        &::after {
+          content: "";
+          border-right: 1.5px solid #ff7120;
+          border-bottom: 1.5px solid #ff7120;
+          border-radius: 0px 0px 5px 0px;
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          bottom: -1px;
+          right: -1px;
+        }
       }
     }
   }
-  .btn,
+
   .btn-finger {
     cursor: pointer;
     filter: url("#rounded-corners");
     transition: opacity 300ms ease;
     position: relative;
+    font-family: "RobotoMono-Regular";
 
     &__border {
       background-color: #ff7120;
-      -webkit-clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-      clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-      padding: 1px;
-      padding-top: 1.2px;
-      padding-left: 1.2px;
+      clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+      padding: 1.2px;
     }
     &__text {
       z-index: 2;
@@ -599,9 +626,7 @@ button {
       font-size: rem(18px);
       text-transform: uppercase;
       white-space: nowrap;
-      -webkit-clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-      clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-      // border-radius: 14px 3px 16px;
+
       justify-content: center;
       align-items: center;
       padding: rem(18px) rem(19.5px);
@@ -610,15 +635,17 @@ button {
       transition-timing-function: ease;
       display: flex;
       position: relative;
-      color: #1c1818;
+      color: #070a0c;
+      border-radius: 27px 3px 26px;
 
+      clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
       &:hover {
         background-color: #faf8f2;
       }
     }
     &__bordered {
       .btn-finger__text {
-        background: #fff;
+        background: #faf8f2;
       }
     }
   }

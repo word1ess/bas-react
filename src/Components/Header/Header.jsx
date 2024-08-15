@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import windows from "../../img/svgicons/windows.svg";
 
 import HeaderDropdown from "./HeaderDropdown/HeaderDropdown";
-import ScrambleLink from "../Common/ScrambleLink";
 
 import { useMediaQuery } from "react-responsive";
 import { useRef } from "react";
@@ -23,35 +22,41 @@ function Header({ additionalClass, headerLogo, headerBtn, linkImg }) {
       parentLinkText: "Наши продукты",
       body: [
         <li>
-          <Link to="/" className="footer__product btn-with-image">
-            <img src={productsImgs[0]} alt="product" />
-            <div>
-              <p>Browser AutomationStudio</p>
-              <p>Автоматизация браузера</p>
+          <Link to="/" className="footer__product">
+            <div className="footer__product-border">
+              <img src={productsImgs[0]} alt="product" className="logo" />
+              <div>
+                <p>Browser AutomationStudio</p>
+                <p>Автоматизация браузера</p>
+              </div>
+              <img src={linkImg} alt="link" className="arrow" />
             </div>
-            <img src={linkImg} alt="link" />
             <span className="white-space"></span>
           </Link>
         </li>,
         <li>
-          <Link to="/finger" className="footer__product btn-with-image">
-            <img src={productsImgs[1]} alt="product" />
-            <div>
-              <p>FingerprintSwitcher</p>
-              <p>Измените отпечаток браузера</p>
+          <Link to="/finger" className="footer__product">
+            <div className="footer__product-border">
+              <img src={productsImgs[0]} alt="product" className="logo" />
+              <div>
+                <p>FingerprintSwitcher</p>
+                <p>Измените отпечаток браузера</p>
+              </div>
+              <img src={linkImg} alt="link" className="arrow" />
             </div>
-            <img src={linkImg} alt="link" />
             <span className="white-space"></span>
           </Link>
         </li>,
         <li>
-          <Link to="#" className="footer__product  btn-with-image">
-            <img src={productsImgs[2]} alt="product" />
-            <div>
-              <p>FingerprintManager</p>
-              <p>Антидетект браузер</p>
+          <Link to="#" className="footer__product">
+            <div className="footer__product-border">
+              <img src={productsImgs[2]} alt="product" className="logo" />
+              <div>
+                <p>FingerprintManager</p>
+                <p>Антидетект браузер</p>
+              </div>
+              <img src={linkImg} alt="link" className="arrow" />
             </div>
-            <img src={linkImg} alt="link" />
             <span className="white-space"></span>
           </Link>
         </li>,
@@ -72,10 +77,7 @@ function Header({ additionalClass, headerLogo, headerBtn, linkImg }) {
     {
       parentLink: "#",
       parentLinkText: "Войти",
-      body: [
-        <ScrambleLink linkText="Вход" />,
-        <ScrambleLink linkText="Регистрация" />,
-      ],
+      body: [<Link to="#">Вход</Link>, <Link to="#">Регистрация</Link>],
     },
   ];
 
@@ -97,6 +99,7 @@ function Header({ additionalClass, headerLogo, headerBtn, linkImg }) {
             <img src={logo} alt="logo" />
           </picture>
         </Link>
+
         <nav className="header__menu" ref={burgerMenuRef}>
           <div className="header__links">
             <HeaderDropdown
@@ -104,10 +107,15 @@ function Header({ additionalClass, headerLogo, headerBtn, linkImg }) {
               parentLinkText={headerDropdowns[0].parentLinkText}
               body={headerDropdowns[0].body}
             />
-
-            <ScrambleLink linkText="Документация" />
-            <ScrambleLink linkText="Цена" />
-            <ScrambleLink linkText="Контакты" />
+            <Link to="#" className="header__link-hover">
+              Документация
+            </Link>
+            <Link to="#" className="header__link-hover">
+              Цена
+            </Link>
+            <Link to="#" className="header__link-hover">
+              Контакты
+            </Link>
           </div>
           <div className="header__for-user">
             {!isMobile && (
@@ -117,8 +125,8 @@ function Header({ additionalClass, headerLogo, headerBtn, linkImg }) {
                 body={headerDropdowns[1].body}
               />
             )}
-            <ScrambleLink linkText="Вход" />
-            {/* {<ScrambleLink linkText="Регистрация" />} */}
+
+            <Link to="#">Вход</Link>
           </div>
           {isMobile && (
             <HeaderDropdown
@@ -133,6 +141,34 @@ function Header({ additionalClass, headerLogo, headerBtn, linkImg }) {
           <span></span>
         </div>
       </div>
+      <svg
+        // style="visibility: hidden; position: absolute;"
+        width="0"
+        height="0"
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+      >
+        <defs>
+          <filter id="rounded-corners">
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="2"
+              result="blur"
+            ></feGaussianBlur>
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+              result="flt_tag"
+            ></feColorMatrix>
+            <feComposite
+              in="SourceGraphic"
+              in2="flt_tag"
+              operator="atop"
+            ></feComposite>
+          </filter>
+        </defs>
+      </svg>
     </header>
   );
 }
