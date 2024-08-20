@@ -4,7 +4,7 @@ import heartImg from "../../img/svgicons/heart.svg";
 import plusImg from "../../img/svgicons/plus.svg";
 import FooterProduct from "./FooterProduct/FooterProduct";
 import { Link } from "react-router-dom";
-function Footer({ additionalClass, linkImg }) {
+function Footer({ additionalClass, linkImg, linkImageOrange }) {
   const footerProducts = [
     {
       title: "Browser AutomationStudio",
@@ -14,7 +14,7 @@ function Footer({ additionalClass, linkImg }) {
     {
       title: "FingerprintSwitcher",
       text: "Измените отпечаток браузера",
-      linkImg,
+      linkImg: linkImageOrange ? linkImageOrange : linkImg,
     },
     {
       title: "FingerprintManager",

@@ -4,8 +4,8 @@ import Marquee from "react-fast-marquee";
 function FingerIntro() {
   return (
     <div className="intro intro-finger block-dashed-top block-dashed-sides">
-      <Marquee className="">
-        <h1>Fingerprint Switcher</h1>
+      <Marquee className="" speed={150}>
+        <h1>FingerprintSwitcher</h1>
       </Marquee>
       <div className="container">
         <div className="plus top left">

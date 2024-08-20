@@ -53,7 +53,11 @@ function Faq() {
         <header className="block-header border-1">
           <h2>
             Еще остались
-            <span>вопросы?</span>
+            <span>
+              <div className="corner top left"></div>
+              <div className="corner bottom right"></div>
+              вопросы?
+            </span>
           </h2>
         </header>
         <main className="faq__row">

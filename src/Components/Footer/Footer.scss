@@ -122,6 +122,7 @@
         .container.with-shadow {
             border: 1px solid #bebcbf;
             border-top: none;
+            max-width: 1060px;
             &::after {
                 display: none !important;
             }

@@ -16,7 +16,11 @@ function FingerAbout() {
           <aside className="about-finger__aside">
             <header className="block-header border-1">
               <h2>
-                <span>О сервисе</span>
+                <span>
+                  О сервисе
+                  <div className="corner top left"></div>
+                  <div className="corner bottom right"></div>
+                </span>
               </h2>
             </header>
             <Link to="#" className="btn-finger">

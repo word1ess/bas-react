@@ -2,8 +2,19 @@
     &.white {
         padding-bottom: 0px;
     }
+    &.block-dashed-sides .container {
+        padding-bottom: 100px;
+    }
     p.iterator {
         color: #ff7120;
+    }
+
+    .block-header {
+        span .corner {
+            &.top {
+                top: -1px;
+            }
+        }
     }
 
     &__question.white {

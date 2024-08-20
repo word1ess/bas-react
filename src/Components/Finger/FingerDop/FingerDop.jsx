@@ -35,7 +35,12 @@ function FingerDop() {
         </div>
         <header className="block-header border-1">
           <h2>
-            Дополнительные <span> инструменты</span>
+            Дополнительные
+            <span>
+              <div className="corner top left"></div>
+              <div className="corner bottom right"></div>
+              инструменты
+            </span>
           </h2>
         </header>
         <main className="dop-finger__row">

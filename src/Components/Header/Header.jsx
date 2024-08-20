@@ -8,7 +8,13 @@ import HeaderDropdown from "./HeaderDropdown/HeaderDropdown";
 import { useMediaQuery } from "react-responsive";
 import { useRef } from "react";
 
-function Header({ additionalClass, headerLogo, headerBtn, linkImg }) {
+function Header({
+  additionalClass,
+  headerLogo,
+  headerBtn,
+  linkImg,
+  linkImageOrange,
+}) {
   function importAll(image) {
     return image.keys().map(image);
   }
@@ -21,7 +27,7 @@ function Header({ additionalClass, headerLogo, headerBtn, linkImg }) {
       parentLink: "#",
       parentLinkText: "Наши продукты",
       body: [
-        <li>
+        <div className="header__link-btn">
           <Link to="/" className="footer__product">
             <div className="footer__product-border">
               <img src={productsImgs[0]} alt="product" className="logo" />
@@ -33,8 +39,8 @@ function Header({ additionalClass, headerLogo, headerBtn, linkImg }) {
             </div>
             <span className="white-space"></span>
           </Link>
-        </li>,
-        <li>
+        </div>,
+        <div className="header__link-btn">
           <Link to="/finger" className="footer__product">
             <div className="footer__product-border">
               <img src={productsImgs[0]} alt="product" className="logo" />
@@ -42,12 +48,16 @@ function Header({ additionalClass, headerLogo, headerBtn, linkImg }) {
                 <p>FingerprintSwitcher</p>
                 <p>Измените отпечаток браузера</p>
               </div>
-              <img src={linkImg} alt="link" className="arrow" />
+              <img
+                src={linkImageOrange ? linkImageOrange : linkImg}
+                alt="link"
+                className="arrow"
+              />
             </div>
             <span className="white-space"></span>
           </Link>
-        </li>,
-        <li>
+        </div>,
+        <div className="header__link-btn">
           <Link to="#" className="footer__product">
             <div className="footer__product-border">
               <img src={productsImgs[2]} alt="product" className="logo" />
@@ -59,7 +69,7 @@ function Header({ additionalClass, headerLogo, headerBtn, linkImg }) {
             </div>
             <span className="white-space"></span>
           </Link>
-        </li>,
+        </div>,
       ],
     },
     {
@@ -93,9 +103,10 @@ function Header({ additionalClass, headerLogo, headerBtn, linkImg }) {
   return (
     <header className={`header ${additionalClass}`}>
       <div className="header__row">
+        <div className="container"></div>
         <Link to="/" className="header__logo">
           <picture>
-            <source srcset={logoMobile} media="(max-width: 1280px)" />
+            <source srcset={logoMobile} media="(max-width: 1440px)" />
             <img src={logo} alt="logo" />
           </picture>
         </Link>

@@ -20,6 +20,21 @@
             border-right: none;
         }
 
+        p {
+            display: -webkit-box;
+            font-weight: 300;
+            font-size: rem(14px);
+            color: #1c1818;
+            -webkit-line-clamp: 12;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            &.active {
+                -webkit-line-clamp: unset;
+            }
+        }
+
         &.active {
             background: #ff7120;
         }
@@ -95,7 +110,13 @@
                 color: #ff7120;
             }
         }
+        span .corner {
+            &.bottom {
+                bottom: -1px;
+            }
+        }
     }
+
     &__header {
         display: flex;
         align-items: center;
@@ -250,6 +271,11 @@
             p {
                 font-size: rem(16px);
                 max-width: 340px;
+            }
+        }
+        &__desc {
+            p {
+                font-size: 14px !important;
             }
         }
         &__item {

@@ -33,13 +33,13 @@ function HeaderDropdown({ parentLink, parentLinkText, body }) {
 
       <div className="arrow" ref={arrowRef}></div>
 
-      <ul
+      <div
         className="header-down__menu dropdown-menu"
         onMouseLeave={closeDropdown}
         ref={dropdownMenuRef}
       >
         <div className="dropdown-container__row">{body}</div>
-      </ul>
+      </div>
     </div>
   );
 }

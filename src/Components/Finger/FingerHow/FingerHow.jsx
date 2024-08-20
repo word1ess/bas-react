@@ -168,7 +168,12 @@ function FingerHow() {
           </div>
           <header class="block-header flex border-1 center">
             <h2>
-              Как это<span>работает</span>
+              Как это
+              <span>
+                работает
+                <div className="corner top left"></div>
+                <div className="corner bottom right"></div>
+              </span>
             </h2>
           </header>
         </div>
@@ -184,7 +189,11 @@ function FingerHow() {
           <header class="block-header border-1">
             <h2>
               Легкая интеграция
-              <span>в наши продукты</span>
+              <span>
+                в наши продукты
+                <div className="corner top left"></div>
+                <div className="corner bottom right"></div>
+              </span>
             </h2>
           </header>
           <main className="how-finger__row">

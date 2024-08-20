@@ -20,6 +20,11 @@
             top: 40px;
             left: 280px;
         }
+        span .corner {
+            &.top {
+                top: -1px;
+            }
+        }
     }
     tr:nth-child(1) {
         th:first-child {
@@ -93,6 +98,12 @@
             height: 12px;
             width: 12px;
         }
+    }
+    .label__text {
+        font-weight: 400;
+        font-size: rem(18px);
+        color: #1a1717;
+        font-family: "NeueMachina-Regular";
     }
 }
 

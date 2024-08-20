@@ -15,7 +15,7 @@ function FingerPlugins() {
       img: itemImgFirst,
       title: [
         <h3>
-          Плагин <span>Selenium</span> для смены отпечатка браузера
+          Плагин <span>Puppeteer</span> для смены отпечатка браузера
         </h3>,
       ],
       text: [
@@ -29,7 +29,7 @@ function FingerPlugins() {
       img: itemImgSecond,
       title: [
         <h3>
-          Плагин <span>Playwright</span> для смены отпечатка браузера
+          Плагин <span>Selenium</span> для смены отпечатка браузера
         </h3>,
       ],
       text: [
@@ -63,7 +63,12 @@ function FingerPlugins() {
         </div>
         <header className="block-header border-1">
           <h2>
-            Плагины <span> для сторонних фреймворков</span>
+            Плагины
+            <span>
+              <div className="corner top left"></div>
+              <div className="corner bottom right"></div>для сторонних
+              фреймворков
+            </span>
           </h2>
         </header>
         <main className="plugins-finger__row">

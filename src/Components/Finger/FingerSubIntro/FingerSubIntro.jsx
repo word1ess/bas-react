@@ -1,6 +1,6 @@
 import "./FingerSubIntro.scss";
 import plusImg from "../../../img/svgicons/plus.svg";
-import contentImg from "./img/bg.png";
+import contentVideo from "./video/bg.webm";
 
 function FingerSubIntro() {
   return (
@@ -17,7 +17,15 @@ function FingerSubIntro() {
           <div className="subintro-finger__item">
             <p>Измените отпечаток браузера в пару кликов.</p>
           </div>
-          <img src={contentImg} alt="" className="subintro-finger__img" />
+          <video
+            src={contentVideo}
+            className="subintro-finger__video"
+            autoPlay
+            muted
+            loop
+            preload="true"
+          />
+
           <div className="subintro-finger__item">
             <p>Защитите вашу конфиденциальность</p>
           </div>

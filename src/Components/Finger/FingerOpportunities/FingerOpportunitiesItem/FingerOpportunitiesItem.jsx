@@ -1,18 +1,25 @@
-import { createRef } from "react";
+import { useEffect } from "react";
+import { useRef } from "react";
 
-function FingerOpportunitiesItem({ img, title, text, link }) {
-  const item = createRef(null);
-  const itemDesc = createRef(null);
+function FingerOpportunitiesItem({ img, title, text }) {
+  const item = useRef(null);
+  const itemDesc = useRef(null);
+  const itemText = useRef(null);
+  const btnMore = useRef(null);
 
-  const hiddenItem = createRef(null);
-  const btnMore = createRef(null);
   function handleClickItem(e) {
     e.target !== itemDesc.current && item.current.classList.toggle("active");
   }
   function handleClickBtnHandle(e) {
     btnMore.current.classList.add("active");
-    hiddenItem.current.classList.remove("hidden");
+    itemText.current.classList.add("active");
   }
+  useEffect(() => {
+    if (itemText.current.clientHeight < 189) {
+      btnMore.current.style.display = "none";
+    }
+  });
+
   return (
     <article
       className="opportunities-finger__item"
@@ -34,10 +41,7 @@ function FingerOpportunitiesItem({ img, title, text, link }) {
         ref={itemDesc}
         onClick={(e) => e.stopPropagation()}
       >
-        <p>{text}</p>
-        <p className="hidden" ref={hiddenItem}>
-          {text}
-        </p>
+        <p ref={itemText}>{text}</p>
         <button
           onClick={handleClickBtnHandle}
           ref={btnMore}

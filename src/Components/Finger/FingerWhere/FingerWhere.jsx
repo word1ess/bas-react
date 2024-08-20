@@ -3,7 +3,6 @@ import plusImg from "../../../img/svgicons/plus.svg";
 import { Link } from "react-router-dom";
 import FingerWhereItem from "./FingerWhereItem/FingerWhereItem";
 
-import bgImage from "./img/bg.svg";
 function FingerWhere() {
   function importAll(image) {
     return image.keys().map(image);
@@ -257,7 +256,11 @@ function FingerWhere() {
 
         <header className="block-header border-1 center flex">
           <h2>
-            <span>Где</span>
+            <span>
+              Где
+              <div className="corner top left"></div>
+              <div className="corner bottom right"></div>
+            </span>
             использовать?
           </h2>
         </header>
@@ -273,10 +276,17 @@ function FingerWhere() {
             );
           })}
           <div className="where-finger__bg">
-            <img src={bgImage} alt="" />
-            <div className="shadow"></div>
+            {/* <img src={bgImageSecond} alt="" />
+            <img src={bgImage} alt="" /> */}
+            <div className="where-finger__print"></div>
+            {/* <div className="shadow"></div> */}
           </div>
-          <div className="shadow"></div>
+          <div className="shadow">
+            <div className="shadow__item"></div>
+            <div className="shadow__item"></div>
+            <div className="shadow__item"></div>
+            <div className="shadow__item"></div>
+          </div>
         </main>
         <footer className="where-finger__footer">
           <div className="line left">

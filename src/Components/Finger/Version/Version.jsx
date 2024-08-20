@@ -131,7 +131,11 @@ function Version(params) {
         </div>
         <header className="block-header border-1 flex">
           <h2>
-            <span>Цены</span>
+            <span>
+              Цены
+              <div className="corner top left"></div>
+              <div className="corner bottom right"></div>
+            </span>
           </h2>
           <p>
             Вы можете получить доступ к нашей базе данных и изменить отпечаток

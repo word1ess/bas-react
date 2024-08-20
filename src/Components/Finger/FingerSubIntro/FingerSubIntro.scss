@@ -2,6 +2,8 @@
     @return ($px / 14px) + rem;
 }
 .subintro-finger {
+    position: relative;
+    z-index: 2;
     &.block-dashed-sides .container {
         padding: rem(30px) rem(24px) 0px;
     }
@@ -9,7 +11,8 @@
         display: flex;
         align-items: flex-end;
         gap: 20px;
-
+        justify-content: space-between;
+        min-height: 260px;
         p {
             font-size: rem(24px);
             font-family: "NeueMachina-Regular";
@@ -32,29 +35,28 @@
             margin-bottom: rem(16px);
         }
     }
-    &__img {
+    &__video {
         display: block;
         flex: 1 1 auto;
-        aspect-ratio: 1/1;
+        aspect-ratio: 6/6.3;
         object-fit: cover;
-        max-width: 340px;
+        max-width: 600px;
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translate(-50%, 0%);
     }
 }
 @media only screen and (max-width: 992px) {
     .subintro-finger {
-        aspect-ratio: 9.44/4.16;
+        // aspect-ratio: 9.44/4.16;
         &__row {
             align-items: flex-start;
             justify-content: space-between;
-
-            & img {
-                position: absolute;
-                bottom: 0px;
-                left: 50%;
-                transform: translate(-50%, 0%);
-                aspect-ratio: 3.74/3.36;
-                width: 33.3333%;
-            }
+            margin-top: 0px;
+        }
+        &__video {
+            max-width: 500px;
         }
         &__item {
             max-width: 33%;
@@ -66,20 +68,12 @@
     .subintro-finger {
         aspect-ratio: 7.68/3.13;
         &__row {
-            align-items: flex-start;
-            justify-content: space-between;
-
             p {
                 font-size: rem(20px);
             }
-            & img {
-                position: absolute;
-                bottom: 0px;
-                left: 50%;
-                transform: translate(-50%, 0%);
-                aspect-ratio: 3.44/3.13;
-                width: 33.3333%;
-            }
+        }
+        &.block-dashed-sides .container {
+            padding: 0px rem(24px) 0px;
         }
         &__item {
             max-width: 30%;
@@ -88,24 +82,19 @@
 }
 @media only screen and (max-width: 450px) {
     .subintro-finger {
-        aspect-ratio: 4.5/2.88;
+        aspect-ratio: auto;
         &__row {
-            align-items: flex-start;
-            justify-content: space-between;
-
+            aspect-ratio: 4.28/4.49;
             p {
                 font-size: rem(16px);
             }
-            & img {
-                position: absolute;
-                bottom: 0px;
-                left: 50%;
-                transform: translate(-50%, 0%);
-                aspect-ratio: 2.4/1.88;
-                width: 100%;
-                max-width: 240px;
-            }
         }
+
+        &__video {
+            max-width: calc(100% - 48px);
+            aspect-ratio: 4.28/4.49;
+        }
+
         &__item {
             max-width: calc(50% - 10px);
             position: absolute;
@@ -121,6 +110,16 @@
             &::before {
                 display: none;
             }
+        }
+    }
+}
+@media only screen and (max-height: 770px) and (min-width: 992px) {
+    .subintro-finger {
+        &__row {
+            margin-top: 30px;
+        }
+        &__video {
+            aspect-ratio: 6/6.8;
         }
     }
 }

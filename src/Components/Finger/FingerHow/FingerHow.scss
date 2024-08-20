@@ -28,7 +28,7 @@
             font-weight: 800;
         }
         p {
-            font-family: "NeueMachina-Regular";
+            text-align: justify;
         }
         img {
             margin-bottom: rem(32px);
@@ -56,6 +56,13 @@
             width: 100%;
             object-fit: cover;
             clip-path: polygon(6% 0, 94% 0, 100% 10%, 100% 90%, 94% 100%, 6% 100%, 0 90%, 0 10%);
+        }
+    }
+    .block-header {
+        span .corner {
+            &.top {
+                top: -1ю5px;
+            }
         }
     }
 }

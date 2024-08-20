@@ -5,10 +5,10 @@
 .intro-finger {
     justify-content: flex-start;
     position: relative;
-    margin-top: 60px;
+    margin-top: 70px;
     aspect-ratio: auto;
-
-    padding: rem(44px) 0px;
+    z-index: 1;
+    padding: rem(20px) 0px rem(25px);
 
     .rfm-marquee-container {
         position: relative;
@@ -17,9 +17,9 @@
     }
 
     h1 {
-        margin-right: 20px;
+        margin-right: rem(120px);
         font-weight: 400;
-        font-size: rem(280px);
+        font-size: rem(160px);
         text-align: center;
         color: #1c1818;
     }
@@ -35,15 +35,21 @@
         border-top: 0px;
 
         .plus {
-            top: 49px;
+            top: 50px;
         }
+    }
+}
+@media only screen and (max-height: 770px) and (min-width: 992px) {
+    .intro-finger {
+        padding: rem(40px) 0px rem(45px);
+        height: calc(100vh - 150px - 310px);
     }
 }
 
 @media only screen and (max-width: 992px) {
     .intro-finger {
         h1 {
-            font-size: 220px;
+            font-size: 189px;
         }
     }
 }
@@ -57,6 +63,7 @@
 @media only screen and (max-width: 450px) {
     .intro-finger {
         min-height: auto;
+
         h1 {
             font-size: 120px;
         }

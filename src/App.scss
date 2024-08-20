@@ -137,9 +137,9 @@ body {
   position: relative;
 }
 
-.block-separator.block-dashed-sides {
+.white .block-separator.block-dashed-sides {
   & .container {
-    padding: 35px 0px;
+    padding: 34px 0px;
   }
 }
 
@@ -353,11 +353,7 @@ button {
   gap: 16px;
   align-items: center;
 }
-.white {
-  a {
-    color: #1c1818;
-  }
-}
+
 .btn-gradient {
   border: none;
   background: url("./img/svgicons/web-for-btn.svg"), linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%);
@@ -473,8 +469,8 @@ button {
   }
 
   .white &-sides .container {
-    border-left: 1px solid #bebcbf;
-    border-right: 1px solid #bebcbf;
+    border-left: 1px solid hsla(280, 2%, 74%, 0.5);
+    border-right: 1px solid hsla(280, 2%, 74%, 0.5);
     border-image: none;
   }
   &-content {
@@ -557,6 +553,27 @@ button {
     }
   }
 
+  .corner {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+
+    &.top {
+      right: -0.5px;
+      top: -0.5px;
+      border-radius: 0px 5px 0px 0px;
+      border-right: 1px solid #bebcbf;
+      border-top: 1px solid #bebcbf;
+    }
+    &.bottom {
+      left: -0.5px;
+      bottom: -0.5px;
+      border-radius: 0px 0px 0px 5px;
+      border-left: 1px solid #bebcbf;
+      border-bottom: 1px solid #bebcbf;
+    }
+  }
+
   &.mt {
     margin-top: rem(200px);
   }
@@ -580,8 +597,8 @@ button {
       span {
         position: relative;
         border: 1px solid #fff;
-
         border-image: url("./img/svgicons/btn-1-orange.svg") 1 round;
+
         &::before {
           content: "";
           border-left: 1.5px solid #ff7120;
@@ -619,6 +636,8 @@ button {
       background-color: #ff7120;
       clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
       padding: 1.2px;
+      padding-right: 1.5px;
+      padding-left: 1.5px;
     }
     &__text {
       z-index: 2;
@@ -678,6 +697,10 @@ button {
         margin-top: 2px;
       }
     }
+  }
+
+  a {
+    color: #1c1818;
   }
 }
 .block-with-substrate {
@@ -794,21 +817,6 @@ div.swiper-pagination {
 @media only screen and (max-width: 1440px) {
 }
 
-// @media only screen and (max-width: 1280px) {
-//   h2 {
-//     font-size: 32px;
-//     margin-bottom: 32px;
-//   }
-//   h3 {
-//     font-size: 18px;
-//     margin-bottom: 24px;
-//   }
-
-//   p {
-//     font-size: 16px;
-//   }
-// }
-
 @media only screen and (max-width: 992px) {
   html,
   body {
@@ -865,4 +873,14 @@ div.swiper-pagination {
 }
 
 @media only screen and (max-width: 450px) {
+  .white .btn-finger {
+    padding-top: 1.5px;
+  }
+}
+@media only screen and (max-height: 770px) and (min-width: 992px) {
+  .white {
+    &.content {
+      padding-top: 70px;
+    }
+  }
 }
