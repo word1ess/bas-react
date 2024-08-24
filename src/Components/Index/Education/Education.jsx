@@ -19,14 +19,6 @@ function Education() {
   const slideImages = importAll(
     require.context("./images/for-slider/", false, /\.(png|jpe?g|svg)$/)
   );
-  const copyTextToClipboard = (text) => {
-    try {
-      navigator.clipboard.writeText(text);
-      console.log("Текст успешно скопирован в буфер обмена!");
-    } catch (err) {
-      console.error("Ошибка:", err);
-    }
-  };
   const educationSlides = [
     {
       title: "Статьи",

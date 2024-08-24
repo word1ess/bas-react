@@ -4,7 +4,12 @@ import heartImg from "../../img/svgicons/heart.svg";
 import plusImg from "../../img/svgicons/plus.svg";
 import FooterProduct from "./FooterProduct/FooterProduct";
 import { Link } from "react-router-dom";
-function Footer({ additionalClass, linkImg, linkImageOrange }) {
+function Footer({
+  additionalClass,
+  linkImg,
+  linkImageOrange,
+  linkImgProductFooter,
+}) {
   const footerProducts = [
     {
       title: "Browser AutomationStudio",
@@ -71,23 +76,23 @@ function Footer({ additionalClass, linkImg, linkImageOrange }) {
             <h2>Контакты</h2>
             <Link to="#" className="btn-with-image">
               Telegram
-              <img src={linkImg} alt="link" />
+              <img src={linkImgProductFooter} alt="link" />
             </Link>
             <Link to="#" className="btn-with-image">
               YouTube
-              <img src={linkImg} alt="link" />
+              <img src={linkImgProductFooter} alt="link" />
             </Link>
             <Link to="#" className="btn-with-image">
               Twitter
-              <img src={linkImg} alt="link" />
+              <img src={linkImgProductFooter} alt="link" />
             </Link>
             <Link to="#" className="btn-with-image">
               Facebook
-              <img src={linkImg} alt="link" />
+              <img src={linkImgProductFooter} alt="link" />
             </Link>
             <Link to="#" className="btn-with-image">
               EMail
-              <img src={linkImg} alt="link" />
+              <img src={linkImgProductFooter} alt="link" />
             </Link>
           </nav>
           <div className="footer__copy">

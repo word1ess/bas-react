@@ -5,8 +5,8 @@ import "./Version.scss";
 import linkImg from "../../../img/svgicons/link-dark.svg";
 import minusImg from "../../../img/svgicons/munis-black.svg";
 import arrowImg from "../../../img/svgicons/arrow-down-black.svg";
-
-import { Link, NavLink } from "react-router-dom";
+import { Tooltip } from "react-tooltip";
+import { Link } from "react-router-dom";
 
 function Version(params) {
   const tableItems = [
@@ -117,9 +117,25 @@ function Version(params) {
     {
       property: [<p>Лимит запросов(за 3 минуты)</p>],
       free: [<p>1</p>],
-      premium: [<p>100 / 1000</p>],
+      premium: [
+        <p>100 / 1000</p>,
+        <div
+          className="table-tip"
+          data-tooltip-id="table-tip-size"
+          data-tooltip-delay-hide={300}
+        >
+          ?
+        </div>,
+
+        <Tooltip
+          id="table-tip-size"
+          content="По умолчанию лимит запросов равен 100, но вы можете настроить аутентификацию по ip, что увеличит лимит до 1000"
+          openOnHover
+        />,
+      ],
     },
   ];
+
   return (
     <article className="version white block-dashed-top block-dashed-sides">
       <div className="container">
@@ -135,6 +151,10 @@ function Version(params) {
               Цены
               <div className="corner top left"></div>
               <div className="corner bottom right"></div>
+              <div className="line-border top"></div>
+              <div className="line-border right"></div>
+              <div className="line-border left"></div>
+              <div className="line-border bottom"></div>
             </span>
           </h2>
           <p>

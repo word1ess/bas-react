@@ -217,64 +217,44 @@
     }
 
     &__item {
-        border: 1.5px solid #272c30;
-        border-radius: 5px;
-        padding: em(40px) em(24px);
-        position: relative;
         grid-column: span 2;
-        background: conic-gradient(from var(--border-angle), #0c1014, #0c1014 100%);
-        @keyframes bg-spin {
-            to {
-                --border-angle: 1turn;
-            }
-        }
-
-        &:hover {
-            border: solid 1.5px transparent;
-            animation-play-state: running;
-            background: var(--main-bg) padding-box,
-                // border-box extends this background to the border space
-                var(--gradient-border) border-box,
-                // Duplicate main background to fill in behind the gradient border. You can remove this if you want the border to extend "outside" the box background.
-                #272c30 border-box;
-
-            background-position: center center;
-
-            animation: bg-spin 3s linear infinite;
-            animation-play-state: paused;
-
-            transition: all 300ms ease;
-
-            cursor: pointer;
-
-            --border-angle: 0turn; // For animation.
-            --main-bg: conic-gradient(from var(--border-angle), #0c1014, #0c1014 100%);
-
-            --gradient-border: conic-gradient(
-                from var(--border-angle),
-                transparent,
-                #3053f9 25%,
-                #3ffbc7 59%,
-                #35e9e4 75%,
-                transparent
-            );
-        }
-
         &.big {
             grid-column: span 3;
         }
+        &-border {
+            clip-path: polygon(28px 0, 100% 0, 100% 100%, 0 100%, 0 28px);
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 1.5px;
+            height: 100%;
+            transition: all 300ms ease;
+            position: relative;
+            overflow: hidden;
 
-        &::before {
-            content: "";
-            position: absolute;
-            left: -8px;
-            top: -16px;
-            background: #090c0f;
-            border-right: 1.5px solid #272c30;
-            width: 27px;
-            height: 51.5px;
-            transform: rotate(41deg);
+            &::after {
+                content: "";
+                clip-path: polygon(28px 0, 100% 0, 100% 100%, 0 100%, 0 28px);
+                border-radius: 5px;
+                background: linear-gradient(0deg, #272c30 0%, #272c30 100%);
+                width: 200%;
+                height: 200%;
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                transform-origin: 50% 50%;
+                border-radius: 50%;
+            }
         }
+        &-text {
+            position: relative;
+            z-index: 2;
+            clip-path: polygon(28px 0, 100% 0, 100% 100%, 0 100%, 0 28px);
+            background: #0c1014;
+            padding: em(40px) em(24px);
+            border-radius: 5px 5px 5px 5px;
+            height: 100%;
+        }
+
         & img {
             display: block;
             width: 100%;
@@ -283,6 +263,23 @@
             aspect-ratio: 1/1;
             object-fit: contain;
             margin: 0px auto 16px;
+        }
+
+        &:hover {
+            .opportunities__item-border {
+                &::after {
+                    animation: speen 2s ease-in-out infinite;
+                    background: linear-gradient(90deg, #3053f9 0%, #3ffbc7 59%, #35e9e4 100%);
+                }
+            }
+        }
+    }
+    @keyframes speen {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
         }
     }
 

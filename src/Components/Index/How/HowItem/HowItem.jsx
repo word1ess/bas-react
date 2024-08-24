@@ -9,17 +9,19 @@ function HowItem({ index, title, text, video }) {
       <div className="how__index">0{index}</div>
       <h3>{title}</h3>
       {text}
-      <div className="btn-container">
-        <a
-          onClick={() => setModalActive(true)}
-          className="btn btn-grey btn-with-border btn-with-image"
-        >
-          Смотреть видео
-          <img src={playImg} alt="" />
+
+      <a
+        onClick={() => setModalActive(true)}
+        className="btn-index btn-index__bordered btn-index__grey "
+      >
+        <div className="btn-index__border">
+          <div className="btn-index__text">
+            Смотреть видео
+            <img src={playImg} alt="" />
+          </div>
           <span className="white-space"></span>
-          <span className="border"></span>
-        </a>
-      </div>
+        </div>
+      </a>
       <Modal active={modalActive} setActive={setModalActive}>
         <video src={video} controls></video>
       </Modal>

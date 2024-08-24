@@ -39,6 +39,10 @@ function FingerDop() {
             <span>
               <div className="corner top left"></div>
               <div className="corner bottom right"></div>
+              <div className="line-border top"></div>
+              <div className="line-border right"></div>
+              <div className="line-border left"></div>
+              <div className="line-border bottom"></div>
               инструменты
             </span>
           </h2>

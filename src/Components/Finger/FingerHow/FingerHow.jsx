@@ -173,6 +173,10 @@ function FingerHow() {
                 работает
                 <div className="corner top left"></div>
                 <div className="corner bottom right"></div>
+                <div className="line-border top"></div>
+                <div className="line-border right"></div>
+                <div className="line-border left"></div>
+                <div className="line-border bottom"></div>
               </span>
             </h2>
           </header>
@@ -193,6 +197,10 @@ function FingerHow() {
                 в наши продукты
                 <div className="corner top left"></div>
                 <div className="corner bottom right"></div>
+                <div className="line-border top"></div>
+                <div className="line-border right"></div>
+                <div className="line-border left"></div>
+                <div className="line-border bottom"></div>
               </span>
             </h2>
           </header>

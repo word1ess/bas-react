@@ -110,9 +110,11 @@
                 color: #ff7120;
             }
         }
-        span .corner {
+
+        .line-border {
+            &.top,
             &.bottom {
-                bottom: -1px;
+                border-image-repeat: round;
             }
         }
     }

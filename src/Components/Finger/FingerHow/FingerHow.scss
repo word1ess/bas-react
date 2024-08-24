@@ -26,6 +26,7 @@
         flex: 0 0 297px;
         h3 {
             font-weight: 800;
+            font-family: "NeueMachina-Ultrabold";
         }
         p {
             text-align: justify;
@@ -59,9 +60,27 @@
         }
     }
     .block-header {
-        span .corner {
-            &.top {
-                top: -1ю5px;
+        .line-border {
+            &.left {
+                opacity: 1;
+            }
+            &.right {
+                opacity: 0.6;
+            }
+        }
+    }
+    & + & {
+        .block-header {
+            h2 {
+                font-size: rem(32px);
+            }
+            .line-border {
+                &.left {
+                    opacity: 0.6;
+                }
+                &.right {
+                    opacity: 1;
+                }
             }
         }
     }

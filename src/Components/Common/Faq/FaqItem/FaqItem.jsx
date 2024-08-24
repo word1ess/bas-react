@@ -11,17 +11,20 @@ function FaqItem({ index, question, asnwer }) {
   return (
     <>
       <div
-        className="faq__question white btn btn-grey btn-with-border"
+        className="faq__question"
         ref={questionRef}
         onClick={questionClickHandle}
       >
-        <p className="iterator">{`0${index}`}</p>
-        {question}
-
-        <span className="border"></span>
-        <div className="faq__toggle"></div>
+        <div className="faq__question-border">
+          <div className="faq__question-bg">
+            <p className="text-gradient">{`0${index}`}</p>
+            {question}
+            <span className="white-space"></span>
+            <div className="faq__toggle"></div>
+          </div>
+        </div>
       </div>
-      <div className="faq__answer white" ref={answerRef}>
+      <div className="faq__answer" ref={answerRef}>
         {asnwer}
       </div>
     </>

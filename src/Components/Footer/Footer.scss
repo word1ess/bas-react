@@ -124,14 +124,18 @@
             border-top: none;
             max-width: 1060px;
             &::after {
-                display: none !important;
+                display: none;
             }
         }
         .footer__item {
             a {
-                color: #1c1818 !important;
-                width: 100% !important;
-                max-width: 100% !important;
+                color: #1c1818;
+                width: 100%;
+                max-width: 100%;
+
+                &:hover {
+                    color: #ff7120;
+                }
             }
         }
         .btn {
@@ -162,6 +166,9 @@
                     border-image: none !important;
                 }
             }
+        }
+        .made {
+            color: #1c1818;
         }
     }
 }

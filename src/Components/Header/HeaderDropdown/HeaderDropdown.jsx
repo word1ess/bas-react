@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 
-function HeaderDropdown({ parentLink, parentLinkText, body }) {
+function HeaderDropdown({ parentLink, parentLinkText, body, arrowImg }) {
   const arrowRef = useRef(null);
   const hoverDropdownRef = useRef(null);
   const dropdownContainerRef = useRef(null);
@@ -31,7 +31,9 @@ function HeaderDropdown({ parentLink, parentLinkText, body }) {
         {parentLinkText}
       </Link>
 
-      <div className="arrow" ref={arrowRef}></div>
+      <div className="arrow" ref={arrowRef}>
+        <img src={arrowImg} alt="" />
+      </div>
 
       <div
         className="header-down__menu dropdown-menu"

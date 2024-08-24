@@ -28,14 +28,6 @@
         color: #1c1818;
         line-height: 1.2;
     }
-
-    .block-header {
-        span .corner {
-            &.bottom {
-                bottom: -1px;
-            }
-        }
-    }
 }
 
 @media only screen and (max-width: 992px) {

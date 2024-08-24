@@ -20,11 +20,6 @@
             top: 40px;
             left: 280px;
         }
-        span .corner {
-            &.top {
-                top: -1px;
-            }
-        }
     }
     tr:nth-child(1) {
         th:first-child {
@@ -49,8 +44,28 @@
             border-radius: 0px 0px 0px 5px;
         }
         td:nth-child(3) {
+            position: relative;
+
             border-radius: 0px 0px 5px 0px;
-            // clip-path: polygon(20% 0%, 90% 0%, 100% 0, 100% 40%, 80% 100%, 20% 100%, 0 100%, 0 0);
+            .table-tip {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                right: 0px;
+                top: 0px;
+                position: absolute;
+                border: 1px solid #ff7120;
+                width: 24px;
+                height: 24px;
+                font-weight: 300;
+                font-size: 14px;
+                color: #1c1818;
+                cursor: pointer;
+            }
+            .react-tooltip {
+                font-size: 14px;
+                font-family: "RobotoMono-Regular";
+            }
         }
     }
     td,

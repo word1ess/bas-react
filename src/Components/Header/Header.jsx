@@ -1,12 +1,9 @@
 import "./Header.scss";
 import { Link } from "react-router-dom";
-
-import windows from "../../img/svgicons/windows.svg";
-
-import HeaderDropdown from "./HeaderDropdown/HeaderDropdown";
-
 import { useMediaQuery } from "react-responsive";
 import { useRef } from "react";
+
+import HeaderDropdown from "./HeaderDropdown/HeaderDropdown";
 
 function Header({
   additionalClass,
@@ -14,6 +11,7 @@ function Header({
   headerBtn,
   linkImg,
   linkImageOrange,
+  arrowImg,
 }) {
   function importAll(image) {
     return image.keys().map(image);
@@ -87,7 +85,14 @@ function Header({
     {
       parentLink: "#",
       parentLinkText: "Войти",
-      body: [<Link to="#">Вход</Link>, <Link to="#">Регистрация</Link>],
+      body: [
+        <li>
+          <Link to="#">Вход</Link>
+        </li>,
+        <li>
+          <Link to="#">Регистрация</Link>
+        </li>,
+      ],
     },
   ];
 
@@ -117,6 +122,7 @@ function Header({
               parentLink={headerDropdowns[0].parentLink}
               parentLinkText={headerDropdowns[0].parentLinkText}
               body={headerDropdowns[0].body}
+              arrowImg={arrowImg}
             />
             <Link to="#" className="header__link-hover">
               Документация
@@ -134,16 +140,23 @@ function Header({
                 parentLink={headerDropdowns[1].parentLink}
                 parentLinkText={headerDropdowns[1].parentLinkText}
                 body={headerDropdowns[1].body}
+                arrowImg={arrowImg}
               />
             )}
 
-            <Link to="#">Вход</Link>
+            <HeaderDropdown
+              parentLink={headerDropdowns[2].parentLink}
+              parentLinkText={headerDropdowns[2].parentLinkText}
+              body={headerDropdowns[2].body}
+              arrowImg={arrowImg}
+            />
           </div>
           {isMobile && (
             <HeaderDropdown
               parentLink={headerDropdowns[1].parentLink}
               parentLinkText={headerDropdowns[1].parentLinkText}
               body={headerDropdowns[1].body}
+              arrowImg={arrowImg}
             />
           )}
         </nav>
