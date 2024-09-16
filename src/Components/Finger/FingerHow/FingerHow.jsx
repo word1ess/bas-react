@@ -1,14 +1,15 @@
 import "./FingerHow.scss";
 import plusImg from "../../../img/svgicons/plus.svg";
 
-import firstImg from "./img/1.svg";
-import secondImg from "./img/2.svg";
+import firstImg from "./img/1.webp";
+import secondImg from "./img/2.webp";
 import videoImg from "./video/interface.webm";
 import FingerHowItem from "./FingerHowItem/FingerHowItem";
 
 function FingerHow() {
   const fingerHowItems = [
     {
+      forScrollClass: "bas",
       img: firstImg,
       title: "Browser AutomationStudio",
       body: [
@@ -29,15 +30,20 @@ function FingerHow() {
       ],
       video: videoImg,
       btns: [
-        { link: "#", text: "Скачать BAS", classes: ["btn-finger"] },
         {
-          link: "#",
+          link: "https://browserautomation.io/download/BrowserAutomationStudioInstallAllInOne.exe",
+          text: "Скачать BAS",
+          classes: ["btn-finger"],
+        },
+        {
+          link: "https://browserautomation.io/ru/",
           text: "Подробнее",
           classes: ["btn-finger", "btn-finger__bordered"],
         },
       ],
     },
     {
+      forScrollClass: "fm",
       img: secondImg,
       title: "FingerprintManager",
       body: [
@@ -63,9 +69,13 @@ function FingerHow() {
       ],
       video: videoImg,
       btns: [
-        { link: "#", text: "Скачать", classes: ["btn-finger"] },
         {
-          link: "#",
+          link: "https://data.bablosoft.com/fingerprint-manager/files/distr/FingerprintManager3.zip",
+          text: "Скачать",
+          classes: ["btn-finger"],
+        },
+        {
+          link: "https://browserautomation.io/ru/fingerprint-manager",
           text: "Подробнее",
           classes: ["btn-finger", "btn-finger__bordered"],
         },
@@ -208,6 +218,7 @@ function FingerHow() {
             {fingerHowItems.map((item) => {
               return (
                 <FingerHowItem
+                  forScrollClass={item.forScrollClass}
                   img={item.img}
                   title={item.title}
                   body={item.body}

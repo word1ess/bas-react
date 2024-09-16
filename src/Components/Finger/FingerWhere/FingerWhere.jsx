@@ -12,6 +12,7 @@ function FingerWhere() {
   );
   const fingerWhereItems = [
     {
+      scrollToBlock: "bas",
       title: "Browser AutomationStudio",
       text: "Автоматизация браузера",
       line: [
@@ -47,6 +48,7 @@ function FingerWhere() {
       ],
     },
     {
+      scrollToBlock: "fm",
       title: "FingerprintManager",
       text: "Антидетект Браузер",
       line: [
@@ -79,6 +81,7 @@ function FingerWhere() {
       ],
     },
     {
+      scrollToBlock: "puppeteer",
       title: "Puppeteer",
       text: "Плагин для смены Fingerprint Puppeteer",
       line: [
@@ -111,6 +114,7 @@ function FingerWhere() {
       ],
     },
     {
+      scrollToBlock: "customServers",
       title: "CustomServers",
       text: "Сбор базы отпечатков с реальных устройств",
       line: [
@@ -145,6 +149,7 @@ function FingerWhere() {
       ],
     },
     {
+      scrollToBlock: "selenium",
       title: "Selenium",
       text: "Плагин для подмены Fingerprint Selenium",
       line: [
@@ -179,6 +184,7 @@ function FingerWhere() {
       ],
     },
     {
+      scrollToBlock: "fingerprintDetector",
       title: "FingerprintDetector",
       text: "Инструмент для анализа сайтов",
       line: [
@@ -211,6 +217,7 @@ function FingerWhere() {
       ],
     },
     {
+      scrollToBlock: "playwright",
       title: "Playwright",
       text: "Плагин для изменения Fingerprint Playwright",
       line: [
@@ -244,118 +251,131 @@ function FingerWhere() {
     },
   ];
 
+  const scrollToBlockHandle = () => {
+    const scrollBlockHtml = document.querySelector(`.version`);
+    if (window.screen.width > 992) {
+      let position = scrollBlockHtml?.getBoundingClientRect();
+      window.scrollTo({
+        left: position.left,
+        top: position.top + window.scrollY - 120,
+        behavior: "smooth",
+      });
+    } else {
+      scrollBlockHtml.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="where-finger block-dashed-top block-dashed-sides">
-      <div className="container">
+      <div className="container with-shadow">
         <div className="plus top left">
           <img src={plusImg} alt="plus" />
         </div>
         <div className="plus top right">
           <img src={plusImg} alt="plus" />
         </div>
-
-        <header className="block-header border-1 center flex">
-          <h2>
-            <span>
-              Где
-              <div className="corner top left"></div>
-              <div className="corner bottom right"></div>
-              <div className="line-border top"></div>
-              <div className="line-border right"></div>
-              <div className="line-border left"></div>
-              <div className="line-border bottom"></div>
-            </span>
-            использовать?
-          </h2>
-        </header>
-        <main className="where-finger__row">
-          {fingerWhereItems.map((item, i) => {
-            return (
-              <FingerWhereItem
-                img={fingerImgs[i]}
-                title={item.title}
-                text={item.text}
-                line={item.line}
-              />
-            );
-          })}
-          <div className="where-finger__bg">
-            {/* <img src={bgImageSecond} alt="" />
-            <img src={bgImage} alt="" /> */}
-            <div className="where-finger__print"></div>
-            {/* <div className="shadow"></div> */}
-          </div>
-          <div className="shadow">
-            <div className="shadow__item"></div>
-            <div className="shadow__item"></div>
-            <div className="shadow__item"></div>
-            <div className="shadow__item"></div>
-          </div>
-        </main>
-        <footer className="where-finger__footer">
-          <div className="line left">
-            <svg
-              width="77"
-              height="83"
-              viewBox="0 0 77 83"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M66.4633 1H29.4329C19.881 1 11.6624 7.75434 9.81181 17.1252L1.71504 58.1252C-0.72632 70.4876 8.73493 82 21.3361 82H76.4629"
-                stroke="url(#paint0_linear_3133_4685)"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_3133_4685"
-                  x1="66.4629"
-                  y1="1"
-                  x2="-78.027"
-                  y2="35.6755"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#F4E547" />
-                  <stop offset="0.3" stop-color="#F4C842" />
-                  <stop offset="1" stop-color="#EE8D48" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <Link to="#" className="btn-finger">
-            <div class="btn-finger__border">
-              <div class="btn-finger__text">получить ключ</div>
+        <div className="block-dashed-content">
+          <header className="block-header border-1 center flex">
+            <h2>
+              <span>
+                Где
+                <div className="corner top left"></div>
+                <div className="corner bottom right"></div>
+                <div className="line-border top"></div>
+                <div className="line-border right"></div>
+                <div className="line-border left"></div>
+                <div className="line-border bottom"></div>
+              </span>
+              использовать?
+            </h2>
+          </header>
+          <main className="where-finger__row">
+            {fingerWhereItems.map((item, i) => {
+              return (
+                <FingerWhereItem
+                  scrollToBlock={item.scrollToBlock}
+                  img={fingerImgs[i]}
+                  title={item.title}
+                  text={item.text}
+                  line={item.line}
+                />
+              );
+            })}
+            <div className="where-finger__bg">
+              <div className="where-finger__print"></div>
             </div>
-          </Link>
-          <p>20$ в месяц за доступ ко всем продуктам.</p>
-          <div className="line right">
-            <svg
-              width="76"
-              height="83"
-              viewBox="0 0 76 83"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9.99962 1H47.03C56.5819 1 64.8005 7.75434 66.6511 17.1252L74.7479 58.1252C77.1892 70.4876 67.728 82 55.1268 82H0"
-                stroke="url(#paint0_linear_3133_4684)"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_3133_4684"
-                  x1="10"
-                  y1="1"
-                  x2="154.49"
-                  y2="35.6755"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#F4E547" />
-                  <stop offset="0.3" stop-color="#F4C842" />
-                  <stop offset="1" stop-color="#EE8D48" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-        </footer>
+            <div className="shadow">
+              <div className="shadow__item"></div>
+              <div className="shadow__item"></div>
+              <div className="shadow__item"></div>
+              <div className="shadow__item"></div>
+            </div>
+          </main>
+          <footer className="where-finger__footer">
+            <div className="line left">
+              <svg
+                width="77"
+                height="83"
+                viewBox="0 0 77 83"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M66.4633 1H29.4329C19.881 1 11.6624 7.75434 9.81181 17.1252L1.71504 58.1252C-0.72632 70.4876 8.73493 82 21.3361 82H76.4629"
+                  stroke="url(#paint0_linear_3133_4685)"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_3133_4685"
+                    x1="66.4629"
+                    y1="1"
+                    x2="-78.027"
+                    y2="35.6755"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#F4E547" />
+                    <stop offset="0.3" stop-color="#F4C842" />
+                    <stop offset="1" stop-color="#EE8D48" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div onClick={scrollToBlockHandle} className="btn-finger">
+              <div class="btn-finger__border">
+                <div class="btn-finger__text">получить ключ</div>
+              </div>
+            </div>
+            <p>20$ в месяц за доступ ко всем продуктам.</p>
+            <div className="line right">
+              <svg
+                width="76"
+                height="83"
+                viewBox="0 0 76 83"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.99962 1H47.03C56.5819 1 64.8005 7.75434 66.6511 17.1252L74.7479 58.1252C77.1892 70.4876 67.728 82 55.1268 82H0"
+                  stroke="url(#paint0_linear_3133_4684)"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_3133_4684"
+                    x1="10"
+                    y1="1"
+                    x2="154.49"
+                    y2="35.6755"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#F4E547" />
+                    <stop offset="0.3" stop-color="#F4C842" />
+                    <stop offset="1" stop-color="#EE8D48" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </footer>
+        </div>
       </div>
     </div>
   );

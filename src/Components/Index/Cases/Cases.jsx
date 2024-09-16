@@ -9,10 +9,9 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import SwiperCore from "swiper";
 
 import casesImg from "../../../img/svgicons/tik-tok.svg";
-import windowsImg from "../../../img/svgicons/windows-black.svg";
+import windowsBtn from "../../../img/svgicons/windows-black.svg";
 import tiktokImg from "../../../img/svgicons/tik-tok-small.svg";
 import cryptoImg from "../../../img/svgicons/crypto.svg";
 import seoImg from "../../../img/svgicons/seo.svg";
@@ -26,7 +25,7 @@ function Cases() {
       title: "Tiktok Менеджер",
       description:
         "Программа для маркетинговой активности в Tiktok. Создание учетных записей, заполнение профиля, загрузки видео, отправка комментариев, лайков и подписок.",
-      link: undefined,
+      link: "https://t.me/tiktok_farms",
       review:
         "Ранее работа с BAS была для меня как хобби, но после вынужденного переезда в ЕС, данный инструмент позволяет обеспечивать достаточный доход для комфортного проживания и путешествий.",
       authorimg: undefined,
@@ -39,7 +38,7 @@ function Cases() {
       title: "NotCoin Автоматизация",
       description:
         "С Помощью BAS была реализована автоматическая добыча монет NotCoin для нескольких тысяч аккаунтов.",
-      link: undefined,
+      link: "https://t.me/bas_project",
       review:
         "Еще  2018 году сделал программу по Email маркетингу, с того времени было уже заработано больше 150к$ И все на бесплатном BAS. Софт в связке с модулями может практически все)",
       authorimg: undefined,
@@ -53,7 +52,7 @@ function Cases() {
       title: "X-GPTWriter",
       description:
         "Программа для автоматизации нейросетей, который позволяет создавать массово текстовые статьи для сайтов, генерировать описаний карточек товара для магазина.",
-      link: undefined,
+      link: "https://x-parser.ru/software/150-xgptwriter.html",
       review: undefined,
       authorimg: undefined,
       author: undefined,
@@ -101,12 +100,18 @@ function Cases() {
             </div>
             <img src={casesImg} alt="" />
             <label className="label">
-              <div className="button-container">
-                <Link to="#" className="btn btn-gradient btn-with-image">
-                  <img src={windowsImg} />
-                  Скачать
-                </Link>
-              </div>
+              <Link
+                class="btn-index "
+                to="https://browserautomation.io/download/BrowserAutomationStudioInstallAllInOne.exe"
+              >
+                <div class="btn-index__border">
+                  <div class="btn-index__text">
+                    <img src={windowsBtn} alt="download" />
+                    Скачать
+                  </div>
+                  <span class="white-space"></span>
+                </div>
+              </Link>
               <p className="label__text">Бесплатно</p>
             </label>
           </aside>

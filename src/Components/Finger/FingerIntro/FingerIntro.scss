@@ -36,6 +36,7 @@
 
         .plus {
             top: 50px;
+            width: fit-content;
         }
     }
 }
@@ -43,6 +44,17 @@
     .intro-finger {
         padding: rem(40px) 0px rem(45px);
         height: calc(100vh - 150px - 310px);
+    }
+}
+@media only screen and (max-width: 1920px) {
+    .intro-finger {
+        .container {
+            height: calc(100% + 120px);
+            top: -120px;
+            .plus {
+                top: 110px;
+            }
+        }
     }
 }
 

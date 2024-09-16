@@ -3,7 +3,8 @@ import "./Education.scss";
 import educationImg from "../../../img/advantages/2.png";
 import plusImg from "../../../img/svgicons/plus.svg";
 import linkImg from "../../../img/svgicons/link.svg";
-import contentImg from "./images/content.png";
+import contentVideo from "./video/bg.webm";
+
 import { Tooltip } from "react-tooltip";
 import React from "react";
 import { useRef } from "react";
@@ -12,6 +13,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
 import EducationSlide from "./EducationSlide/EducationSlide";
+import CustomBtn from "../../Common/Btns/CustomBtn";
+
 function Education() {
   function importAll(image) {
     return image.keys().map(image);
@@ -23,40 +26,49 @@ function Education() {
     {
       title: "Статьи",
       body: [
-        <Link to="#" className="btn-with-image">
-          Видео от пользователя
+        <Link
+          to="https://browserautomation.io/ru/start/"
+          className="btn-with-image"
+        >
+          БЫСТРЫЙ СТАРТ
           <img src={linkImg} alt="link" />
         </Link>,
       ],
       img: educationImg,
       btn: [
-        <div className="button-container">
-          <Link to="#" className="btn btn-gradient">
-            Быстрый старт
-          </Link>
-        </div>,
+        <CustomBtn
+          textForBtn="Быстрый старт"
+          btnClass="btn-index"
+          link="https://browserautomation.io/ru/start/"
+        />,
       ],
     },
     {
       title: "Видеоуроки",
 
       body: [
-        <Link to="#" className="btn-with-image">
+        <Link
+          to="https://www.youtube.com/@browserautomationstudio"
+          className="btn-with-image"
+        >
           Видео от пользователя
           <img src={linkImg} alt="link" />
         </Link>,
-        <Link to="#" className="btn-with-image">
+        <Link
+          to="https://www.youtube.com/@olegkasaev1378"
+          className="btn-with-image"
+        >
           Видео от пользователя 2
           <img src={linkImg} alt="link" />
         </Link>,
       ],
       img: educationImg,
       btn: [
-        <div className="button-container">
-          <Link to="#" className="btn btn-gradient">
-            Официальный канал YouTube
-          </Link>
-        </div>,
+        <CustomBtn
+          textForBtn="Официальный канал YouTube"
+          btnClass="btn-index"
+          link="https://www.youtube.com/@browserautomationstudio3109"
+        />,
       ],
     },
     {
@@ -73,17 +85,17 @@ function Education() {
             }}
             closeEvents={"mouseleave"}
           >
-            basmarketings@gmail.com
+            BASMARKETINGS@GMAIL.COM
           </a>
           <Tooltip id="copy" content="Скопировано!" openOnClick />
         </>,
       ],
       btn: [
-        <div className="button-container">
-          <Link to="#" className="btn btn-gradient">
-            Задать вопрос
-          </Link>
-        </div>,
+        <CustomBtn
+          textForBtn="Задать вопрос"
+          btnClass="btn-index"
+          isScroll={[true, "support"]}
+        />,
       ],
     },
   ];
@@ -99,14 +111,23 @@ function Education() {
           <img src={plusImg} alt="plus" />
         </div>
         <div className="block-with-bg">
-          <div class="corner top left"></div>
-          <div class="corner top right"></div>
-          <div class="corner bottom left"></div>
-          <div class="corner bottom right"></div>
-          <header className="block-header flex border-2">
+          <div class="corner-block top left"></div>
+          <div class="corner-block top right"></div>
+          <div class="corner-block bottom left"></div>
+          <div class="corner-block bottom right"></div>
+
+          <header className="block-header border-2 flex">
             <h3 className="text-gradient">Хотите стать профессионалом BAS?</h3>
             <h2>
-              <span>Обучение</span>
+              <span>
+                <div className="corner top left"></div>
+                <div className="corner bottom right"></div>
+                <div className="line-border top"></div>
+                <div className="line-border right"></div>
+                <div className="line-border left"></div>
+                <div className="line-border bottom"></div>
+                Обучение
+              </span>
             </h2>
             <div class="line">
               <svg
@@ -169,7 +190,7 @@ function Education() {
               })}
             </Swiper>
             <div className="education__content-img">
-              <img src={contentImg} alt="content-education-img" />
+              <video src={contentVideo} autoPlay muted loop></video>
               <div className="line">
                 <svg
                   width="254"

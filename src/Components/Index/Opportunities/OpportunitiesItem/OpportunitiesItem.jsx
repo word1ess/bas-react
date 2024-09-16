@@ -7,7 +7,11 @@ function OpportunitiesItem({
   isPremium,
 }) {
   return (
-    <div className={`opportunities__item ${additionalClass ? "big" : ""}`}>
+    <div
+      className={`opportunities__item ${
+        additionalClass ? additionalClass : ""
+      }`}
+    >
       <div className="opportunities__item-border">
         <div className="opportunities__item-text">
           {isPremium ? (

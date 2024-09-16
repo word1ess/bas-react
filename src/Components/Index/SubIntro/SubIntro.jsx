@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import plusImg from "../../../img/svgicons/plus.svg";
 import windowsImg from "../../../img/svgicons/windows-black.svg";
-
+import CustomBtn from "../../Common/Btns/CustomBtn";
 import "./SubIntro.scss";
 
 function SubIntro() {
@@ -224,15 +224,12 @@ function SubIntro() {
           <div className="plus top right">
             <img src={plusImg} alt="plus" />
           </div>
-          <Link to="#" className="btn-index">
-            <div className="btn-index__border">
-              <div className="btn-index__text">
-                <img src={windowsImg} alt="download" />
-                Скачать
-              </div>
-              <span className="white-space"></span>
-            </div>
-          </Link>
+
+          <CustomBtn
+            textForBtn="Скачать"
+            btnClass="btn-index"
+            img={[true, "window-black"]}
+          />
           <p className="label__text">Бесплатно</p>
         </div>
       </article>

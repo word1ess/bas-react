@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+
 import playImg from "../../../../img/svgicons/btn-play.svg";
 import Modal from "../../../Common/Modal/Modal";
 function HowItem({ index, title, text, video }) {

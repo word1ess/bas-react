@@ -4,6 +4,7 @@ import { useMediaQuery } from "react-responsive";
 import { useRef } from "react";
 
 import HeaderDropdown from "./HeaderDropdown/HeaderDropdown";
+import ScrollLinkHeader from "../Common/ScrollLinkHeader/ScrollLinkHeader";
 
 function Header({
   additionalClass,
@@ -12,62 +13,61 @@ function Header({
   linkImg,
   linkImageOrange,
   arrowImg,
+  productsImgs,
+  headerLogoText,
+  setIsLoading,
+  handleLoading,
 }) {
-  function importAll(image) {
-    return image.keys().map(image);
-  }
-  const productsImgs = importAll(
-    require.context("../../img/footer/", false, /\.(svg)$/)
-  );
-  const [logo, logoMobile] = headerLogo;
   const headerDropdowns = [
     {
       parentLink: "#",
       parentLinkText: "Наши продукты",
       body: [
-        <div className="header__link-btn">
-          <Link to="/" className="footer__product">
-            <div className="footer__product-border">
-              <img src={productsImgs[0]} alt="product" className="logo" />
-              <div>
-                <p>Browser AutomationStudio</p>
-                <p>Автоматизация браузера</p>
-              </div>
-              <img src={linkImg} alt="link" className="arrow" />
+        <Link
+          to="https://browserautomation.io/ru/"
+          className="footer__product"
+          onClick={productHandle}
+        >
+          <div className="footer__product-border">
+            <img src={productsImgs[0]} alt="product" className="logo" />
+            <div>
+              <p>Browser AutomationStudio</p>
+              <p>Автоматизация браузера</p>
             </div>
-            <span className="white-space"></span>
-          </Link>
-        </div>,
-        <div className="header__link-btn">
-          <Link to="/finger" className="footer__product">
-            <div className="footer__product-border">
-              <img src={productsImgs[0]} alt="product" className="logo" />
-              <div>
-                <p>FingerprintSwitcher</p>
-                <p>Измените отпечаток браузера</p>
-              </div>
-              <img
-                src={linkImageOrange ? linkImageOrange : linkImg}
-                alt="link"
-                className="arrow"
-              />
+            <img src={linkImg} alt="link" className="arrow" />
+          </div>
+          <span className="white-space"></span>
+        </Link>,
+        <Link to="finger" className="footer__product" onClick={productHandle}>
+          <div className="footer__product-border">
+            <img src={productsImgs[1]} alt="product" className="logo" />
+            <div>
+              <p>FingerprintSwitcher</p>
+              <p>Измените отпечаток браузера</p>
             </div>
-            <span className="white-space"></span>
-          </Link>
-        </div>,
-        <div className="header__link-btn">
-          <Link to="#" className="footer__product">
-            <div className="footer__product-border">
-              <img src={productsImgs[2]} alt="product" className="logo" />
-              <div>
-                <p>FingerprintManager</p>
-                <p>Антидетект браузер</p>
-              </div>
-              <img src={linkImg} alt="link" className="arrow" />
+            <img
+              src={linkImageOrange ? linkImageOrange : linkImg}
+              alt="link"
+              className="arrow"
+            />
+          </div>
+          <span className="white-space"></span>
+        </Link>,
+        <Link
+          to="https://browserautomation.io/ru/fingerprint-manager"
+          className="footer__product"
+          onClick={productHandle}
+        >
+          <div className="footer__product-border">
+            <img src={productsImgs[2]} alt="product" className="logo" />
+            <div>
+              <p>FingerprintManager</p>
+              <p>Антидетект браузер</p>
             </div>
-            <span className="white-space"></span>
-          </Link>
-        </div>,
+            <img src={linkImg} alt="link" className="arrow" />
+          </div>
+          <span className="white-space"></span>
+        </Link>,
       ],
     },
     {
@@ -75,22 +75,26 @@ function Header({
       parentLinkText: "Ru",
       body: [
         <li>
-          <button>Ru</button>
+          <Link to="https://browserautomation.io/ru/">
+            <button>Ru</button>
+          </Link>
         </li>,
         <li>
-          <button>En</button>
+          <Link to="https://browserautomation.io/">
+            <button>En</button>
+          </Link>
         </li>,
       ],
     },
     {
-      parentLink: "#",
+      parentLink: "https://bablosoft.com/login",
       parentLinkText: "Войти",
       body: [
         <li>
-          <Link to="#">Вход</Link>
+          <Link to="https://bablosoft.com/login">Вход</Link>
         </li>,
         <li>
-          <Link to="#">Регистрация</Link>
+          <Link to="https://bablosoft.com/register">Регистрация</Link>
         </li>,
       ],
     },
@@ -105,15 +109,20 @@ function Header({
     burgerBtnRef.current.classList.toggle("burger-active");
     burgerMenuRef.current.classList.toggle("burger-active");
   }
+  function productHandle() {
+    document.body.classList.remove("burger-active");
+    burgerBtnRef.current.classList.remove("burger-active");
+    burgerMenuRef.current.classList.remove("burger-active");
+    window.scrollTo(0, 0);
+    setIsLoading(true);
+    handleLoading();
+  }
   return (
     <header className={`header ${additionalClass}`}>
       <div className="header__row">
-        <div className="container"></div>
-        <Link to="/" className="header__logo">
-          <picture>
-            <source srcset={logoMobile} media="(max-width: 1440px)" />
-            <img src={logo} alt="logo" />
-          </picture>
+        <Link className="header__logo">
+          <img src={headerLogo} alt="logo" />
+          <p>{headerLogoText}</p>
         </Link>
 
         <nav className="header__menu" ref={burgerMenuRef}>
@@ -124,15 +133,14 @@ function Header({
               body={headerDropdowns[0].body}
               arrowImg={arrowImg}
             />
-            <Link to="#" className="header__link-hover">
+            <Link
+              to="https://wiki.bablosoft.com/doku.php "
+              className="header__link-hover"
+            >
               Документация
             </Link>
-            <Link to="#" className="header__link-hover">
-              Цена
-            </Link>
-            <Link to="#" className="header__link-hover">
-              Контакты
-            </Link>
+            <ScrollLinkHeader linkText="Цена" scrollBlock="version" />
+            <ScrollLinkHeader linkText="Контакты" scrollBlock="footer" />
           </div>
           <div className="header__for-user">
             {!isMobile && (

@@ -37,12 +37,18 @@ function Interface() {
       <div className="container">
         <header className="block-header center border-1">
           <h2>
-            <span>Интерфейс</span>
+            <span>
+              <div className="corner top left"></div>
+              <div className="corner bottom right"></div>
+              <div className="line-border top"></div>
+              <div className="line-border right"></div>
+              <div className="line-border left"></div>
+              <div className="line-border bottom"></div>
+              Интерфейс
+            </span>
           </h2>
         </header>
         <div className="interface__video">
-          <div className="corner top left"></div>
-          <div className="corner top right"></div>
           <video src={interfaceVideo} controls loading="lazy"></video>
         </div>
         <main className="interface__row">

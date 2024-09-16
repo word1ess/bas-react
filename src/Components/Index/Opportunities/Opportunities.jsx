@@ -4,53 +4,51 @@ import React from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 
-import windowImg from "../../../img/svgicons/windows.svg";
+import windowsBtn from "../../../img/svgicons/windows.svg";
 
-function Opportunities({ title, supTitle, isBtn, items, images, isPremium }) {
+function Opportunities({ title, supTitle, isBtn, items, images }) {
   const [opportunitiesItems, setOpportunitiesItems] = React.useState(items);
   const [btnMoreStatus, setBtnMoreStatus] = React.useState(false);
 
   const btnMoreRef = useRef(null);
   const opportunitiesRowRef = useRef(null);
-  function btnHandle(btnMoreRef) {
+  function btnHandle() {
     const copyItems = opportunitiesItems.slice();
     const newArr = [
       {
         title: "Автоматическое решение капчи",
-        p: `100% эмуляция человека. Поддерживается человекоподобное движения и клики мыши, перетаскивание элементов, прокрутка, выбор элементов из выпадающего списка, нативная эмуляция клавиатуры, сочетания клавиш и т.д.`,
+        p: `Интеграция со всеми популярными сервисами и программами решения капчи.`,
       },
       {
         title: "Модуль получения SMS",
-        p: `Без знаний программирования:
-        АИ-помощник/Запись действий/Визуальный конструктор..`,
+        p: `BAS содержит модуль активации телефона при регистрации на различных сайтах.`,
       },
       {
         title: "Модуль электронной почты",
-        p: `Запуск до 300 браузеров одновременно для выполнения вашей задачи в зависимости от мощности вашего ПК.`,
+        p: `С помощью BAS легко получать и отправлять письма. Автоматический поиск и обработка писем.`,
       },
       {
         title: "Автоматизация расширений браузера",
-        p: `100% эмуляция человека. Поддерживается человекоподобное движения и клики мыши, перетаскивание элементов, прокрутка, выбор элементов из выпадающего списка, нативная эмуляция клавиатуры, сочетания клавиш и т.д.`,
+        p: `Автоматизируйте любые расширения Chrome.`,
       },
       {
-        title: "Автоматизация расширений браузера",
-        p: `Без знаний программирования:
-        АИ-помощник/Запись действий/Визуальный конструктор..`,
+        title: "Создание автономных приложений",
+        p: `BAS позволяет легко создать из скрипта автономное приложение .exe и отправить его заказчику.`,
       },
       {
         title: "Базы данных",
-        p: `Запуск до 300 браузеров одновременно для выполнения вашей задачи в зависимости от мощности вашего ПК.`,
+        p: `Интеграция базы данных MongoDB в свой проект в несколько кликов.
+        Может пригодиться, если вы хотите хранить какие-то данные, например, если вы создаете менеджер аккаунтов.`,
       },
       {
         title: "Расширение функционала с помощью модулей",
-        p: `Без знаний программирования:
-        АИ-помощник/Запись действий/Визуальный конструктор..`,
-        additionalClass: true,
+        p: `Модульная система бесплатных плагинов от других пользователей позволяет легко расширять функционал BAS. Вы также можете создавать свои модули с помощью визуальных компонент.`,
+        additionalClass: "big",
       },
       {
         title: "Поддержка Javascript и Python",
-        p: `Запуск до 300 браузеров одновременно для выполнения вашей задачи в зависимости от мощности вашего ПК.`,
-        additionalClass: true,
+        p: `Поддерживается среда  Node.js, NPM модули и стандартный JS для расширения возможностей. Python модуль.`,
+        additionalClass: "big",
       },
     ];
     if (!btnMoreStatus) {
@@ -63,7 +61,7 @@ function Opportunities({ title, supTitle, isBtn, items, images, isPremium }) {
     opportunitiesRowRef.current.classList.toggle("active");
   }
   return (
-    <article className="opportunities block-with-substrate ">
+    <article className="opportunities block-with-substrate">
       <div className="container">
         <div className="line">
           <svg
@@ -154,7 +152,7 @@ function Opportunities({ title, supTitle, isBtn, items, images, isPremium }) {
           </svg>
         </div>
         {supTitle ? (
-          <header className="block-header flex border-2 center">
+          <header className="block-header flex border-1 center">
             <h3 className="text-gradient">{supTitle}</h3>
             <h2>{title}</h2>
           </header>
@@ -177,36 +175,33 @@ function Opportunities({ title, supTitle, isBtn, items, images, isPremium }) {
             );
           })}
         </main>
-
         {isBtn &&
           (btnMoreStatus ? (
-            <div className="button-container">
-              <Link
-                to="#"
-                class="btn btn-with-image btn-gradient btn-with-border"
-              >
-                <img src={windowImg} alt="download" />
-                Скачать
-                <span class="white-space"></span>
-                <span class="border"></span>
-              </Link>
-            </div>
+            <Link
+              class="btn-index btn-index__bordered"
+              to="https://browserautomation.io/download/BrowserAutomationStudioInstallAllInOne.exe"
+            >
+              <div class="btn-index__border">
+                <div class="btn-index__text">
+                  <img src={windowsBtn} alt="download" />
+                  Скачать
+                </div>
+              </div>
+              <span class="white-space"></span>
+            </Link>
           ) : (
-            <div className="button-container">
-              <button
-                className="btn btn-gradient btn-with-border"
-                onClick={() => {
-                  btnHandle(btnMoreRef);
-                }}
-                ref={btnMoreRef}
-              >
-                Показать все
-                <span className="border"></span>
-                <span className="white-space"></span>
-              </button>
-            </div>
+            <button
+              class="btn-index btn-index__bordered"
+              onClick={() => {
+                btnHandle(btnMoreRef);
+              }}
+            >
+              <div class="btn-index__border">
+                <div class="btn-index__text">Показать все</div>
+              </div>
+              <span class="white-space"></span>
+            </button>
           ))}
-
         <div className="lines__fixes"></div>
       </div>
     </article>

@@ -18,11 +18,11 @@ function FaqItem({ index, question, asnwer }) {
         <div className="faq__question-border">
           <div className="faq__question-bg">
             <p className="text-gradient">{`0${index}`}</p>
-            {question}
-            <span className="white-space"></span>
+            <p> {question}</p>
             <div className="faq__toggle"></div>
           </div>
         </div>
+        <span className="white-space"></span>
       </div>
       <div className="faq__answer" ref={answerRef}>
         {asnwer}

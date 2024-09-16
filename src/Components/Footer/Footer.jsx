@@ -9,30 +9,29 @@ function Footer({
   linkImg,
   linkImageOrange,
   linkImgProductFooter,
+  productsImgs,
 }) {
   const footerProducts = [
     {
+      link: "https://browserautomation.io/ru/",
       title: "Browser AutomationStudio",
       text: "Автоматизация браузера",
       linkImg,
     },
     {
+      link: "https://browserautomation.io/ru/fingerprint-switcher",
       title: "FingerprintSwitcher",
       text: "Измените отпечаток браузера",
       linkImg: linkImageOrange ? linkImageOrange : linkImg,
     },
     {
+      link: "https://browserautomation.io/ru/fingerprint-manager",
       title: "FingerprintManager",
       text: "Антидетект браузер",
       linkImg,
     },
   ];
-  function importAll(image) {
-    return image.keys().map(image);
-  }
-  const productsImgs = importAll(
-    require.context("../../img/footer/", false, /\.(svg)$/)
-  );
+
   return (
     <footer
       className={`footer block-dashed-top block-dashed-sides ${additionalClass}`}
@@ -48,41 +47,55 @@ function Footer({
           <nav className="footer__item height">
             <h2>Наши продукты</h2>
 
-            {footerProducts.map((product, i) => {
-              return (
-                <FooterProduct
-                  productImg={productsImgs[i]}
-                  title={product.title}
-                  text={product.text}
-                  linkImg={product.linkImg}
-                />
-              );
-            })}
+            <main className="footer__products">
+              {footerProducts.map((product, i) => {
+                return (
+                  <FooterProduct
+                    link={product.link}
+                    productImg={productsImgs[i]}
+                    title={product.title}
+                    text={product.text}
+                    linkImg={product.linkImg}
+                  />
+                );
+              })}
+            </main>
           </nav>
           <nav className="footer__item">
             <h2>Документация</h2>
-            <Link to="#">Быстрый старт</Link>
-            <Link to="#">Документация</Link>
+            <Link to="https://browserautomation.io/ru/start/">
+              Быстрый старт
+            </Link>
+            <Link to="https://wiki.bablosoft.com/doku.php">Документация</Link>
           </nav>
           <nav className="footer__item">
             <h2>Ресурсы</h2>
-            <Link to="#">Вход</Link>
-            <Link to="#">Регистрация</Link>
+            <Link to="https://bablosoft.com/login">Вход</Link>
+            <Link to="https://bablosoft.com/register ">Регистрация</Link>
             <Link to="#">
               Партнерская <br /> программа
             </Link>
           </nav>
           <nav className="footer__item">
             <h2>Контакты</h2>
-            <Link to="#" className="btn-with-image">
+            <Link
+              to="https://t.me/browserautomation_io"
+              className="btn-with-image"
+            >
               Telegram
               <img src={linkImgProductFooter} alt="link" />
             </Link>
-            <Link to="#" className="btn-with-image">
+            <Link
+              to="https://www.youtube.com/@browserautomationstudio3109"
+              className="btn-with-image"
+            >
               YouTube
               <img src={linkImgProductFooter} alt="link" />
             </Link>
-            <Link to="#" className="btn-with-image">
+            <Link
+              to="https://x.com/browserautomation_io"
+              className="btn-with-image"
+            >
               Twitter
               <img src={linkImgProductFooter} alt="link" />
             </Link>
@@ -90,7 +103,10 @@ function Footer({
               Facebook
               <img src={linkImgProductFooter} alt="link" />
             </Link>
-            <Link to="#" className="btn-with-image">
+            <Link
+              to="mailto:mail.to.twaego@gmail.com"
+              className="btn-with-image"
+            >
               EMail
               <img src={linkImgProductFooter} alt="link" />
             </Link>

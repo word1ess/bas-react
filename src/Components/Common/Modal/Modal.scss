@@ -1,9 +1,9 @@
 .modal {
     height: 100vh;
     width: 100vw;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.9);
     position: fixed;
-    z-index: 10000;
+    z-index: 1000001;
     top: 0px;
     left: 0px;
     display: flex;
@@ -28,16 +28,245 @@
         & video {
             width: 100%;
         }
+
+        p {
+            font-size: 18px;
+            line-height: 1.4;
+
+            &:not(:last-child) {
+                margin-bottom: 40px;
+            }
+            a {
+                font-size: inherit;
+            }
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            margin: 40px auto;
+
+            &:not(:last-child) {
+                margin-bottom: 40px;
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin: 40px auto;
+            li {
+                font-weight: 400;
+                font-size: 16px;
+                color: #1c1818;
+                position: relative;
+                padding-left: 30px;
+                line-height: 1.2;
+                &::before {
+                    content: "";
+                    left: 16px;
+                    top: 5px;
+                    width: 6px;
+                    height: 6px;
+                    background: #ff7120;
+                    position: absolute;
+                }
+            }
+        }
+        .btn-with-image {
+            &:not(:last-child) {
+                margin-bottom: 40px;
+            }
+            img {
+                margin: 0px;
+            }
+        }
+    }
+    &__close {
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 20px;
+        top: 40px;
+        right: -40px;
+        cursor: pointer;
+        background: center / contain no-repeat url("../../../img/svgicons/close.svg");
     }
 }
 
+.white {
+    .modal {
+        &__content {
+            max-height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: #faf8f2;
+            border-radius: 5px;
+            padding: 24px;
+            padding-top: 80px;
+            width: 100vw;
+
+            ul {
+                gap: 32px;
+                margin: 40px auto;
+                li {
+                    display: block;
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: #1c1818;
+                    position: relative;
+                    padding-left: 30px;
+                    line-height: 1.2;
+                    a {
+                        font-size: inherit;
+                    }
+                    &::before {
+                        content: "";
+                        left: 16px;
+                        top: 5px;
+                        width: 6px;
+                        height: 6px;
+                        background: #ff7120;
+                        position: absolute;
+                    }
+                }
+            }
+            video {
+                display: block;
+                aspect-ratio: 16/9;
+                max-width: fit-content;
+                margin: 0 auto 40px;
+            }
+            ol {
+                display: flex;
+                gap: 12px;
+                flex-direction: column;
+                font-weight: 400;
+                font-size: 16px;
+                color: #1c1818;
+                position: relative;
+                padding-left: 30px;
+                line-height: 1.2;
+                li {
+                }
+                a {
+                    font-size: inherit;
+                }
+            }
+        }
+        &__close {
+            z-index: 100;
+            width: 100%;
+            right: 0px;
+            left: 0px;
+            top: 0px;
+            height: 80px;
+            right: 40px;
+            position: fixed;
+            background: calc(100% - 40px) / contain no-repeat url("../../../img/svgicons/close-black.svg");
+            background-color: #faf8f2;
+            background-size: 30px;
+        }
+        &-video {
+            .modal {
+                &__close {
+                    position: absolute;
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    top: 40px;
+                    right: -40px;
+                    cursor: pointer;
+                    left: auto;
+                    background: center / contain no-repeat url("../../../img/svgicons/close.svg");
+                }
+                &__content {
+                    border-radius: 12px;
+                    width: 50vw;
+                    background: none;
+                    position: relative;
+                    overflow: visible;
+
+                    & video {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+*.modal-active {
+    z-index: 10000000000 !important;
+}
 @media only screen and (max-width: 992px) {
     .modal {
         &__content {
             width: 80vw;
         }
     }
+    .modal {
+        &__close {
+            top: -60px;
+            right: 0px;
+        }
+        &__content {
+            p {
+                font-size: 16px;
+                line-height: 1.4;
+
+                &:not(:last-child) {
+                    margin-bottom: 24px;
+                }
+            }
+            img {
+                margin: 24px auto;
+            }
+        }
+        .block-header {
+            margin-bottom: 24px;
+
+            & h2 {
+                max-width: 100% !important;
+                span {
+                    max-width: 100% !important;
+                    text-align: center;
+                }
+            }
+        }
+        .btn-with-image {
+            margin-bottom: 24px;
+            b {
+                font-size: 12px;
+                display: block;
+                word-wrap: break-word;
+                max-width: 80%;
+            }
+        }
+    }
 }
+@media only screen and (max-width: 576px) {
+    .white .modal-video {
+        .modal__close {
+            right: 20px;
+        }
+        .modal__content {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+    .modal-video {
+        &__content {
+            width: 100%;
+        }
+        &__close {
+            right: 20px;
+        }
+    }
+}
+
 @media screen and (orientation: landscape) {
     .modal {
         &__content {

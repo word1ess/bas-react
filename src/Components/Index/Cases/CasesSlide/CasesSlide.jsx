@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import lineOneImg from "../../../../img/svgicons/line-cases-1.svg";
+import CustomBtn from "../../../Common/Btns/CustomBtn";
+
 import lineTwoImg from "../../../../img/svgicons/line-cases-2.svg";
 import placeholderAutohrImg from "../../../../img/cases/author.png";
 function CasesSlide({
@@ -16,22 +17,27 @@ function CasesSlide({
   return (
     <>
       <header className="cases__header">
-        <div className="cases__img btn btn-gradient btn-with-border">
-          <img src={img} alt="" />
-        </div>
+        <Link class="btn-index btn-index__bordered cases__logo" to="/">
+          <div class="btn-index__border">
+            <div class="btn-index__text">
+              <img src={img} alt="" />
+            </div>
+          </div>
+        </Link>
         <p>{type}</p>
       </header>
       <div className="block-with-bg"></div>
       <main className="cases__body">
         <h3>{title}</h3>
         <p>{description}</p>
-        <div className="button-container">
-          <Link to={link ?? "#"} className="btn btn-gradient btn-with-border">
-            Канал проекта
-            <span className="white-space"></span>
-            <span className="border"></span>
-          </Link>
-        </div>
+
+        <CustomBtn
+          textForBtn="Канал проекта"
+          btnType="bordered"
+          btnClass="btn-index"
+          isWhiteSpace
+          link={link}
+        />
       </main>
       {review ? (
         <blockquote>

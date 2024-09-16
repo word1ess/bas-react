@@ -2,6 +2,15 @@
     @return ($px / 14px) + rem;
 }
 .where-finger {
+    z-index: 1;
+    .container.with-shadow {
+        &::after {
+            bottom: auto;
+            top: 50%;
+            transform: translate(0%, -50%);
+            height: 75%;
+        }
+    }
     &__row {
         display: grid;
         gap: rem(40px) rem(47px);
@@ -51,11 +60,11 @@
             .where-finger__card {
                 padding-top: 1px;
                 &::after {
-                    background: linear-gradient(0deg, #ee8d48 0%, #bebcbf calc(50% + 60px));
-                    height: calc(100% + 60px);
+                    background: linear-gradient(0deg, #ee8d48 0%, #bebcbf calc(50% + 120px));
+                    height: calc(100% + 120px);
                 }
                 &:hover::after {
-                    transform: translate(0px, -59px);
+                    transform: translate(0px, -119px);
                 }
             }
             .where-finger__line {
@@ -67,9 +76,9 @@
         &:nth-child(odd):not(:first-child) {
             .where-finger__card {
                 &::after {
-                    width: calc(100% + 120px);
-                    transform: translate(-119px, 0px);
-                    background: linear-gradient(90deg, #ee8d48 0%, #bebcbf calc(50% + 120px));
+                    width: calc(100% + 240px);
+                    transform: translate(-239px, 0px);
+                    background: linear-gradient(90deg, #ee8d48 0%, #bebcbf calc(50% + 240px));
                 }
                 &:hover::after {
                     transform: translate(0px, 0px);
@@ -83,11 +92,11 @@
         &:nth-child(even) {
             .where-finger__card {
                 &::after {
-                    width: calc(100% + 120px);
-                    background: linear-gradient(-90deg, #ee8d48 0%, #bebcbf calc(50% + 120px));
+                    width: calc(100% + 240px);
+                    background: linear-gradient(-90deg, #ee8d48 0%, #bebcbf calc(50% + 240px));
                 }
                 &:hover::after {
-                    transform: translate(-119px, 0px);
+                    transform: translate(-239px, 0px);
                 }
             }
         }
@@ -369,9 +378,16 @@
 }
 @media only screen and (max-width: 450px) {
     .where-finger {
+        &__info {
+            h3 {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+        }
         &__footer {
             margin-top: 40px;
             padding: 0px;
+            gap: 16px;
             p {
                 font-size: rem(16px);
                 max-width: 297px;

@@ -2,9 +2,9 @@ import gitHubImg from "../img/github.png";
 import linkImg from "../../../../img/svgicons/link-dark.svg";
 import { Link } from "react-router-dom";
 
-function FingerPluginsItem({ img, title, text, link }) {
+function FingerPluginsItem({ forScrollClass, img, title, text, link }) {
   return (
-    <article className="plugins-finger__item">
+    <article className={`plugins-finger__item ${forScrollClass}`}>
       <div className="plugins-finger__github">
         <img src={gitHubImg} alt="" />
       </div>

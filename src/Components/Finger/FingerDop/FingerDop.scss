@@ -2,6 +2,13 @@
     @return ($px / 14px) + rem;
 }
 .dop-finger {
+    z-index: 1000000000 !important;
+    p + ul {
+        margin-top: 0px;
+    }
+    ul {
+        padding-left: 16px;
+    }
     &-item__row {
         display: flex;
     }
@@ -40,21 +47,26 @@
         flex-direction: column;
         padding: rem(24px);
         padding-right: rem(50px);
-        border-right: 1px solid #bebcbf;
+        // border-right: 1px solid #bebcbf;
     }
     &__play {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: rem(32px);
-        border-top: 1px solid #bebcbf;
         flex: 1 1 auto;
+        max-height: 75px;
+        margin-top: auto;
+        border-top: 1px solid #bebcbf;
+        border-left: 1px solid #bebcbf;
     }
     &__icon {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: rem(40px) rem(32px);
+        border-bottom: 1px solid #bebcbf;
+        border-left: 1px solid #bebcbf;
     }
 
     .btn-finger {
@@ -69,14 +81,20 @@
 
 @media only screen and (max-width: 992px) {
     .dop-finger {
+        margin-bottom: -120px;
+        border-bottom: 1px solid #bebcbf;
         &-item__row {
             flex-direction: column-reverse;
         }
         &__play {
+            border-left: none;
             border-bottom: 1px solid #bebcbf;
         }
         &__text {
             padding-right: 24px;
+        }
+        &__icon {
+            border: none;
         }
         .btn-finger {
             max-width: 100%;
@@ -86,4 +104,16 @@
 @media only screen and (max-width: 768px) {
 }
 @media only screen and (max-width: 450px) {
+    .dop-finger {
+        &__item {
+            h3 {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+            p {
+                margin-bottom: 16px;
+                font-size: 16px;
+            }
+        }
+    }
 }

@@ -222,16 +222,32 @@
         align-items: flex-start;
         min-height: 500px;
         padding-top: 24px;
+        aspect-ratio: 19.2/4.2;
         video {
             display: block;
             right: 0%;
             left: auto;
-            width: fit-content;
-            height: 50%;
+            width: 950px;
+            height: 210px;
             top: auto;
             bottom: 0px;
+            aspect-ratio: 19.2/4.2;
         }
         &__row {
+        }
+
+        &__info {
+            h1 {
+                font-size: 32px;
+                gap: 16px;
+
+                div.button {
+                    font-size: 32px;
+                    .white-space.left {
+                        bottom: 0px;
+                    }
+                }
+            }
         }
     }
     .sub-intro {

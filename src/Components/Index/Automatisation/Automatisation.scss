@@ -74,4 +74,19 @@
 }
 
 @media only screen and (max-width: 450px) {
+    .automatisation {
+        &__img {
+            width: 56px;
+            height: 56px;
+
+            & img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        &__item {
+            padding-right: 24px;
+            margin-right: 24px;
+        }
+    }
 }

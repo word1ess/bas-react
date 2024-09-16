@@ -2,6 +2,7 @@
     @return ($px / 14px) + rem;
 }
 .how-finger {
+    z-index: 1;
     .container {
         padding: 40px 24px;
     }
@@ -85,8 +86,7 @@
         }
     }
 }
-.plyr--video {
-}
+
 [data-media-player] {
     position: sticky !important;
     top: 120px;
@@ -95,6 +95,7 @@
     aspect-ratio: 6.91/3.88;
     width: 100%;
     object-fit: cover;
+    clip-path: polygon(6% 0, 94% 0, 100% 10%, 100% 90%, 94% 100%, 6% 100%, 0 90%, 0 10%);
 }
 div[data-can-play] {
     [data-media-provider] {
@@ -110,10 +111,21 @@ div[data-can-play] {
             background: hsla(22, 100%, 56%, 0.5);
             transition: all 300ms ease;
             clip-path: polygon(6% 0, 94% 0, 100% 10%, 100% 90%, 94% 100%, 6% 100%, 0 90%, 0 10%);
+            z-index: 4;
+            pointer-events: none;
         }
     }
 }
+.plyr__control {
+    // position: absolute !important;
+    // z-index: 3 !important;
+}
 .plyr {
+    z-index: 3 !important;
+    clip-path: polygon(6% 0, 94% 0, 100% 10%, 100% 90%, 94% 100%, 6% 100%, 0 90%, 0 10%);
+}
+
+.plyr--video {
     clip-path: polygon(6% 0, 94% 0, 100% 10%, 100% 90%, 94% 100%, 6% 100%, 0 90%, 0 10%);
 }
 div[data-playing] {
@@ -164,4 +176,46 @@ div[data-playing] {
     }
 }
 @media only screen and (max-width: 450px) {
+    .white .how-finger {
+        .container {
+            padding-bottom: 0px;
+        }
+        .block-header {
+            h2 {
+                gap: 24px;
+                flex-direction: row;
+                margin-bottom: 24px;
+                span {
+                    padding: 12px 24px 16px 24px;
+
+                    .line-border {
+                        &.right,
+                        &.left {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        &__info {
+            flex: none;
+            h3 {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+            p {
+                font-size: 16px;
+                opacity: 0.7;
+            }
+            ul {
+                li {
+                    font-size: 16px;
+                    opacity: 0.7;
+                }
+            }
+        }
+        &__btns {
+            margin-top: 24px;
+        }
+    }
 }

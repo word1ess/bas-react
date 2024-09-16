@@ -1,10 +1,12 @@
 .faq {
     padding-bottom: 80px;
+    z-index: 1;
     &__question {
         filter: url(#rounded-corners);
         clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
         border-radius: 10px 5px 5px 5px;
         padding: 1.5px;
+        position: relative;
 
         &-border {
             clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
@@ -27,7 +29,10 @@
             color: #fff;
             background: #090c0f;
             border-radius: 15px 5px 5px 5px;
-            font-size: 18px;
+
+            p {
+                font-size: 17px;
+            }
         }
 
         &:not(:first-child) {
@@ -40,7 +45,16 @@
                 background: #fff;
             }
         }
-
+        .white-space {
+            display: block;
+            width: 3px;
+            height: 14px;
+            left: 0px;
+            top: 50%;
+            transform: translate(0%, -50%);
+            position: absolute;
+            background: #090c0f;
+        }
         &.active .faq {
             &__toggle {
                 rotate: 45deg;
@@ -56,6 +70,9 @@
         color: #fff;
         padding: 24px 40px 16px 40px;
 
+        a {
+            font-family: "NeueMachina-Ultrabold";
+        }
         &.active {
             display: block;
         }
@@ -93,6 +110,10 @@
 
 .white {
     .faq {
+        padding-bottom: 0px;
+        .container {
+            padding-bottom: 80px;
+        }
         &__question {
             &-border {
                 background: #bebcbf;
@@ -118,6 +139,9 @@
                     rotate: 45deg;
                 }
             }
+            .white-space {
+                display: none;
+            }
         }
         &__toggle {
             &::before {
@@ -130,10 +154,14 @@
         &__answer {
             color: #1c1818;
         }
+        .container {
+            max-width: 1060px;
+        }
         .text-gradient {
-            background: transparent;
             color: #ff7120;
-            -webkit-text-fill-color: #ff7120;
+            background: none;
+            background-clip: none;
+            -webkit-text-fill-color: unset;
         }
     }
 }
@@ -152,9 +180,14 @@
 @media only screen and (max-width: 576px) {
     .faq {
         &__question {
-            padding: 14px 20px;
-            font-size: 14px;
-            gap: 20px;
+            &-bg {
+                gap: 0px;
+                font-size: 16px;
+                padding: 24px 40px;
+            }
+            p.text-gradient {
+                margin-right: 40px;
+            }
         }
         &__answer {
             font-size: 14px;
@@ -165,4 +198,49 @@
 }
 
 @media only screen and (max-width: 450px) {
+    .faq {
+        .text-gradient {
+            font-size: 18px;
+        }
+        &__toggle {
+            margin-left: 15px;
+        }
+        &__question {
+            p:not(.text-gradient) {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            &-bg {
+                p:not(.text-gradient) {
+                    font-size: 16px;
+                }
+            }
+
+            &.active {
+                p:not(.text-gradient) {
+                    white-space: unset;
+                    overflow: visible;
+                    text-overflow: unset;
+                }
+            }
+        }
+        &__answer {
+            padding: 14px 40px;
+        }
+    }
+    .white .faq {
+        & .faq {
+            &__question {
+                &:first-child {
+                    .faq__question-bg {
+                        p:not(.text-gradient) {
+                            word-wrap: break-word;
+                            max-width: calc(100% - 30px);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
